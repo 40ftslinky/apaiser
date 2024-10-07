@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Essential </title>
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://kit.fontawesome.com/08e8c4f6cf.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+  
+  </head>
+  
+  <body class="home">
+
+
+<!-- header -->
+        <header id="header">
+            <!-- logo -->
+            <a class="site-link" href="/">
+                <div class="site-title">
+                <h1 hidden>Essential Community</h1>
+            </div>
+            </a>
+            <a class="site-logo-link" href="/">
+                <div class="logo" aria-label="Essential Community">
+                    <!-- <img src="img/logo.png" alt="logo"> -->
+                    <svg width="250" height="26" viewBox="0 0 250 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.55476 14.8861H15.8447V11.0464H8.55476V14.8861ZM0 0.342486V25.6286H16.8105V21.7889H4.65242V4.18219H16.7124V0.342486H0Z" fill="#322A2A"/>
+                        <path d="M47.4703 7.29351C47.4458 5.8705 47.0389 4.60668 46.2545 3.51169C45.4701 2.41187 44.3867 1.55325 43.0091 0.930983C41.6315 0.30872 40.0333 0 38.2096 0C36.3859 0 34.8024 0.30872 33.3807 0.930983C31.959 1.55325 30.8364 2.42152 30.0127 3.54063C29.1891 4.65974 28.7773 5.96698 28.7773 7.45269C28.7773 9.2616 29.3901 10.7135 30.6157 11.8037C31.8414 12.8939 33.5131 13.7091 35.626 14.2397L38.5479 14.9826C39.4696 15.2141 40.2736 15.4746 40.9648 15.764C41.656 16.0583 42.1904 16.42 42.5777 16.8494C42.9601 17.2835 43.1611 17.8286 43.166 18.4846C43.1562 19.2082 42.9356 19.8401 42.4993 20.3803C42.0629 20.9206 41.4648 21.3403 40.7001 21.6393C39.9353 21.9384 39.0479 22.0879 38.0331 22.0879C37.0183 22.0879 36.1849 21.9432 35.4054 21.6538C34.621 21.3644 33.9886 20.9302 33.5033 20.3466C33.0179 19.7629 32.7434 19.0297 32.6748 18.1518H28.0959C28.1645 19.8304 28.6057 21.2534 29.4343 22.4208C30.2579 23.5881 31.405 24.4805 32.8709 25.0883C34.3367 25.6961 36.0722 26 38.0724 26C40.0726 26 41.8865 25.6865 43.3376 25.0545C44.7887 24.4226 45.9016 23.5495 46.6712 22.4256C47.4409 21.3017 47.8233 19.9993 47.8233 18.5184C47.8233 17.4234 47.6125 16.4683 47.1958 15.6531C46.7791 14.8378 46.2104 14.1432 45.4947 13.5644C44.7789 12.9904 43.97 12.5128 43.0728 12.1317C42.1757 11.7555 41.2393 11.4516 40.2687 11.2297L37.8616 10.6364C37.337 10.5109 36.8124 10.3614 36.2928 10.1781C35.7731 9.99481 35.3025 9.77291 34.876 9.50278C34.4495 9.23265 34.1112 8.90946 33.8661 8.52356C33.6209 8.13766 33.4984 7.67941 33.4984 7.15362C33.5082 6.52171 33.6945 5.95733 34.0622 5.46048C34.4298 4.96846 34.9593 4.57774 35.6555 4.28831C36.3516 3.99889 37.1801 3.85417 38.1508 3.85417C39.5333 3.85417 40.6559 4.15325 41.5188 4.75621C42.3865 5.35918 42.8767 6.19852 42.9944 7.27421H47.4752L47.4703 7.29351Z" fill="#322A2A"/>
+                        <path d="M77.9635 7.29351C77.939 5.8705 77.5321 4.60668 76.7477 3.51169C75.9633 2.41187 74.8799 1.55325 73.5023 0.930983C72.1247 0.30872 70.5265 0 68.7028 0C66.8791 0 65.2956 0.30872 63.8739 0.930983C62.4522 1.55325 61.3295 2.42152 60.5059 3.54063C59.6823 4.65974 59.2705 5.96698 59.2705 7.45269C59.2705 9.2616 59.8833 10.7135 61.1089 11.8037C62.3345 12.8939 64.0063 13.7091 66.1192 14.2397L69.0411 14.9826C69.9627 15.2141 70.7667 15.4746 71.458 15.764C72.1492 16.0583 72.6836 16.42 73.0709 16.8494C73.4582 17.2835 73.6543 17.8286 73.6592 18.4846C73.6494 19.2082 73.4288 19.8401 72.9924 20.3803C72.5561 20.9206 71.958 21.3403 71.1933 21.6393C70.4285 21.9384 69.5411 22.0879 68.5263 22.0879C67.5115 22.0879 66.6781 21.9432 65.8986 21.6538C65.1142 21.3644 64.4818 20.9302 63.9965 20.3466C63.5111 19.7629 63.2366 19.0297 63.168 18.1518H58.5891C58.6577 19.8304 59.0989 21.2534 59.9274 22.4208C60.7511 23.5881 61.8982 24.4805 63.3641 25.0883C64.8299 25.6961 66.5653 26 68.5655 26C70.5657 26 72.3796 25.6865 73.8308 25.0545C75.2819 24.4226 76.3947 23.5495 77.1644 22.4256C77.9341 21.3017 78.3165 19.9993 78.3165 18.5184C78.3165 17.4234 78.1057 16.4683 77.689 15.6531C77.2723 14.8378 76.7036 14.1432 75.9878 13.5644C75.2721 12.9904 74.4632 12.5128 73.566 12.1317C72.6689 11.7555 71.7325 11.4516 70.7618 11.2297L68.3547 10.6364C67.8302 10.5109 67.3056 10.3614 66.786 10.1781C66.2663 9.99481 65.7957 9.77291 65.3691 9.50278C64.9426 9.23265 64.6044 8.90946 64.3592 8.52356C64.1141 8.13766 63.9916 7.67941 63.9916 7.15362C64.0014 6.52171 64.1877 5.95733 64.5553 5.46048C64.923 4.96846 65.4525 4.57774 66.1486 4.28831C66.8448 3.99889 67.6733 3.85417 68.644 3.85417C70.0265 3.85417 71.1491 4.15325 72.012 4.75621C72.8797 5.35918 73.3699 6.19852 73.4876 7.27421H77.9684L77.9635 7.29351Z" fill="#322A2A"/>
+                        <path d="M90.0088 0.342486V25.6237H106.824V21.784H94.6661V14.8861H105.858V11.0464H94.6661V4.18219H106.721V0.342486H90.0088Z" fill="#322A2A"/>
+                        <path d="M135.523 0.342486V17.5777H135.298L123.198 0.342486H119.036V25.6237H123.689V8.40297H123.904L136.013 25.6237H140.151V0.342486H135.523Z" fill="#322A2A"/>
+                        <path d="M151.637 0.342486V4.18219H159.579V25.6237H164.193V4.18219H172.139V0.342486H151.637Z" fill="#322A2A"/>
+                        <path d="M188.288 0.342486H183.636V25.6286H188.288V0.342486Z" fill="#322A2A"/>
+                        <path d="M208.28 0.342486L199.235 25.6237H204.201L211.055 5.52801H211.251L218.119 25.6237H223.086L214.026 0.342486H208.28Z" fill="#322A2A"/>
+                        <path d="M234.028 0.342486V25.6237H250V21.784H238.685V0.342486H234.028Z" fill="#322A2A"/>
+                    </svg>                                                
+                </div>
+            </a>
+
+            <div class="desktop-menu">                
+                <nav class="desktop">
+                    <ul class="menu">
+                        <!-- <li class="menu-item"><a class="menu-link active" href="/">Home</a></li> -->
+                        <li class="menu-item has-dropdown">
+                            <a class="menu-link has-submenu active">Services</a>
+                            <div class="dropdown">
+                                <ul class="submenu">
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_01">Service 01</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_02">Service 02</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_03">Service 03</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_04">Service 04</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_05">Service 05</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-item"><a class="menu-link " href="/who">Who we Help</a></li>
+                        <li class="menu-item"><a class="menu-link " href="/projects">Projects</a></li>
+                        <li class="menu-item"><a class="menu-link " href="/about">About Us</a></li>
+                        <li class="menu-item"><a class="menu-link " href="/blog">Blog</a></li>                        
+                    </ul>
+                </nav>
+                <a class="button-solid" href="/contact">Contact Us</a>
+            </div>
+
+            <!-- hamburger -->
+            <div id="menu-button" class="hamburger">
+                <span></span>                
+            </div>
+            <!-- full screen menu -->
+            <div class="fullscreen-menu">                
+                <nav class="fullscreen">
+                    <ul class="menu">
+                        <!-- <li class="menu-item"><a class="menu-link active" href="/">Home</a></li> -->
+                        <li class="menu-item has-dropdown">
+                            <span class="menu-link has-submenu active">Services</span>
+                                <ul class="submenu">
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_01">Service 01</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_02">Service 02</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_03">Service 03</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_04">Service 04</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="/services_05">Service 05</a></li>
+                                </ul>
+                        </li>
+                        <li class="menu-item"><a class="menu-link " href="/who">Who we Help</a></li>
+                        <li class="menu-item"><a class="menu-link " href="/projects">Projects</a></li>
+                        <li class="menu-item"><a class="menu-link " href="/about">About Us</a></li>
+                        <li class="menu-item"><a class="menu-link " href="/blog">Blog</a></li>                        
+                    </ul>
+                </nav>
+                <a class="button-solid" href="/contact">Contact Us</a>
+            </div>
+        </header>
+
+        <main>
+<!--  -->
+<!-- HERO -->
+<!--  -->
+            <section class="hero captioned">
+                <div class="hero-image">
+                    <img src="images/heros/Essential_Hero.jpg" alt="image">
+                </div>
+                <div class="hero-caption caption_wrap">
+                    <p class="caption">image Caption | image Caption</p>
+                </div>
+                
+            
+                <!-- <div class="row">
+                    <div class="column">
+                        <h1 class="huge">Huge
+                            <span class="subheading">Subheading</span>
+                        </h1>
+                    </div>
+                </div> -->
+            </section>
+<!--  -->
+<!-- INTRO -->
+<!--  -->
+            <section class="pattern home-intro align-center">
+                <div class="row align-center">
+                    <div class="col column one-third">
+                        <div class="shout_wrap">
+                            <img src="images/brand/difference.svg" alt="The Essential Difference - headline">
+                            <!-- 
+                            <div class="subheading">The</div>
+                            <div class="huge">Essential</div>
+                            <div class="subheading">Difference</div> 
+                            -->
+                        </div>
+                    </div>
+                    <div class="col column one-third">
+                        <div class="card no_border">
+                            <div class="card-content">
+                                <p>From community creation through to full design review and handover, we protect the legacy of developers and maximise long term property value for owners through our holistic owners corporation, facilities management and lifestyle services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col column one-third">
+                        <div class="col-image">
+                            <img src="images/brand/100Years.svg" alt="image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col column">
+                        <a class="button-secondary">Learn more</a>
+                    </div>
+                </div>
+            </section>
+<!--  -->
+<!-- BUILDINGS 4 Col -->
+<!--  -->
+            <section class="plain align-center">
+                <div class="row">
+                    <div class="column">
+                        <h2>Trusted by famous landmarks</h2>
+                    </div>
+                </div>
+                <div class="row four_col align-center">
+                    <div class="col column one-quarter">
+                        <div class="img_wrap">
+                            <img src="images/buildings/Essential_BUILDINGS_01.png" alt="building icon">
+                        </div>
+                    </div>
+                    <div class="col column one-quarter">
+                        <div class="img_wrap">
+                            <img src="images/buildings/Essential_BUILDINGS_02.png" alt="building icon">
+                        </div>
+                    </div>
+                    <div class="col column one-quarter">
+                        <div class="img_wrap">
+                            <img src="images/buildings/Essential_BUILDINGS_03.png" alt="building icon">
+                        </div>
+                    </div>
+                    <div class="col column one-quarter">
+                        <div class="img_wrap">
+                            <img src="images/buildings/Essential_BUILDINGS_04.png" alt="building icon">
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!--  -->
+<!-- 01 -->
+<!--  -->
+            <section class="pattern twin-block ">
+                <div class="row column-reverse-mob">
+                    
+                    <div class="col column half_col card_col">
+                        
+                        <div class="card no_border">
+                            <div class="card-content">
+                                <h3>A better place to live.</h3>
+                                <h4>Community Management</h4>
+                                <hr class="redbar"></hr>
+                                <p>Building a thriving vertical community people want to call home. It’s at the core of what we do.</p>
+                                <a class="button-secondary">Learn more</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col column half_col">
+                        <div class="img_wrap captioned">
+                            <img src="images/content/Community_Management.jpg" alt="Community Management">
+                            <div class="caption_wrap"><p class="caption">image Caption | image Caption</p></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+<!--  -->
+<!-- 02 -->
+<!--  -->
+            <section class="pattern twin-block">
+                <div class="row">                                        
+
+                    <div class="col column half_col">
+                        <div class="img_wrap captioned">
+                            <img src="images/content/Owners_Corporation_Management.png" alt="Owners Corporation Management">
+                            <div class="caption_wrap"><p class="caption">image Caption | image Caption</p></div>
+                        </div>
+                    </div>
+
+                    <div class="col column half_col card_col">
+                        
+                        <div class="card no_border">
+                            <div class="card-content">
+                                <h3>Everything just works.</h3>
+                                <h4>Owners Corporation Management</h4>
+                                <hr class="redbar"></hr>
+                                <p>Ensuring your building runs like clockwork, day in, day out. Guaranteeing OC compliance.</p>
+                                <a class="button-secondary">Learn more</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<!--  -->
+<!-- 03 -->
+<!--  -->
+
+            <section class="pattern twin-block ">
+                <div class="row column-reverse-mob">
+                    
+                    <div class="col column half_col card_col">
+                        
+                        <div class="card no_border">
+                            <div class="card-content">
+                                <h3>A beautiful place to live.</h3>
+                                <h4>Facilities Management</h4>
+                                <hr class="redbar"></hr>
+                                <p>Keeping your building clean, pristine and beautiful, the way it was always intended.</p>
+                                <a class="button-secondary">Learn more</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col column half_col">
+                        <div class="img_wrap captioned">
+                            <img src="images/content/Facilities_Management.jpg" alt="image">
+                            <div class="caption_wrap"><p class="caption">image Caption | image Caption</p></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+<!--  -->
+<!-- 04 -->
+<!--  -->
+            <section class="pattern twin-block">
+                <div class="row">                                        
+
+                    <div class="col column half_col">
+                        <div class="img_wrap captioned">
+                            <img src="images/content/Design_Review_Consulting.jpg" alt="image">
+                            <div class="caption_wrap"><p class="caption">image Caption | image Caption</p></div>
+                        </div>
+                    </div>
+
+                    <div class="col column half_col card_col">
+                        
+                        <div class="card no_border">
+                            <div class="card-content">
+                                <h3>Plan for success.</h3>
+                                <h4>Design Review & Consulting</h4>
+                                <hr class="redbar"></hr>
+                                <p>Setting up a building for longterm success starts before the first stone is even laid.</p>
+                                <a class="button-secondary">Learn more</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<!--  -->
+<!-- SHOUT -->
+<!--  -->
+<section class="shout_banner">
+    <div class="row">
+        <div class="column">
+            <h2 class="white">Where you’ll find us</h2>
+        </div>
+    </div>
+</section>
+
+<!--  --> 
+<!-- PROJECTS -->
+<!--  -->
+            <section class="projects-sect full-background align-center">
+                <div class="row align-center">
+                    <div class="column">
+                        <h2 class="white">Projects</h2>
+                    </div>
+                </div>
+                <div class="row align-center">
+
+                    <div class="col column one-third align-end carousel-nav_container">
+                        <div class="carousel-nav">
+                            <a class="nav-button is-selected">Iconic towers</a>
+                            <a class="nav-button">Land Estates</a>
+                            <a class="nav-button">Hotels</a>
+                            <a class="nav-button">Golf Courses</a>
+                            <a class="nav-button">International</a>
+                        </div>
+                    </div>
+                    <!-- https://codepen.io/desandro/pen/emVRjv -->
+                    <div class="col column one-third">                        
+                        <div class="carousel ">
+                            <!-- 01 -->
+                            <div class="carousel-cell ">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <h3>Iconic towers</h3>
+                                    <!-- </div> -->
+                                    <div class="card-image">
+                                        <img src="images/modern-lobby-design.jpg" alt="image">
+                                    </div>
+                                    <!-- <div class="card-content"> -->
+                                        <p>Essential<sup>™</sup> are renowned experts in conducting design reviews and setting up and managing complicated multi-use strata projects</p>
+                                        <a class="button-solid">Solid </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 02 -->
+                            <div class="carousel-cell ">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <h3>Land Estates</h3>
+                                    <!-- </div> -->
+                                    <div class="card-image">
+                                        <img src="images/modern-lobby-design.jpg" alt="image">
+                                    </div>
+                                    <!-- <div class="card-content"> -->
+                                        <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                        <a class="button-solid">Solid </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 03 -->
+                            <div class="carousel-cell ">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <h3>Hotels</h3>
+                                    <!-- </div> -->
+                                    <div class="card-image">
+                                        <img src="images/modern-lobby-design.jpg" alt="image">
+                                    </div>
+                                    <!-- <div class="card-content"> -->
+                                        <p>We specialise in assisting developers with mixed-use projects with hotels and working through all the idiosyncrasies involved in what a hotel needs in comparison to residential and commercial uses all in the same building.</p>
+                                        <a class="button-solid">Solid </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 04 -->
+                            <div class="carousel-cell ">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <h3>Golf Courses</h3>
+                                    <!-- </div> -->
+                                    <div class="card-image">
+                                        <img src="images/modern-lobby-design.jpg" alt="image">
+                                    </div>
+                                    <!-- <div class="card-content"> -->
+                                        <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                        <a class="button-solid">Solid </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 05 -->
+                            <div class="carousel-cell ">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <h3>International</h3>
+                                    <!-- </div> -->
+                                    <div class="card-image">
+                                        <img src="images/modern-lobby-design.jpg" alt="image">
+                                    </div>
+                                    <!-- <div class="card-content"> -->
+                                        <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                        <a class="button-solid">Solid </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col column one-third">
+                        
+                    </div>
+
+                </div>
+                        
+            </section>
+<!--  -->
+<!-- ARTICLES -->
+<!--  -->
+            <section class="plain articles align-center">
+
+                <div class="row align-center">
+                    <div class="column">
+                        <h2 class="">Heading</h2>
+                    </div>
+                </div>
+
+                <div class="carousel ">
+                    
+                    <!-- 01 -->
+                    <div class="carousel-cell column one-third">
+                        <div class="card ">
+                        
+                            <div class="card-image">
+                                <img src="images/content/articles-August-Meet-Up.jpg" alt="image">
+                            </div>
+                            <div class="card-content">
+                                <h3>August Meet Up</h3>
+                                <h4 class="bold">Australia 108</h4>
+                                <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                <!-- <a class="button-secondary">Secondary </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="carousel-cell column one-third">
+                        <div class="card">
+                        
+                            <div class="card-image">
+                                <img src="images/content/articles-Football-Get-Together.jpg" alt="image">
+                            </div>
+                            <div class="card-content">
+                                <h3>Football Get Together</h3>
+                                <h4 class="bold">Melbourne Square</h4>
+                                <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                <!-- <a class="button-secondary">Secondary </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 03 -->
+                    <div class="carousel-cell column one-third">
+                        <div class="card">
+                        
+                            <div class="card-image">
+                                <img src="images/content/articles-Sky-Garden-Meet-Greet.jpg" alt="image">
+                            </div>
+                            <div class="card-content">
+                                <h3>Sky Garden Meet & Greet</h3>
+                                <h4 class="bold">Collins Arch</h4>
+                                <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                <!-- <a class="button-secondary">Secondary </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-cell col column one-third">
+                        <div class="card">
+                        
+                            <div class="card-image">
+                                <img src="images/modern-lobby-design.jpg" alt="image">
+                            </div>
+                            <div class="card-content">
+                                <h3>Heading 04</h3>
+                                <h4 class="bold">Subheading</h4>
+                                <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                <!-- <a class="button-secondary">Secondary </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-cell col column one-third">
+                        <div class="card">
+                        
+                            <div class="card-image">
+                                <img src="images/modern-lobby-design.jpg" alt="image">
+                            </div>
+                            <div class="card-content">
+                                <h3>Heading 05</h3>
+                                <h4 class="bold">Subheading</h4>
+                                <p>Endionse quatinciam, sit porem ulliqui temolorescia volo cus audio. Ut asimeni hilissi ut et offici blabo. Piet qui que vellacim qui res si re doloribus imusape nimenti aspissi.</p>
+                                <!-- <a class="button-secondary">Secondary </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </section>
+<!--  -->
+
+        </main>
+<!--  -->
+<!-- FOOTER -->
+<!--  -->
+        <footer>
+            <div class="row">
+                <div class="col_group">
+                    
+                    
+                    <div class="column">
+                        <div class="logo_wrap">
+                            
+                            <a class="site-logo-link" href="/">
+                                <div class="logo" aria-label="Essential Community">
+                                    <!-- <img src="img/logo.png" alt="logo"> -->
+                                    <img src="./images/brand/essential.svg" alt="Essential Community">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="address">
+
+                            <p>Level 2 / 58 Lorimer Street<br>
+                                Docklands Victoria 3008<br>
+                                Australia</p>
+                                <p class="email"><a href="mailto:info@essentialcommunity.com.au">info@essentialcommunity.com.au</a></p>
+                                <p class="phone"><a href="tel:03 9981 0077">03 9981 0077</a></p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <nav class="footer_nav">
+                            <ul class="menu">
+                                <li class="menu-item"><a class="menu-link" href="/services">Service</a></li>
+                                <li class="menu-item"><a class="menu-link" href="/who">Who we Help</a></li>
+                                <li class="menu-item"><a class="menu-link" href="/projects">Projects</a></li>
+                                <li class="menu-item"><a class="menu-link" href="/about">About Us</a></li>
+                                <li class="menu-item"><a class="menu-link" href="/blog">Blog</a></li>
+                                <li class="menu-item"><a class="menu-link" href="/contact">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <div class="column align-center">
+                    
+                    <div class="social_head">
+                        <h6>Stay Connected</h6>
+                    </div>
+
+                    <div class="social_wrap">
+                        <a href="https://www.facebook.com/essentialcommunity" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="images/social/facebook.svg" alt="facebook social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/essentialcommunity" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="images/social/instagram.svg" alt="instagram social-icon">
+                        </a>
+                        <!-- <a href="https://www.linkedin.com/company/essentialcommunity" target="_blank" rel="noopener noreferrer" class="social-icon">
+                            <img src="images/social/linkedin.svg" alt="linkedin">
+                        </a> -->
+                        <a href="https://www.x.com/essentialcommunity" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="images/social/x-twitter.svg" alt="x social-icon">
+                        </a>                
+                    </div>
+
+                    <div class="col-image">
+                        <img src="images/brand/100Years.svg" alt="image">
+                    </div>
+
+                </div>
+            </div>
+            <div class="row bottom">
+                <div class="column credits">
+                    <p>© 2021 Essential Community. All rights reserved.</p><a href="/conditions">Terms of Use</a><a href="/privacy">Privacy Policy</a><a href="/about">About Us</a><a href="/contact">Contact</a><a href="/language">English</a>
+                </div>
+            </div>
+        </footer>
+
+    <!-- <script src="js/scripts.js"></script> -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/phucbm/flickity-responsive@2.0.6/flickity-responsive.min.js"></script> -->
+
+    <script src="js/menu-active.js"></script>
+    <script src="js/truncate.js"></script>
+
+    <script src="js/flickity_custom.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+/* ----------------------- */
+/* articles / posts */
+
+.post {
+    --max-width: 880px;
+}
+
+.post .content {
+    background-color: white;
+}
+.post .row {
+    justify-content: center;
+}
+.post .column {
+    align-items: flex-start;
+    max-width: 600px;
+}
+
+.post .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--gap-sm);
+    margin-bottom: var(--gap-sm);
+    font-size: var(--font-size-sm);
+}

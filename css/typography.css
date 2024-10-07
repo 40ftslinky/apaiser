@@ -1,0 +1,389 @@
+/* typography.css */
+
+
+:root {
+    --base-font-family: 'futura-pt', 'Futura', Arial, sans-serif;
+    --heading-font-family: 'futura-pt', 'Futura', Arial, sans-serif;
+    --menu-font-family: 'futura-pt', 'Futura', Arial, sans-serif;
+    --footer-font-family: 'futura-pt', 'Futura', Arial, sans-serif;
+    --heading-serif: 'Austin', serif;
+    --blockquote: 'Austin', serif;
+
+    --base-line-height: 1.7;
+    --base-font-percent: 62.5%;
+    --base-font-size: 16px, 1rem;
+    /* specific */
+    /* weight */
+    --base-font-weight: 400;
+    --form-font-weight: 400;
+    --button-font-weight: 400;
+    --link-font-weight: 700;
+    --serif-font-weight: normal;
+    --blockquote-font-weight: normal;
+    --heading-font-weight: 700;
+    --menu-font-weight: 400;
+    --footer-font-weight: 400;
+    /*  */
+    --thin-font-weight: 300;
+    --light-font-weight: 300;
+    --reg-font-weight: 400;
+    --med-font-weight: 500;
+    --demi-font-weight: 600;
+    --heavy-font-weight: 700;
+    --extrabold-font-weight: 800;
+
+    /* size */
+    --font-size-base: 1rem;
+    --font-size-xs: 0.6rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 1.25rem;
+    --font-size-lg: 1.4rem;
+    --font-size-lg: clamp(1.125rem, 1.0414rem + 0.3822vw, 1.5rem);
+    --font-size-xl: 2.2rem;
+    --font-size-xxl: 2.4rem;
+    --font-size-xxxl: clamp(1.5rem, 0.2308rem + 2.3077vw, 3rem);
+    --font-size-sxl: clamp(1.5rem, 0.2308rem + 2.3077vw, 3rem);
+    /* 3rem; */
+    --font-size-huge: 100px; 
+    --font-size-h1: 100px;
+    --font-size-h1: clamp(3.25rem, 0.712rem + 4.615vw, 6.25rem);
+    --font-size-huge-sub: 50px;
+    --font-size-blockquote: 60px;
+    --font-size-blockquote: clamp(2rem, 1.6rem + 1.50vw, 3.75rem);
+    --font-size-h2: 80px;
+    /* --font-size-h2: clamp(3.8rem, 3.56rem + 1.2vw, 5rem); */
+    --font-size-h3: clamp(2.75rem, 2.267857142857143rem + 0.7142857142857143vw, 3.125rem); /* 50px / 3.125rem */
+    --font-size-h2-subtitle: 20px;
+    --font-size-h4: 20px;
+    --font-size-h4-bold: 16.5px;
+    --font-size-h4-demibold: 16.5px;
+    --font-size-h4: 16.5px;
+    --font-size-h4-enquiry: 22px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+    --font-size-menu-title: 40px;
+    --font-size-menu: 12px;
+    --font-size-submenu: 12px;
+    --font-size-caption: 12px;
+    --font-size-form: 16px;
+    --font-size-footer: 12px;
+    --font-size-button: 30px;
+    /*  */
+    --font-awesome: 'FontAwesome';
+    /*  */
+    --intro-size: 28px;
+    --intro-size: clamp(1.125rem, 0.9857rem + 0.6369vw, 1.75rem);
+    --large-size: 18px;
+    --normal-size: 16.5px;
+    --small-size: 14px;
+    --micro-size: 12px;
+    /* non-standard */
+    --heading-size-sm: 1.25rem;
+    --heading-size-lrg: 36px;
+    /*  */
+    /* 
+    Tracking Conversion CSS “letter-spacing”
+    1 =1/1000 em
+    100 =100/1000 em =0.10 em 
+    based on an Em Size of 1000 - not always the case
+    */
+    --letterspacing-base: 0;
+    --letterspacing-text: 0.03em;
+    --letterspacing-heading: 0;
+    --letterspacing-menu: 0.1em; /* 0.096em */
+    --letterspacing-footer: 0.1em; /* 0.096em */
+    --letterspacing-button: 0.1em;
+    --letterspacing-caption: 0.025em;
+
+    --blockquote-line-height: 1.16;
+    --heading-line-height: 1.05;
+}
+
+@media screen and (max-width: 880px){
+    :root {
+        --font-size-xxxl: 22px;
+        --intro-size: clamp(1.125rem, 0.9857rem + 0.6369vw, 1.75rem);
+        --base-font-size: 1.25rem;
+        --font-size-base: 1.25rem;
+        --font-size-sm: 1rem;
+    }
+}
+@media screen and (max-width: 1080px){
+    :root {
+        --font-size-menu: 2rem;
+        --font-size-menu-title: 28px;
+        --font-size-submenu: 24px;
+        /* --font-size-h1: clamp(3rem, 1.736842105263158rem + 6.315789473684211vw, 6rem);
+        --font-size-h2: clamp(2.5rem, 1.4473684210526316rem + 5.263157894736842vw, 5rem); */
+    }
+}
+@media screen and (max-width: 880px) {
+    :root {
+        /* --font-size-h1: 50px; */
+        --font-size-huge-sub: 50px;
+        /* --font-size-h2: 40px; */
+        --font-size-h3: 25px;
+        --font-size-h4-bold: 16.5px;
+        --font-size-h4-demibold: 16.5px;
+        --font-size-h4: 16.5px;
+        --font-size-h4-enquiry: 22px;
+        --font-size-h5: 14px;
+        --font-size-h6: 12px;
+    }
+}
+
+* {
+    font-family: var(--base-font-family);
+    font-weight: var(--base-font-weight);
+    letter-spacing: var(--letterspacing-base);
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--white);
+    background: var(--secondary);
+  }
+  
+::selection {
+    color: var(--white);
+    background: var(--secondary);
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote {
+    max-width: 75ch;
+}
+
+button, 
+[class*="button"] { 
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+html {font-size: 100%;} /* 16px */
+
+body {
+    font-family: var(--base-font-family);
+    font-weight: var(--base-font-weight);
+    line-height: var(--base-line-height);
+	font-style: normal;
+    color: var(--primary);
+}
+
+.normal { font-size: var(--font-size-base); }
+.micro { font-size: var(--font-size-xs); }
+.small, small { font-size: var(--font-size-sm); }
+.medium { font-size: var(--font-size-md); }
+.large { font-size: var(--font-size-lg) ; }
+.xlarge { font-size: var(--font-size-xl) ; }
+
+[class*="_light"] { font-weight: var(--light-font-weight);}
+[class*="_reg"] { font-weight: var( --reg-font-weight);}
+[class*="_med"] { font-weight: var(--med-font-weight);}
+[class*="_demi"] { font-weight: var(--demi-font-weight);}
+[class*="_bold"] { font-weight: var(--bold-font-weight);}
+[class*="_extra"] { font-weight: var(--extra-font-weight);}
+[class*="_black"] { font-weight: var(--black-font-weight);}
+
+.scaling_text {
+    font-size: max(1rem,min(.38835vw + .908981rem,1.375rem));
+}
+
+
+
+/* links */
+
+.link {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+a {
+    color: var(--primary);
+    font-weight: var(--link-font-weight);
+    /* text-underline-offset: 3px;
+    text-decoration-thickness: 1px; */
+}
+
+/* headings */
+
+h1, h2, h3 {
+    font-family: var(--heading-serif);
+    font-weight: normal;
+    font-weight: var(--serif-font-weight);
+    line-height: 1.2;
+    margin: 0 0 0.75rem 0;
+}
+h1, h2 {
+    text-transform: uppercase;
+}
+h4, h5, h6 {
+    font-family: var(--heading-font-family);
+    font-weight: 500;
+    font-weight: var(--demi-font-weight); 
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+}
+
+
+
+.site-title h1 {
+    margin-bottom: 0;
+}
+
+/* headings size */
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: 1.03;
+    text-transform: uppercase;
+}
+
+h1.huge {
+    font-size: var(--font-size-huge);
+    line-height: 0.96;
+}
+h1.subheading, .subheading {
+    font-size: var(--font-size-huge-sub);
+    line-height: 1;
+    display: demi;
+}
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--heading-line-height);
+}
+h2.subtitle {
+    font-family: var(--heading-font-family);
+    font-size: var(--font-size-h2-subtitle);
+    font-weight: var(--bold-font-weight);
+    line-height: 1.2;
+    text-transform:none;
+}   
+h3 {
+    font-size: var(--font-size-h3);
+    line-height: 1.2;
+}
+h4.bold {
+    font-family: var(--heading-font-family);
+    font-size: var(--font-size-h4-bold);
+    font-weight: var(--bold-font-weight);
+    line-height: 1.2;
+}
+h4.demibold {
+    font-family: var(--heading-font-family);
+    font-size: var(--font-size-h4-demibold);
+    line-height: 1.2;
+}
+
+/* styles */
+
+strong, .bold {
+    font-weight: 700;
+    font-weight: var(--bold-font-weight);
+}
+.demibold {
+    font-weight: 600;
+    font-weight: var(--demi-font-weight);
+}
+.regular {
+    font-weight: 500;
+    font-weight: var(--reg-font-weight);
+}
+.light {
+    font-weight: 400;
+    font-weight: var(--light-font-weight);
+}
+
+/* paragraphs */
+
+p {
+    margin: 0 0 1.5rem 0;
+    max-width: 65ch;
+    font-weight: var(--base-font-weight);
+    font-size: var(--font-size-base);
+}
+
+strong {
+    font-weight: var(--demi-font-weight);
+}
+
+.intro, .intro-light {
+    font-size: var(--intro-size);
+}
+.intro {
+    margin-bottom: 2rem;
+    font-weight: var(--med-font-weight);
+}
+.intro-light {
+    /* margin-bottom: 0; */
+    font-weight: var(--light-font-weight);
+}
+.intro-light:last-of-type {
+    margin-bottom: 0;
+}
+
+/* other */
+
+._left, .left-align {
+    text-align: left;
+}
+._right, .right-align {
+    text-align: right;
+}
+._center, .center-align {
+    text-align: center;
+}
+
+/* lists */
+
+ul, ol {
+    padding-inline-start:0; 
+    padding-left: 0;
+    margin-inline-start: 1rem;
+    margin-left: 1rem;
+}
+.no_bullets {
+    list-style-type: none;
+}
+
+/*  */
+
+figcaption, .caption, caption {
+    font-size: var(--font-size-caption);
+    font-weight: var(--caption-font-weight);
+    color: var(--primary);
+    margin-bottom: 0;
+    letter-spacing: var(--letterspacing-caption);
+}
+figcaption {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+blockquote, blockquote p {
+    font-family: var(--blockquote);
+    font-size: var(--font-size-blockquote);
+    font-style: normal;
+    font-weight: var(--serif-font-weight);
+    line-height: var(--blockquote-line-height);
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0;
+    
+    text-align: left;
+    margin-bottom: var(--gap);
+}
+blockquote { padding: 2.5vw; }
+
+.credit, cite {
+    font-family: var(--heading-font-family);
+    font-size: var(--font-size-caption);
+    font-weight: var(--base-font-weight);
+    color: var(--grey);
+    margin-bottom: 0;
+    letter-spacing: var(--letterspacing-caption);
+}

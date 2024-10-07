@@ -1,0 +1,80 @@
+/* fonts */
+
+
+/* GOOGLE FONTS */
+/* Spectral */
+/* @import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"); */
+
+/* TYPEKIT */
+/* Futura */
+@import url("https://use.typekit.net/ova4pow.css");
+
+/* font-family: futura-pt, sans-serif; */
+.futura-light {
+    font-family: "Futura", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+/* Futura PT Book Oblique */
+.futura-light-italic {
+    font-family: "Futura", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+.futura {
+    font-family: "Futura", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* Futura PT Book Oblique */
+.futura-italic {
+    font-family: "Futura", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+/* Futura PT Medium */
+.futura-medium {
+    font-family: "Futura", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.futura-medium-italic {
+    font-family: "Futura", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+/* font-family: futura-pt-bold, sans-serif; */
+.futura-bold {
+    font-family: "Futura", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* LOCAL FONTS */
+/* Austin */
+    
+    @font-face {
+      font-family: "Austin";
+      font-style: normal;
+      font-weight: normal;
+      src: 
+            url("../assets/localfonts/austin/Austin-Light.woff") format("woff"),
+            url("../assets/localfonts/austin/Austin-Light.otf") format("opentype");
+    } 
+    @font-face {
+      font-family: "Austin";
+      font-style: italic;
+      font-weight: normal;
+      src: url("../assets/localfonts/austin/Austin-LightItalic.woff") format("woff"),
+            url("../assets/localfonts/Austin-LightItalic.otf") format("opentype");
+    }
+    
+
+/* High Spirited */    
+    @font-face {
+        font-family: "High-Spirited-Regular";
+        font-style: normal;
+        font-weight: normal;
+        src: local("High Spirited Regular"), url("High-Spirited.woff") format("woff");
+    }
+    

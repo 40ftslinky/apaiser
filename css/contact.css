@@ -1,0 +1,127 @@
+/* contact.css */
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+form {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin: 1rem 0 0 0;
+}
+
+form input,
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 0.5rem;
+    border-radius: 0;
+    border: 1px solid #D0D5DD;
+    margin-bottom: 10px;
+    color: black;
+    font-size: var(--font-size-form);
+    font-weight: var(--form-font-weight);
+}
+
+
+form input[type="checkbox"],
+form input[type="radio"] {
+    width: max-content;
+}
+select {
+    width: calc(100%);
+    padding: 0.5rem;
+    border-radius: 0;
+    border: 1px solid #D0D5DD;
+/*  */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml,<svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="arrow-down-blk" d="M5.91583 5.83166C5.83567 5.83166 5.74549 5.79158 5.68537 5.73146L1.01603 1.06212C0.955913 1.002 0.915833 0.911823 0.915833 0.831663C0.915833 0.751502 0.955913 0.661322 1.01603 0.601202L1.51704 0.1002C1.57716 0.0400798 1.65732 -4.04703e-07 1.7475 -4.00761e-07C1.82766 -3.97257e-07 1.91784 0.0400798 1.97796 0.1002L5.91583 4.03808L9.85371 0.1002C9.91383 0.0400801 10.004 -3.98571e-08 10.0842 -3.63532e-08C10.1643 -3.28493e-08 10.2545 0.0400801 10.3146 0.1002L10.8156 0.601202C10.8758 0.661323 10.9158 0.751503 10.9158 0.831663C10.9158 0.911823 10.8758 1.002 10.8156 1.06212L6.14629 5.73146C6.08617 5.79158 5.99599 5.83166 5.91583 5.83166Z" fill="%23312A2A"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) 50%;
+    background-size: 0.8rem;
+    font-size: var(--font-size-form);
+}
+
+select:focus {
+    outline: none;
+}
+select:focus-visible {
+    outline: 1px solid rgba(var(--secondary-rgb), 0.3); /* That'll show 'em */
+}
+
+.shout_banner select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0;
+    border: 1px solid #D0D5DD;
+    min-width: 150px ;
+}
+
+form textarea,
+.wpcf7-form textarea{ 
+    /* width: 100% !important; */
+    height:30px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 1px solid rgba(var(--secondary-rgb), 0.3);
+}
+
+form input:not([type="submit"]) {
+    font-size: 1rem;
+}
+
+form label {
+    font-size: 0.8rem;
+}
+
+form button[type="submit"] {
+    
+}
+
+
+[type="checkbox"] + span {
+    font-size: 0.8rem;
+    display: block;
+}
+
+[for=consent], [name=consent] {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.form_chckbx_grp .wpcf7-list-item {
+    margin-left: 0;
+}
+
+.form_chckbx_grp label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+:placeholder-shown,
+::placeholder,
+input::placeholder,
+form input::placeholder,
+form textarea::placeholder {
+    /* font-weight: var(--form-font-weight); */
+    color: #667085;
+    font-size: var(--font-size-form);
+}
