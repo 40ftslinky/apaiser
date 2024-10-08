@@ -8,13 +8,32 @@
     align-items: flex-start;
     flex-direction: column;
     /* gap: var(--gap-sm); */
-    border: 1px solid var(--primary);
+    /* border: 1px solid var(--primary); */
     width: 100%;
     /* min-width: 300px; */
     /* margin: 3rem auto; */
     background-color: var(--white);
     box-sizing: border-box;
 }
+.card-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    /* border: 1px solid var(--primary); */
+    width: 100%;
+    /* min-width: 300px; */
+    /* margin: 3rem auto; */
+    background-color: var(--white);
+    box-sizing: border-box;
+    text-align: center;
+}
+.card-center > * {
+    text-align: center;
+    align-items: center;
+}
+
 .column.half_col .card {
     width:calc(var(--max-width)/3);
     max-width: 30vw;

@@ -1,0 +1,218 @@
+/* footer.css */
+
+
+footer {
+    background-color: #fff;  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    /* gap: var(--gap); */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ----------------------- */
+
+footer .row,
+.post footer .row,
+.generic footer .row {
+    /* max-width: var(--max-col-width); */
+    justify-content: space-between;
+    padding: var(--gutter);
+    box-sizing: border-box; 
+}
+
+footer .row.bottom {
+    /* background-color: var(--primary); */
+    /* color: var(--primary); */
+    padding: var(--gap) var(--gutter);
+}
+footer .row.bottom p {
+    margin-bottom: 0;
+}
+
+footer .row.bottom .credits > *{
+    /* color: var(--primary) */
+}
+
+footer .row.bottom .credits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem var(--gap);
+}
+
+.credits a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+
+footer .row .column {
+    align-items: flex-start;
+    max-width: unset;
+    gap: var(--gap); 
+}
+
+footer .row .col:last-of-type,
+footer .row .column:last-of-type {
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 880px) {
+    footer .row .column:last-of-type {
+        align-content: flex-start;
+    }
+}
+
+footer .row .column.credits {
+    max-width: unset;
+    /* width: max-content; */
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.logo_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--gap);
+}
+
+footer .site-logo-link {
+    position: relative;
+    left: 0;
+}
+footer .logo {
+    width: 465px;
+    height: 63px;
+    /* transform: translate(-50%, -50%); */
+    transition: var(--transition);
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+footer .logo img {
+    width: 100%;
+    height: auto;
+}
+
+
+footer,
+footer p,
+footer .address p,
+footer .address a {
+    font-family: var(--footer-font-family);
+    font-size: var(--font-size-footer);
+    font-weight: var(--footer-font-weight);
+    letter-spacing: var(--letterspacing-footer);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+footer img {
+    width: 100%;
+    height: auto;
+}
+
+/*  */
+
+.social_header {
+    font-weight: var(--footer-font-weight);
+}
+.social_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 20px;
+    height: 20px; */
+    transition: var(--transition);
+}
+.social-link img {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary);
+    display: block;
+}
+
+/* ------------------------------------- */
+/*  */
+
+.footer_top, .footer_main, .footer_bottom,
+.row.footer_top, .row.footer_main, .row.footer_bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--gap);
+    max-width: var(--max-width);
+}
+
+.row.footer_bottom {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.column_wrap {
+    max-width: unset;
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    border-top: 1px solid var(--primary);
+}
+
+.row.footer_bottom p {
+    margin-bottom: 0;
+}
+
+
+footer .col_group {
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 600px){
+    footer .col_group {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+/*  */
+
+.certifications_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+/* footer form */
+
+footer form {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--gap);
+    width: auto;
+}
