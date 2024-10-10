@@ -807,6 +807,16 @@ footer .footer_nav .menu {
     max-height: 400px;
     margin-left: 0;
 }
+@media screen and (max-width: 1080px){
+    footer nav ul,
+    footer .footer_nav .menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: unset;
+    }
+}
+
+
 footer nav li a,
 footer nav ul li a span,
 footer .menu-link {
@@ -821,5 +831,12 @@ footer .menu-link {
     transition: var(--transition);
     text-transform: uppercase;
     position: relative;
-    padding: 0.125rem 0.5rem;
+    padding: 0.175rem 0.5rem;
+}
+
+@media screen and (max-width: 1080px){
+       
+    li.menu-item:has(a) {
+        display: none;
+    }
 }

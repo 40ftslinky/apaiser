@@ -23,7 +23,7 @@
     padding: 0;
 }
 section.hero {
-    background-position: center center;
+    background-position: right center;
     background-size: cover;
 }
 
@@ -60,6 +60,25 @@ body:not(.home) .hero {
     left: 0;
     background-image: linear-gradient(91deg, rgba(255, 255, 255, 0.7), transparent);
 }
+/* white horiz grad for text */
+
+.dark_grad:after {
+    position: absolute;
+    z-index: 11;
+    height: 100vh;
+    width: 70vw;
+    content: '';
+    left: 0;
+    background-image: linear-gradient(91deg, rgba(0, 0, 0, 0.3), transparent);
+}
+@media screen and (max-width: 1080px) {
+    .text_only.dark_grad:after {
+        height: 50vh;
+        width: 100vw;
+        bottom: 0;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+    }
+}
 
 /* horiz grad for text */
 body:not(.home) .hero::before {
@@ -94,6 +113,7 @@ body.post .hero::before {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6));
 }
 
+
 .hero.captioned figcaption,
 .hero div.caption_wrap {
     bottom: 18px;
@@ -105,6 +125,11 @@ body.post .hero::before {
 .hero .row {
     position: absolute;
     z-index: 1111;
+}
+@media screen and (max-width: 1080px) {
+    .hero .row {
+        bottom:10%
+    }
 }
 
 @media screen and (max-width: 1540px) {
@@ -118,14 +143,29 @@ body.post .hero::before {
         max-width: var(--max-col-width);
     }
 }
+@media screen and (max-width: 1080px) {
+    .hero .column, .hero .col {
+        align-items: center;
+    }
+}
 
 .hero h1 {
     backdrop-filter: drop-shadow(0px 0px 2rem rgba(var(--primary-rgb),0.8));
     text-shadow: 0px 0px 2rem rgba(var(--primary-rgb),0.8);
+    max-width: 10ch;
+    /* text-align: left; */
 }
 
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    gap: var(--gap-sm);
+}
 
-.home section.hero .hero-content { 
+section.home_hero .hero-content { 
     z-index: 2;
     /* position: absolute;
     top: 50%;
@@ -139,4 +179,10 @@ body.post .hero::before {
     width: 60vh;
     /* backdrop-filter: drop-shadow(0px 0px 2rem rgba(var(--primary-rgb),0.8)); */
     /* box-shadow: 0px 0px 2rem rgba(var(--primary-rgb),0.8); */
+}
+
+section.home_hero .hero-content h1 { 
+    display: none;
+    visibility: hidden;
+    opacity: 0;
 }

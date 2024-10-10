@@ -261,7 +261,7 @@ a.search {
         background-color: var(--primary);
         border: 1px solid var(--white);
         color: var(--white);
-        &:after {
+        &::after {
             content: url(../assets/icons/arrow-down-wht.svg);
             /* opacity: 0.3; */
             transform: rotate(180deg) translate(0%, 47.5%) ;
@@ -343,6 +343,40 @@ button.read_more-link:hover::after {
     transform: translateX(0.5rem);
     content: url(../assets/icons/arrow.svg);
 
+}
+
+
+/* ----------------------- */
+/* download */
+
+a.download-link,
+button.download-link {
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: unset;
+    letter-spacing: unset;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-underline-offset: 3px;
+    &:after {
+    content: url(../assets/icons/download.svg);
+    margin-left: 0.5rem;
+    transition: var(--transition-button);
+    }
+    &:hover {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-color: var(--tertiary);
+        ::after {
+            transform: translateX(0.5rem);
+            content: url(../assets/icons/download-wht.svg);
+        }
+    }
 }
 
 /* ----------------------- */

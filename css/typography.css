@@ -50,6 +50,7 @@
     --font-size-huge-sub: 50px;
     --font-size-blockquote: 60px;
     --font-size-blockquote: clamp(2rem, 1.6rem + 1.50vw, 3.75rem);
+    /* --font-size-blockquote: clamp(40px, 14.286px + 2.381vw, 60px); */
     --font-size-h2: 80px;
     --font-size-h2: clamp(3.8rem, 3.56rem + 1.2vw, 5rem);
     /* --font-size-h3: clamp(2.75rem, 1.971rem + 0.962vw, 3.125rem);  */
@@ -249,14 +250,18 @@ h1.huge {
     line-height: 0.96;
 }
 h1.subheading, .subheading {
-    font-size: var(--font-size-huge-sub);
-    line-height: 1;
-    display: demi;
+    font-family: var(--heading-font-family);
+    font-size: var(--font-size-h2-subtitle);
+    font-weight: var(--bold-font-weight);
+    line-height: 1.2;
+    text-transform:none;
 }
 h2 {
     font-size: var(--font-size-h2);
     line-height: var(--heading-line-height);
 }
+.subtitle,
+h1.subtitle,
 h2.subtitle {
     font-family: var(--heading-font-family);
     font-size: var(--font-size-h2-subtitle);
@@ -379,7 +384,10 @@ blockquote, blockquote p {
     text-align: left;
     margin-bottom: var(--gap);
 }
-blockquote { padding: 2.5vw; }
+blockquote { 
+    /* padding: 2.5vw;  */
+    min-width: 45vw;
+}
 
 .credit, cite {
     font-family: var(--heading-font-family);
