@@ -137,7 +137,7 @@ footer .row .column.credits {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: var(--gap);
+    /* margin-bottom: var(--gap); */
 }
 
 footer .site-logo-link {
@@ -174,9 +174,12 @@ footer a {
     font-family: var(--footer-font-family);
     font-size: var(--font-size-footer);
     font-weight: var(--footer-font-weight);
-    letter-spacing: var(--letterspacing-footer);
-    text-transform: uppercase;
+    /* letter-spacing: var(--letterspacing-footer); */
+    /* text-transform: uppercase; */
     text-decoration: none;
+}
+footer p {
+    max-width: 35ch;
 }
 
 footer a {
@@ -192,6 +195,7 @@ footer a:hover {
 footer .menu-title {
     margin-top: 1rem;
     margin-left: 0.5rem;
+    letter-spacing: var(--letterspacing-sm-heading);
 }
 footer .menu-title.less_margin {
     margin-top: 0.175rem;

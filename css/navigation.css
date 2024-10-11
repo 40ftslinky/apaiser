@@ -823,13 +823,13 @@ footer .menu-link {
     font-family: var(--footer-font-family);
     font-size: var(--font-size-footer);
     font-weight: var(--footer-font-weight);
-    letter-spacing: var(--letterspacing-footer);
+    /* letter-spacing: var(--letterspacing-footer); */
     text-transform: uppercase;
     /*  */
     color: var(--primary);
     text-decoration: none;
     transition: var(--transition);
-    text-transform: uppercase;
+    text-transform: none;
     position: relative;
     padding: 0.175rem 0.5rem;
 }

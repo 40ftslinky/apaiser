@@ -237,3 +237,28 @@
     background-size: cover;
     background-position: center center;
 }
+
+/* plain */
+
+.plain:has(blockquote) {
+    background-color: var(--not-white);
+    height: 70vh;
+}
+@media screen and (max-width: 1080px) {
+    .plain:has(blockquote) {
+        height: auto;
+    }
+}
+
+.plain:has(blockquote) .row {
+    height: 100%;
+}
+
+.plain:has(blockquote) .column:first-of-type {
+    height: 100%;
+    justify-content: flex-start;
+}
+.plain:has(blockquote) .column:last-of-type {
+    height: 100%;
+    justify-content: flex-end;
+}

@@ -351,6 +351,7 @@ button.read_more-link:hover::after {
 
 a.download-link,
 button.download-link {
+    font-weight: var(--base-font-weight) !important;
     padding: 0;
     border: none;
     background: none;

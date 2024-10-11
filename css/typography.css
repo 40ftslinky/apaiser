@@ -55,7 +55,9 @@
     --font-size-h2: clamp(3.8rem, 3.56rem + 1.2vw, 5rem);
     /* --font-size-h3: clamp(2.75rem, 1.971rem + 0.962vw, 3.125rem);  */
     /* 50px / 3.125rem */
-    --font-size-h3: clamp(1.5rem, 1.048rem + 1.731vw, 3rem);
+    /* --font-size-h3: clamp(1.5rem, 1.048rem + 1.731vw, 3rem); */
+    --font-size-h3: clamp(2.5rem, 1.458rem + 1.389vw, 3.125rem);
+    --font-size-grid-title: 14px;
     --font-size-h2-subtitle: 20px;
     --font-size-h4: 20px;
     --font-size-h4-bold: 16.5px;
@@ -227,6 +229,7 @@ h4, h5, h6 {
     font-family: var(--heading-font-family);
     font-weight: 500;
     font-weight: var(--demi-font-weight); 
+    /* letter-spacing: var(--letterspacing-sm-heading); */
     line-height: 1.2;
     margin: 0 0 0.5rem 0;
 }
