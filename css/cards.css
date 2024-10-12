@@ -384,8 +384,8 @@
     overflow: hidden;
 }
 
-.grid-colours .card:hover,
-.grid-colours a:hover .card  {
+/* .grid-colours .card:hover, */
+.grid-colours a:hover .card-img  {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -418,14 +418,14 @@
 @media screen and (max-width: 1200px){
     .grid-colours .card, 
     .grid-colours .card img {
-       max-width: calc(var(--one-third-max-width));
+       /* max-width: calc(var(--one-fourth-max-width)); */
          /* min-height: calc(var(--one-third-max-width) - (1rem)); */
     }
 }
 @media screen and (max-width: 1080px){
     .grid-colours .card, 
     .grid-colours .card img {
-        max-width: calc(var(--one-half-max-width));
+        max-width: calc(var(--one-qtr-max-width));
         /* min-height: calc(var(--one-third-max-width) - (2.5vw)); */
     }
 }

@@ -14,12 +14,10 @@
     --secondary-2: #B98D5D;
     --secondary-3: #E3BE96;
 
-    --tertiary: #FF0100;
-    --tertiary-rgb: 255,1,0;
-    --tertiary: #FF0100;
-    --tertiary-rgb: 255,1,0;
-    --tertiary-light: #ff8686;
-    --tertiary-dark: #8e0000;
+    --tertiary: #cbcbcb;
+    --tertiary-rgb: 203,203,203;
+    --tertiary-light: #f8f8f8;
+    --tertiary-dark: #2c2c2c;
     
     --black: #111111;
 
@@ -47,6 +45,7 @@
     --gray-600: #a3acc8;
     --gray-700: #c3cadb;
     --gray-800: #e3e6ee;
+    --gray-850: #F8F8F8;
     --gray-900: #f3f4f7;
     --gray-999-basis: 0, 0%, 100%;
     --gray-999_40: hsla(var(--gray-999-basis), 0.4);

@@ -311,6 +311,7 @@ input[type=submit],
 
 a.read_more-link,
 button.read_more-link {
+    font-weight: var(--base-font-weight) !important;
     padding: 0;
     border: none;
     background: none;
@@ -322,32 +323,28 @@ button.read_more-link {
     cursor: pointer;
     margin-top: 1rem;
     text-underline-offset: 3px;
-}
-
-a.read_more-link:hover,
-button.read_more-link:hover {
-    color: var(--primary);
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-color: var(--tertiary);
-}
-
-a.read_more-link::after,
-button.read_more-link::after {
-    content: url(../assets/icons/arrow-blk.svg);
-    margin-left: 0.5rem;
-    transition: var(--transition-button);
-}
-a.read_more-link:hover::after,
-button.read_more-link:hover::after {
-    transform: translateX(0.5rem);
-    content: url(../assets/icons/arrow.svg);
-
+    position: relative;
+    &::after {
+        content: url(../assets/icons/arrow-blk.svg);
+        margin-left: 0.5rem;
+        transition: var(--transition-button);
+        position: absolute;
+    } 
+    &:hover {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-color: var(--tertiary);
+        &:hover::after {
+            transform: translateX(0.25rem);
+            /* content: url(../assets/icons/arrow.svg); */
+        }
+    }
 }
 
 
 /* ----------------------- */
-/* download */
+/* download  icon last */
 
 a.download-link,
 button.download-link {
@@ -363,22 +360,63 @@ button.download-link {
     cursor: pointer;
     margin-top: 1rem;
     text-underline-offset: 3px;
-    &:after {
-    content: url(../assets/icons/download.svg);
-    margin-left: 0.5rem;
-    transition: var(--transition-button);
+    &::after {
+        content: url(../assets/icons/download.svg);
+        margin-left: 0.5rem;
+        transition: var(--transition-button);
     }
     &:hover {
         color: var(--primary);
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-color: var(--tertiary);
-        ::after {
-            transform: translateX(0.5rem);
-            content: url(../assets/icons/download-wht.svg);
+        &::after {
+            transform: translateX(0.25rem);
+            /* content: url(../assets/icons/download-wht.svg); */
         }
     }
 }
+
+/* download icon first */
+
+a.download-link-left,
+button.download-link-left {
+    font-weight: var(--base-font-weight) !important;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: unset;
+    letter-spacing: unset;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    text-underline-offset: 3px;
+    position: relative;
+    transition: var(--transition-button);
+    &::before {
+        content: url(../assets/icons/document.svg); 
+        margin-right: 0.5rem;
+        transition: var(--transition-button);
+        position: absolute;
+        top: -1px;
+        left: -1.5rem;
+    }
+    &:hover {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-color: var(--tertiary);
+        &::before {
+            transform: translateX(-0.25rem);
+            /* content: url(../assets/icons/document-wht.svg); */
+        }
+    }
+}
+
+
 
 /* ----------------------- */
 /* pagination */
