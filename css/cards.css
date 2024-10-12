@@ -126,8 +126,10 @@
     position: relative;
 }
 
+/* --------------------------------------- */
+/* --------------------------------------- */
 
-/* grids */
+/* GRIDS */
 
 .grid-archive .column {
     gap: var(--gap);
@@ -348,10 +350,8 @@
     }
 }
 
-
+/* --------------------------------------- */
 /* COLOUR PALETTE */
-
-/* grids */
 
 .grid-colours .column {
     gap: var(--gap);
@@ -455,6 +455,124 @@
 
 
 .grid-colours p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+/* --------------------------------- */
+/* COLLECTION */
+
+.grid-collection .row {
+    max-width: var(--column-width-xs);
+}
+
+.grid-collection .column {
+    gap: var(--gap);
+    max-width: var(--column-width-xs);
+}
+
+.grid-collection .grid-col.column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--gap-xs);
+}
+@media screen and (max-width: 1200px) {
+    .grid-collection .grid-col.column {
+        gap: var(--gap-xs);
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .grid-collection .grid-col.column {
+        width: 100%;
+        max-width: unset;
+    }
+}
+.grid-collection .card {
+    width: 100%;
+    max-width: calc(var(--one-third-max-width-smgap));
+    overflow: hidden;
+}
+
+.grid-collection a:hover .card-img  {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.grid-collection .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1);
+    transform-origin: center;
+    transition: var(--transition);
+    aspect-ratio: 3 / 2;
+    /* A4 */
+}
+
+.grid-collection .card:hover img,
+.grid-collection a:hover .card img {
+    transform: scale(1.05);
+    transform-origin: center;
+    transition: var(--transition);
+}
+
+@media screen and (max-width: 1440px){
+    .grid-collection .card, 
+    .grid-collection .card img {
+        /* max-width: calc(var(--one-third-max-width)); */
+    }
+}
+@media screen and (max-width: 1200px){
+    .grid-collection .card, 
+    .grid-collection .card img {
+       /* max-width: calc(var(--one-fourth-max-width)); */
+         /* min-height: calc(var(--one-third-max-width) - (1rem)); */
+    }
+}
+@media screen and (max-width: 1080px){
+    .grid-collection .card, 
+    .grid-collection .card img {
+        /* max-width: calc(var(--one-qtr-max-width)); */
+        /* min-height: calc(var(--one-third-max-width) - (2.5vw)); */
+    }
+}
+@media screen and (max-width: 660px){
+    .grid-collection .card, 
+    .grid-collection .card img {
+        /* max-width: calc(var(--one-half-max-width) - (2vw));
+        min-height: calc(var(--one-half-max-width) - (2vw)); */
+    }
+}
+
+.grid-collection .card-content {
+    align-items: flex-start;
+    padding: 0;
+    padding-top: var(--gap-sm);
+}
+
+.grid-collection h3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+    font-family: var(--base-font-family);
+    font-size: var(--font-size-grid-title);
+    font-weight: var(--base-font-weight);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+
+.grid-collection p {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;

@@ -58,7 +58,7 @@
     /* 50px / 3.125rem */
     /* --font-size-h3: clamp(1.5rem, 1.048rem + 1.731vw, 3rem); */
     --font-size-h3: clamp(2.5rem, 1.458rem + 1.389vw, 3.125rem);
-    --font-size-grid-title: 14px;
+    --font-size-grid-title: 16px;
     --font-size-h2-subtitle: 20px;
     --font-size-h4: 20px;
     --font-size-h4-bold: 16.5px;
@@ -74,6 +74,7 @@
     --font-size-form: 16px;
     --font-size-footer: 12px;
     --font-size-button: 30px;
+    --font-size-sm-link: 0.875rem;
     /*  */
     --font-awesome: 'FontAwesome';
     /*  */

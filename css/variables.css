@@ -97,6 +97,7 @@
 
 
 :root {
+    --column-width-xs: calc(var(--max-width) - var(--gap-xs) * 2);
     --column-width: calc(var(--max-width) - var(--gutter) * 2);
     --fourth-width: calc((var(--column-width) / 4) - (var(--gap) * 3/4));
     --third-width: calc(var(--max-width) / 3);
@@ -107,6 +108,7 @@
     --hlf-width-nogap: calc(var(--max-col-width) / 2);
     --one-half-max-width: calc(var(--max-col-width) / 2 - (var(--gap-large) * 1/2));
     --one-third-max-width: calc(var(--max-col-width) / 3 - (var(--gap-large) * 2/3));
+    --one-third-max-width-smgap: calc(var(--column-width-xs) / 3 - (var(--gap-xs) * 2/3));
     --two-thirds-max-width: calc((var(--max-col-width) * 2 / 3) - (var(--gap-large) * 1/2));
     --one-qtr-max-width: calc(var(--max-col-width) / 4 - (var(--gap-large) * 3/4));
     --one-sixth-max-width: calc((var(--max-col-width)  / 6) - (var(--gap) * 5/6));

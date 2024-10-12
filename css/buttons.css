@@ -307,6 +307,35 @@ input[type=submit],
 }
 
 /* ----------------------- */
+/* link button */
+
+a.view_product-link,
+button.view_product-link{
+    font-weight: var(--base-font-weight) !important;
+    font-size: var(--font-size-sm-link);
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: unset;
+    letter-spacing: unset;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    text-underline-offset: 3px;
+    position: relative;
+    
+    &:hover {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-color: var(--tertiary);
+        
+    }
+}
+
+/* ----------------------- */
 /* read more */
 
 a.read_more-link,
