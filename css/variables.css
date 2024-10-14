@@ -91,7 +91,7 @@
         --gap: 1rem;
         --gap-large: 2rem;
         --gap-xlarge: 3rem;
-        --gap-xs: 0.25rem;
+        --gap-xs: 1rem;
     }
 }
 
@@ -107,6 +107,7 @@
     --hlf-ratio-height: calc(var(--hlf-width) * 0.5625);
     --hlf-width-nogap: calc(var(--max-col-width) / 2);
     --one-half-max-width: calc(var(--max-col-width) / 2 - (var(--gap-large) * 1/2));
+    --one-half-max-width-smgap: calc(var(--column-width-xs) / 2 - (var(--gap-xs) * 1/2));
     --one-third-max-width: calc(var(--max-col-width) / 3 - (var(--gap-large) * 2/3));
     --one-third-max-width-smgap: calc(var(--column-width-xs) / 3 - (var(--gap-xs) * 2/3));
     --two-thirds-max-width: calc((var(--max-col-width) * 2 / 3) - (var(--gap-large) * 1/2));

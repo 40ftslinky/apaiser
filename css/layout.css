@@ -1,6 +1,6 @@
 /* layout.css */
 
-.visually-hidden {
+.visually-hidden, .hidden {
     /* // Move the text out of the flow of the container. */
     position: absolute;
     
@@ -50,9 +50,21 @@
 
 .relative { position: relative; }
 
+.object-fit-cover { object-fit: cover; }
+.object-position-center { object-position: center; }
+.object-position-right { object-position: right; }
+.object-position-left { object-position: left; }
+.object-position-bottom { object-position: bottom; }
+.object-position-top { object-position: top; }
+
 
 /* -------------------------------------------------------- */
 /* global */
+
+
+html, html > * {
+    height: 100%;
+}
 
 body {
     background-color: var(--white);
@@ -185,6 +197,7 @@ section.projects-sect {
     /* !!!! */
     /* overflow-x: hidden; */
     box-sizing: border-box;
+    align-items: stretch;
 }
 
 .hero .row {
@@ -650,6 +663,9 @@ div.caption_wrap {
 
 .table_section .row {
     max-width: fit-content;
+}
+.table_section .column {
+    align-items: center;
 }
 
 .table_section h4 {

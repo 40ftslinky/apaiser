@@ -156,3 +156,7 @@
 .grey_900_bg {
     background-color: var(--gray-900);
 }
+
+.no_bg {
+    background-color: transparent !important;
+}

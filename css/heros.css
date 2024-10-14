@@ -186,3 +186,25 @@ section.home_hero .hero-content h1 {
     visibility: hidden;
     opacity: 0;
 }
+
+section.about_hero  {
+    background-size: cover;
+    background-position: 0% center;
+    background-repeat: no-repeat;
+}
+
+section.about_hero .hero-content { 
+    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--gap-large);
+    box-sizing: border-box;
+    content: url(../assets/heros/AboutUs_Step_inside_the_atelier.svg);
+    width: 60vh;
+}
+
+section.about_hero .hero-content h1 { 
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}

@@ -36,7 +36,7 @@
     /* size */
     --font-size-base: 1rem;
     --font-size-xs: 0.6rem;
-    --font-size-sm: 0.8rem;
+    --font-size-sm: 0.875rem;
     --font-size-md: 1.25rem;
     --font-size-lg: 1.4rem;
     --font-size-lg: clamp(1.125rem, 1.0414rem + 0.3822vw, 1.5rem);
@@ -50,13 +50,14 @@
     --font-size-h1: clamp(3.25rem, 0.712rem + 4.615vw, 6.25rem);
     --font-size-huge-sub: 50px;
     --font-size-blockquote: 60px;
-    --font-size-blockquote: clamp(2rem, 1.6rem + 1.50vw, 3.75rem);
-    /* --font-size-blockquote: clamp(40px, 14.286px + 2.381vw, 60px); */
+    --font-size-blockquote: clamp(2rem, 0.893rem + 2.381vw, 3.5rem);
     --font-size-h2: 80px;
-    --font-size-h2: clamp(3.8rem, 3.56rem + 1.2vw, 5rem);
+    /* --font-size-h2: clamp(3.8rem, 3.56rem + 1.2vw, 5rem); */
+    --font-size-h2: clamp(4rem, 2.714rem + 1.905vw, 5rem);
     /* --font-size-h3: clamp(2.75rem, 1.971rem + 0.962vw, 3.125rem);  */
     /* 50px / 3.125rem */
     /* --font-size-h3: clamp(1.5rem, 1.048rem + 1.731vw, 3rem); */
+    --font-size-h3: 50px;
     --font-size-h3: clamp(2.5rem, 1.458rem + 1.389vw, 3.125rem);
     --font-size-grid-title: 16px;
     --font-size-h2-subtitle: 20px;
@@ -129,7 +130,7 @@
         /* --font-size-h1: 50px; */
         --font-size-huge-sub: 50px;
         /* --font-size-h2: 40px; */
-        --font-size-h3: 25px;
+        --font-size-h3: 36px;
         --font-size-h4-bold: 16.5px;
         --font-size-h4-demibold: 16.5px;
         --font-size-h4: 16.5px;
@@ -236,7 +237,7 @@ h1, h2 {
 h4, h5, h6 {
     font-family: var(--heading-font-family);
     font-weight: 500;
-    font-weight: var(--demi-font-weight); 
+    font-weight: var(--base-font-weight); 
     /* letter-spacing: var(--letterspacing-sm-heading); */
     line-height: 1.2;
     margin: 0 0 0.5rem 0;
@@ -388,16 +389,21 @@ blockquote, blockquote p {
     font-style: normal;
     font-weight: var(--serif-font-weight);
     line-height: var(--blockquote-line-height);
-    text-transform: uppercase;
     color: var(--primary);
+    text-transform: uppercase;
     margin: 0;
-    
     text-align: left;
-    margin-bottom: var(--gap);
+}
+blockquote p.lowercase {
+    text-transform: none;
+}
+blockquote p:nth-of-type(2n) {
+    margin-top: 2rem;
 }
 blockquote { 
     /* padding: 2.5vw;  */
-    min-width: 45vw;
+    /* min-width: 45vw; */
+    margin-bottom: var(--gap-large);
 }
 
 .credit, cite {

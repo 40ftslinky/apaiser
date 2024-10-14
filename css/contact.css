@@ -6,6 +6,10 @@
     gap: 0.25rem;
 }
 
+footer .form_group {
+    min-width: 300px;
+}
+
 form {
     position: relative;
     width: 100%;
@@ -16,6 +20,10 @@ form {
     justify-content: flex-start;
     gap: 0.5rem;
     margin: 1rem 0 0 0;
+}
+
+footer form {
+    max-width: 100%;
 }
 
 form input,

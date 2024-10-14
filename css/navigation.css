@@ -801,11 +801,13 @@ footer .footer_nav .menu {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    align-content: flex-end;
     gap: 0.125rem 2rem;
     list-style: none;
     flex-wrap: wrap;
     max-height: 400px;
     margin-left: 0;
+    justify-content: flex-start;
 }
 @media screen and (max-width: 1080px){
     footer nav ul,
