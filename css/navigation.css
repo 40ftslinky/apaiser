@@ -793,7 +793,22 @@ footer nav {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    gap: 2rem;
 }
+@media screen and (max-width: 1080px){
+    footer nav {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+footer .menu_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.125rem;
+}
+
 
 footer nav ul,
 footer .footer_nav .menu {
@@ -802,10 +817,9 @@ footer .footer_nav .menu {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-end;
-    gap: 0.125rem 2rem;
+    /* gap: 0.125rem 2rem; */
     list-style: none;
-    flex-wrap: wrap;
-    max-height: 400px;
+    
     margin-left: 0;
     justify-content: flex-start;
 }
@@ -813,8 +827,7 @@ footer .footer_nav .menu {
     footer nav ul,
     footer .footer_nav .menu {
         flex-direction: column;
-        flex-wrap: nowrap;
-        max-height: unset;
+        
     }
 }
 
@@ -840,5 +853,10 @@ footer .menu-link {
        
     li.menu-item:has(a) {
         display: none;
+    }
+    /* to do: */
+    /* -> add .active with JS */
+    li.menu-item:has(a).active {
+        display: block;
     }
 }
