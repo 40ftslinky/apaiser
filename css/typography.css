@@ -64,7 +64,7 @@
     --font-size-h4: 20px;
     --font-size-h4-bold: 16.5px;
     --font-size-h4-demibold: 16.5px;
-    --font-size-h4: 16.5px;
+    /* --font-size-h4: 16.5px; */
     --font-size-h4-enquiry: 22px;
     --font-size-h5: 14px;
     --font-size-h6: 12px;
@@ -279,10 +279,17 @@ h2.subtitle {
     font-size: var(--font-size-h2-subtitle);
     font-weight: var(--bold-font-weight);
     line-height: 1.2;
+}
+h2.subtitle,
+h2.no_case {
     text-transform:none;
 }   
 h3 {
     font-size: var(--font-size-h3);
+    line-height: 1.2;
+}
+h4 {
+    font-size: var(--font-size-h4);
     line-height: 1.2;
 }
 h4.bold {
@@ -401,8 +408,6 @@ blockquote p:nth-of-type(2n) {
     margin-top: 2rem;
 }
 blockquote { 
-    /* padding: 2.5vw;  */
-    /* min-width: 45vw; */
     margin-bottom: var(--gap-large);
 }
 
