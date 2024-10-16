@@ -298,7 +298,7 @@
 
      <div class="row">
         <div class="column align-center no_gap">
-            <h2 class="center-align">Ode Collection</h2>            
+            <h2 class="center-align collection-title">Ode Collection</h2>            
         </div>
     </div>
 
@@ -315,7 +315,7 @@
                         <img src="assets/images/placeholder.jpg" alt="image">
                     </div>
                     <div class="card-content">
-                        <h3>Heading 01</h3>
+                        <h3 class="product-title">Heading 01</h3>
                         <button class="view_product-link">View Product</button>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
                         <img src="assets/images/placeholder.jpg" alt="image">
                     </div>
                     <div class="card-content">
-                        <h3>Heading 02</h3>
+                        <h3 class="product-title">Heading 02</h3>
                     </div>
                 </div>
             </a>
@@ -340,7 +340,7 @@
                         <img src="assets/images/placeholder.jpg" alt="image">
                     </div>
                     <div class="card-content">
-                        <h3>Heading 03 abcde fghig klmno pqrstuv asdasd asdasda asdasd asdasd asdas</h3>
+                        <h3 class="product-title">Heading 03 abcde fghig klmno pqrstuv asdasd asdasda asdasd asdasd asdas</h3>
                     </div>
                 </div>
             </a>
@@ -353,7 +353,7 @@
     <!-- <div class="row ">
         <div class="column align-center">
             <div class="pagination">
-                <a href="" class="page previous">&larrb;</a> <a href="" class="page current">01</a> | <a href="" class="page">02</a> | <a href="" class="page">03</a> | <a href="" class="page">04</a> | <a href="" class="page more">»</a> 
+                <a href="" class="page previous"><span class="left_arrow">&#x2B60;</span></a> <a href="" class="page current">01</a> | <a href="" class="page">02</a> | <a href="" class="page">03</a> | <a href="" class="page">04</a> | <a href="" class="page more"><span class="right_arrow">&#x2B62;</span></a> 
             </div>
             
         </div>
@@ -643,23 +643,29 @@
 
             <div class="search-content">
                 
+                <form class="search" action="" method="get">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                    <button type="submit">Search</button>
+                </form>
+
                 <div class="search-details">
-                    <h2 class="search-title">Search</h2>
-                    <h3 class="search-subtitle">Popular Searches</h3>
+                
+                    <!-- <h2 class="search-title">Search</h2> -->
+                    <div class="search-heading">
+                        <div class="search-subtitle">Recent Searches</div>
+                        <div class="search-clear">Clear All</div>
+                    </div>
+
                     <div class="search-filters">
-                        <ul>
+                        <ul class="search-list">
                             <li class="pre-filter">Baths</li>
                             <li class="pre-filter">White</li>
                             <li class="pre-filter">Stone</li>
                         </ul>
                     </div>
-                    <form action="" method="get">
-                        <input type="text" name="search" id="search" placeholder="Search">
-                        <button type="submit">Search</button>
-                    </form>
+
                     <p>lorem ipsum autlaciis pa dolesequae nempore mporesedic dior audit in re dus int pore ero volorporpost.</p>
-                    
-                    
+                                        
                 </div>
                 
             </div>
@@ -678,6 +684,7 @@
     <script src="js/pop-up.js"></script>
     <script src="js/search-pop-up.js"></script>
     <script src="js/truncate.js"></script>
+    <script src="js/in-focus.js"></script>
 
     <script src="js/flickity_custom.js"></script>
 

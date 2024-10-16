@@ -39,7 +39,7 @@
     --font-size-sm: 0.875rem;
     --font-size-md: 1.25rem;
     --font-size-lg: 1.4rem;
-    --font-size-lg: clamp(1.125rem, 1.0414rem + 0.3822vw, 1.5rem);
+    --font-size-lg-x: clamp(1.125rem, 1.0414rem + 0.3822vw, 1.5rem);
     --font-size-xl: 2.2rem;
     --font-size-xxl: 2.4rem;
     --font-size-xxxl: clamp(1.5rem, 0.2308rem + 2.3077vw, 3rem);

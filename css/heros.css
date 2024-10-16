@@ -154,8 +154,8 @@ body.post .hero::before {
 }
 
 .hero h1 {
-    backdrop-filter: drop-shadow(0px 0px 2rem rgba(var(--primary-rgb),0.8));
-    text-shadow: 0px 0px 2rem rgba(var(--primary-rgb),0.8);
+    /* backdrop-filter: drop-shadow(0px 0px 2rem rgba(var(--primary-rgb),0.8)); */
+    text-shadow: 2px 2px 0px rgba(var(--primary-rgb),0.8);
     max-width: 10ch;
     /* text-align: left; */
 }
@@ -167,6 +167,7 @@ body.post .hero::before {
     align-content: center;
     flex-direction: column;
     gap: var(--gap-sm);
+    min-width: 40vw;
 }
 
 /* ----------------------- */

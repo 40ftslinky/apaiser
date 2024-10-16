@@ -479,7 +479,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: var(--gap-xs);
+    gap: var(--gap) var(--gap-xs);
 }
 @media screen and (max-width: 1200px) {
     .grid-collection .grid-col.column {
@@ -533,7 +533,8 @@
 @media screen and (max-width: 880px){
     .grid-collection .card, 
     .grid-collection .card img {
-        max-width: var(--column-width-xs) ;
+        width: var(--column-width-xs);
+        max-width: unset ;
     }
 }
 
@@ -556,6 +557,13 @@
     -moz-osx-font-smoothing: auto;
 }
 
+.grid-collection.archive h3 {
+    font-family: var(--heading-serif);
+    font-size: var(--font-size-h3);
+    font-weight: var(--serif-font-weight);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
 
 .grid-collection p {
     overflow: hidden;
