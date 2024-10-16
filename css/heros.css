@@ -160,6 +160,10 @@ body.post .hero::before {
     /* text-align: left; */
 }
 
+.hero h1.subtitle {
+    max-width: unset;
+}
+
 .hero-content {
     display: flex;
     justify-content: center;
@@ -175,18 +179,13 @@ body.post .hero::before {
 
 section.home_hero .hero-content { 
     z-index: 2;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+    /*  */
     width: 100%;
     max-width: 100%;
     padding: 0 var(--gap-large);
     box-sizing: border-box;
     content: url(../assets/heros/step-inside-the-house-of-apaiser.svg);
     width: 60vh;
-    /* backdrop-filter: drop-shadow(0px 0px 2rem rgba(var(--primary-rgb),0.8)); */
-    /* box-shadow: 0px 0px 2rem rgba(var(--primary-rgb),0.8); */
 }
 
 section.home_hero .hero-content h1 { 
@@ -268,4 +267,37 @@ section.sustainability_feature .hero-content h1 {
     display: none;
     visibility: hidden;
     opacity: 0;
+}
+
+/* projects */
+
+section.projects_hero  {
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+/* ----------------------- */
+/* customisation */
+
+section.customisation_hero  {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+section.customisation_hero .hero-content { 
+    z-index: 2;
+    /*  */
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--gap-large);
+    box-sizing: border-box;
+    content: url(../assets/customisation/customisation.svg);
+    width: 60vh;
+}
+
+.customisation .text_only .hero-content h1 { 
+    
+    max-width: 12ch;
 }

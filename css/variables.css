@@ -10,6 +10,7 @@
     --gap-sm: 1rem;
     --gap: 2rem;
     --gap-large: 4rem;
+    --gap-large: calc(70/1920 *100vw);s
     --gap-xlarge: 6rem;
     --gap-xs: 0.75rem;
 

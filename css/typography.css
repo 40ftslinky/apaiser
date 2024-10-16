@@ -274,11 +274,14 @@ h2 {
 }
 .subtitle,
 h1.subtitle,
-h2.subtitle {
-    font-family: var(--heading-font-family);
-    font-size: var(--font-size-h2-subtitle);
-    font-weight: var(--bold-font-weight);
+h2.subtitle,
+h3.subtitle {
+    font-family: var(--heading-font-family) !important;
+    font-size: var(--font-size-h2-subtitle) !important;
+    font-weight: var(--base-font-weight) !important;
     line-height: 1.2;
+    max-width: unset;
+    margin-bottom: 0.5rem;
 }
 h2.subtitle,
 h2.no_case {

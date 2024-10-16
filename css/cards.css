@@ -223,6 +223,7 @@
 
 .grid-archive h3 {
     overflow: hidden;
+    /* display: inline-flex; */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -566,6 +567,116 @@
 }
 
 .grid-collection p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+/* --------------------------------- */
+/* PROJECTS */
+
+.grid-projects .row {
+    max-width: var(--max-col-width);
+}
+
+.grid-projects .column,
+.grid-projects .grid-col.column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--gap-large) ;
+}
+@media screen and (max-width: 1200px) {
+    .grid-projects .column,
+    .grid-projects .grid-col.column {
+        gap: var(--gap-xs);
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .grid-projects .grid-col.column {
+        width: 100%;
+        max-width: unset;
+    }
+}
+.grid-projects .card {
+    width: 100%;
+    max-width: calc(var(--one-third-max-width));
+    overflow: hidden;
+}
+
+.grid-projects a:hover .card-img  {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.grid-projects .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1);
+    transform-origin: center;
+    transition: var(--transition);
+    aspect-ratio: 3 / 2;
+    /* A4 */
+}
+
+.grid-projects .card:hover img,
+.grid-projects a:hover .card img {
+    transform: scale(1.05);
+    transform-origin: center;
+    transition: var(--transition);
+}
+
+@media screen and (max-width: 1080px){
+    .grid-projects .card, 
+    .grid-projects .card img {
+        max-width: var(--one-half-max-width);
+    }
+}
+@media screen and (max-width: 880px){
+    .grid-projects .card, 
+    .grid-projects .card img {
+        width: var(--max-col-width);
+        max-width: unset ;
+    }
+}
+
+.grid-projects .card-content {
+    align-items: flex-start;
+    padding: 0;
+    padding-top: var(--gap);
+    gap: var(--gap-sm);
+}
+
+.grid-projects h3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+    font-family: var(--base-font-family);
+    font-size: var(--font-size-grid-title);
+    font-weight: var(--base-font-weight);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+.grid-projects.archive h3 {
+    font-family: var(--heading-serif);
+    font-size: var(--font-size-h3);
+    font-weight: var(--serif-font-weight);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+
+.grid-projects p {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;

@@ -125,6 +125,13 @@
 .black_bg {
     background-color: var(--black);
 }
+.primary_bg {
+    background-color: var(--primary);
+}
+.secondary_bg {
+    background-color: var(--secondary);
+}
+
 
 .grey_000_bg {
     background-color: var(--gray-000);
