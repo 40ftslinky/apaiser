@@ -1,7 +1,7 @@
 /* -- vanilla js -- */
 
-var elem = document.querySelector('.range .carousel');
-var flkty = new Flickity( elem, {
+var rangeCarousel = document.querySelector('.range .carousel');
+var flkty = new Flickity( rangeCarousel, {
     // options
     cellAlign: 'left',
     contain: true,
@@ -10,6 +10,16 @@ var flkty = new Flickity( elem, {
     // groupCells: 3,
 });
 
+var projectCarousel = document.querySelector('.project-carousel');
+var flkty = new Flickity( projectCarousel, {
+    // options
+    cellAlign: 'left',
+    contain: true,
+    prevNextButtons: true,
+    pageDots: true,
+    // margin: 1,
+    // groupCells: 3,
+});
 
 // 
 

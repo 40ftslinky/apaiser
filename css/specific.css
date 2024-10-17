@@ -142,10 +142,11 @@
 .collections-hero .column .card {    
     
     max-width: calc(50vw - (var(--gutter)*2));
-    /* aspect-ratio: 1 / 1; */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
+
 }
 @media screen and (max-width: 1080px) {
     .half_panel-hero .column .card,
@@ -205,7 +206,7 @@
 .customised-hero .column .card {    
     
     max-width: calc(50vw - (var(--gutter)*2));
-    /* aspect-ratio: 1 / 1; */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
@@ -335,6 +336,13 @@
 }
 
 /* ----------------------- */
+/* PLAIN (replace with half_panel) */
+
+.plain .row {
+    /* gap: calc(var(--gutter)*2); */
+}
+
+/* ----------------------- */
 /* RANGE */
 
 @media screen and (max-width: 1080px) {
@@ -362,6 +370,33 @@ section.full-width-img .img_wrap {
 section.full-width-img img {
     width: 100vw;
     height: 100%;
+    object-fit: cover;
+}
+
+
+/* ----------------------- */
+/* full-width-img-padding section */
+
+section.full-width-img-padding {
+    padding: 0;
+    max-height: var(--hero-height);
+    overflow: hidden;
+}
+section.full-width-img-padding > * {
+    width: 100%;
+    max-width: var(--max-col-width);
+}
+
+section.full-width-img-padding .img_wrap {
+    width: 100%;
+    max-width: var(--max-col-width);
+
+}
+section.full-width-img-padding img {
+    width: 100%;
+    max-width: var(--max-col-width);
+    height: 100%;
+    max-height: calc(var(--hero-height) - (var(--gutter)*2));
     object-fit: cover;
 }
 
