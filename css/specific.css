@@ -60,15 +60,18 @@
 }
 .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) {
     align-items: center;
+    padding-left: var(--gap);
+    justify-content: flex-start;
 }
 .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) .card {
 
     max-width: 600px;
 }
 
-
-.overflow_section .column-reverse-mob .column:first-of-type {
+.overflow_section .column-reverse-mob .column:first-of-type,
+.overflow_section .column-reverse-mob .column-text {
     max-width: 60vw;
+    justify-content: flex-start;
 }
 
 .overflow_section .column.four-tenths,
@@ -85,7 +88,7 @@
 }
 .overflow_section .img_wrap {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     object-fit:cover;
 }
 
@@ -97,7 +100,7 @@
 
 .overflow_section img {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     object-fit: cover;
 }
 
@@ -173,6 +176,12 @@
         
     }
 }
+
+.half_panel-hero img {
+    height: var(--hero-height);
+    object-fit: cover;
+}
+
 
 /*  */
 

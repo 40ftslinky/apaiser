@@ -160,6 +160,9 @@
 .grey_800_bg {
     background-color: var(--gray-800);
 }
+.grey_850_bg {
+    background-color: var(--gray-850);
+}
 .grey_900_bg {
     background-color: var(--gray-900);
 }
