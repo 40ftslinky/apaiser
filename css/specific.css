@@ -161,7 +161,7 @@
 
 @media screen and (max-width: 880px) {
     .half_panel-hero .column:has(.card) {
-        margin: -30vh auto 3rem;
+        margin: 0vh auto 3rem;
         box-sizing: border-box;
         width: calc(var(--max-width) - (var(--gutter)*2));
         z-index: 111;
@@ -212,8 +212,7 @@
     /* padding: var(--gap); */
 }
 .featured-hero  .column .card,
-.customised-hero .column .card {    
-    
+.customised-hero .column .card {     
     max-width: calc(50vw - (var(--gutter)*2));
     aspect-ratio: 1 / 1;
     overflow: hidden;
@@ -224,6 +223,7 @@
     .featured-hero .column .card,
     .customised-hero .column .card {
         max-width: calc(50vw - (var(--gap)*2));
+        aspect-ratio:unset;
     }
 }
 @media screen and (max-width: 1080px) {

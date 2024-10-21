@@ -24,6 +24,7 @@
     --blockquote-font-weight: normal;
     --heading-font-weight: 700;
     --menu-font-weight: 400;
+    --submenu-font-weight: 300;
     --footer-font-weight: 400;
     /*  */
     --thin-font-weight: 300;
@@ -121,16 +122,17 @@
     :root {
         --font-size-menu: 2rem;
         --font-size-menu-title: 28px;
-        --font-size-submenu: 24px;
+        --font-size-submenu: 22px;
         /* --font-size-h1: clamp(3rem, 1.736842105263158rem + 6.315789473684211vw, 6rem);
         --font-size-h2: clamp(2.5rem, 1.4473684210526316rem + 5.263157894736842vw, 5rem); */
     }
 }
 @media screen and (max-width: 880px) {
     :root {
+        /* 20rem - 67.5rem */
         /* --font-size-h1: 50px; */
         --font-size-huge-sub: 50px;
-        /* --font-size-h2: 40px; */
+        --font-size-h2: clamp(2.5rem, 1.868rem + 3.158vw, 4rem); 
         --font-size-h3: 36px;
         --font-size-h4-bold: 16.5px;
         --font-size-h4-demibold: 16.5px;
@@ -273,6 +275,11 @@ h2 {
     font-size: var(--font-size-h2);
     line-height: var(--heading-line-height);
 }
+h2 a {
+    font-weight: initial;
+    text-decoration: initial;
+}
+
 .subtitle,
 h1.subtitle,
 h2.subtitle,

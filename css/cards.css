@@ -674,6 +674,11 @@
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
 }
+.grid-projects.archive h3.subtitle {
+    font-family: var(--base-font-family);
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--base-font-weight);
+}
 
 
 .grid-projects p {
