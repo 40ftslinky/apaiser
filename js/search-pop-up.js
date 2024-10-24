@@ -5,9 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var close = document.querySelector('.search-close');
     // var overlay = document.querySelector('.search-overlay');
     var searchButton = document.querySelector('.search');
+    var mobileSearchButton = document.querySelector('.mobile-secondary-menu .search');
     var body = document.body;
 
     searchButton.addEventListener('click', function() {
+        search_popUp.classList.toggle('is-visible');
+        body.classList.toggle('no_scroll');
+    });
+    mobileSearchButton.addEventListener('click', function() {
         search_popUp.classList.toggle('is-visible');
         body.classList.toggle('no_scroll');
     });

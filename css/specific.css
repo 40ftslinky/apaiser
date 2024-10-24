@@ -139,6 +139,9 @@
     background-size: cover;
     background-position: center center;
     height: var(--hero-height);
+    min-height: 50vw;
+    min-height: 50vw;
+    min-height: 50vw;
     /* padding: var(--gap); */
 }
 .half_panel-hero .column .card,
@@ -179,6 +182,8 @@
 
 .half_panel-hero img {
     height: var(--hero-height);
+    min-height: 50vw;
+    min-height: 50vw;
     object-fit: cover;
 }
 
@@ -209,6 +214,8 @@
     background-size: cover;
     background-position: center center;
     height: var(--hero-height);
+    min-height: 50vw;
+    min-height: 50vw;
     /* padding: var(--gap); */
 }
 .featured-hero  .column .card,
@@ -558,6 +565,7 @@ section.half_panel-img_padding img {
 .fullwidth-feature {
     padding: 0;
     height: var(--hero-height);
+    min-height: 50vw;
     overflow: hidden;
 }
 

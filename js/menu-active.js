@@ -38,37 +38,29 @@ for (let i = 0; i < desk_menuLinks.length; i++) {
 const mob_hasDropdownElements = document.querySelectorAll('.fullscreen .has-dropdown');
 
 // Loop over the elements
-for (let i = 0; i < mob_hasDropdownElements.length; i++) {
+for (let j = 0; j < mob_hasDropdownElements.length; j++) {
 
     // Add the onclick event listener to each element
-    mob_hasDropdownElements[i].onclick = function() {
+    mob_hasDropdownElements[j].onclick = function() {
 
         // Remove 'open' class from all dropdown elements
-        const allDropdownElements = document.querySelectorAll('.dropdown.open');
+        const openDropdownElements = document.querySelectorAll('.dropdown.open');
         const dropdownElement = this.querySelectorAll('.dropdown');
         // const opensubmenuElement = this.querySelectorAll('.submenu.open');
 
-        for (let k = 0; k < allDropdownElements.length; k++) {
-            if (allDropdownElements[k] !== dropdownElement) {
-                allDropdownElements[k].classList.remove('open');
+        for (let k = 0; k < openDropdownElements.length; k++) {
+            if (openDropdownElements[k] !== dropdownElement) {
+                openDropdownElements[k].classList.toggle('open');
                 // opensubmenuElement[k].classList.remove('open');
             }
         }
         
 
-        // Remove 'open' class from all submenu elements
-        // this isnt working - is it because .dropdown is a parent of .submenu?
-
-        // const openSubmenuElements = document.querySelectorAll('.submenu.open');
-        // for (let l = 0; l < openSubmenuElements.length; l++) {
-        //     openSubmenuElements[l].classList.remove('open');
-        // }
-
-
         // Loop over the dropdown elements
-        for (let j = 0; j < dropdownElement.length; j++) {
+        for (let l = 0; l < dropdownElement.length; l++) {
             // Toggle the 'open' class on each dropdown element
-            dropdownElement[j].classList.toggle('open');
+            
+            dropdownElement[l].classList.toggle('open');
         }
         // Toggle the 'open' class on the submenu element
         if (dropdownElement) {
@@ -80,22 +72,22 @@ for (let i = 0; i < mob_hasDropdownElements.length; i++) {
 // mobile submenu show`n`hide
 
 // Get all elements with class 'has-submenu'
-const mob_hasSubmenuElements = document.querySelectorAll('.fullscreen .dropdown .submenu-title');
+const mob_hasSubmenuElements = document.querySelectorAll('.has-submenu');
 
 // Loop over the elements
-for (let i = 0; i < mob_hasSubmenuElements.length; i++) {
+for (let m = 0; m < mob_hasSubmenuElements.length; m++) {
 
     // Add the onclick event listener to each element
-    mob_hasSubmenuElements[i].onclick = function() {
+    mob_hasSubmenuElements[m].onclick = function() {
 
         // Get the submenu element within the clicked element's parent
         const submenuElement = this.parentElement.querySelector('.submenu');
 
         // Close any open submenu
-        const allSubmenuElements = document.querySelectorAll('.submenu.open');
-        for (let j = 0; j < allSubmenuElements.length; j++) {
-            if (allSubmenuElements[j] !== submenuElement) {
-                allSubmenuElements[j].classList.remove('open');
+        const openSubmenuElements = document.querySelectorAll('.submenu.open');
+        for (let n= 0; n < openSubmenuElements.length; n++) {
+            if (openSubmenuElements[n] !== submenuElement) {
+                openSubmenuElements[n].classList.remove('open');
             }
         }
 

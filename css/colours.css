@@ -124,6 +124,7 @@
 }   
 .black_bg {
     background-color: var(--black);
+    color: var(--white);
 }
 .primary_bg {
     background-color: var(--primary);

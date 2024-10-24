@@ -269,7 +269,7 @@ nav.desktop li.has-child a.active,
 nav.desktop ul li a span.active,
 .desktop .menu-link.active {
     color: var(--white);
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-underline-offset: 0.325rem;
     text-decoration-thickness: 1px;
 }
@@ -279,6 +279,9 @@ nav.desktop ul li a span:hover,
 .desktop .menu-link:hover {
     color: rgba(var(--white-rgb), 0.5);
     /* text-decoration: underline; */
+    text-decoration: underline;
+    text-underline-offset: 0.325rem;
+    text-decoration-thickness: 1px;
 }
 
 /* ------------------------------------ */
@@ -337,7 +340,11 @@ nav.desktop ul li a span:hover,
     max-width: var(--max-col-width);
     justify-content: flex-start;
     gap: var(--gap);
-    
+}
+@media screen and (min-width: 1200px) {
+    .dropdown .content {
+        margin-left: calc((var(--nav-padding)));    
+    }
 }
 
 .desktop h2.submenu-title {
@@ -449,6 +456,9 @@ nav .wp-block-navigation-submenu ul li a span,
         display: none;
     }
 }
+.mobile-secondary-menu {
+    display: none;
+}
 
 /* ----------------------- */
 /* MOBILE */
@@ -483,8 +493,10 @@ nav .wp-block-navigation-submenu ul li a span,
 
     .secondary-menu {
         align-items: flex-start;
-        margin: 0;
         margin-left: 1rem;
+    }
+    .secondary-menu .menu-item:last-of-type {
+        display: none;
     }
 
     nav .fullscreen ul li,
@@ -519,6 +531,22 @@ nav .wp-block-navigation-submenu ul li a span,
         color: rgba(var(--primary-rgb), 0.8);
         /* text-decoration: underline; */
     }
+
+    /*  */
+
+    .mobile-secondary-menu {
+        display: none;
+    }
+    @media screen and (max-width: 1080px) {
+        .mobile-secondary-menu {
+            align-items: flex-start;
+            margin: 0;
+            margin-left: 1rem;
+            display: inline-flex;
+            padding-right: 6rem ;
+        }
+    }
+
 
     /* ------------------------------------ */
     /* MOBILE SUBMENUS */
@@ -640,6 +668,7 @@ nav .wp-block-navigation-submenu ul li a span,
 /* end mobile */
 }
 
+
 /* ----------------------- */
 /* HAMBURGER + FULLSCREEN */
 
@@ -731,7 +760,8 @@ nav .wp-block-navigation-submenu ul li a span,
         flex-direction: column;
         /* visibility: hidden; */
         position: absolute;
-        top: calc(var(--header-height)/2);
+        top: calc(var(--header-height) );
+        top: calc(42px );
         left: 0;
         padding: var(--gap-large);
         width: 100%;
@@ -802,7 +832,7 @@ footer nav {
     justify-content: flex-start;
     gap: 2rem;
 }
-@media screen and (max-width: 1080px){
+@media screen and (max-width: 880px){
     footer nav {
         flex-direction: column;
         gap: 0;
@@ -856,14 +886,16 @@ footer .menu-link {
     padding: 0.175rem 0.5rem;
 }
 
-@media screen and (max-width: 1080px){
+
+
+@media screen and (max-width: 880px){
        
-    li li.menu-item:has(a) {
+    footer li.menu-item:has(a) {
         display: none;
     }
     /* to do: */
     /* -> add .active with JS */
-    li li.menu-item:has(a).active {
+    footer li.menu-item:has(a).active {
         display: block;
     }
 }

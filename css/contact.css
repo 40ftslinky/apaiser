@@ -96,7 +96,6 @@ form label {
 }
 
 form button[type="submit"] {
-    
 }
 
 
@@ -113,6 +112,14 @@ form button[type="submit"] {
     margin-bottom: 2rem;
 }
 
+.checkbox_group,
+.form_chckbx_grp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+.checkbox_group .wpcf7-list-item, 
 .form_chckbx_grp .wpcf7-list-item {
     margin-left: 0;
 }
@@ -123,6 +130,11 @@ form button[type="submit"] {
     align-items: flex-start;
     gap: 0.25rem;
 }
+.checkbox_group label span {
+    font-size: 0.8rem;
+    display: inline-block;
+} 
+
 
 :placeholder-shown,
 ::placeholder,
@@ -132,4 +144,24 @@ form textarea::placeholder {
     /* font-weight: var(--form-font-weight); */
     color: #667085;
     font-size: var(--font-size-form);
+}
+
+/* professionals */
+
+.professionals_form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 580px;
+}
+
+@media screen and (max-width: 880px) {
+    .professionals_form {
+        min-width: 90vw;
+        width: 100%
+    }
+}
+
+.professionals_form input[type="submit"] {
+    margin-top: 1rem;
 }

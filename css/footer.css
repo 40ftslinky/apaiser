@@ -219,6 +219,11 @@ footer .menu-title {
 footer .menu-title.less_margin {
     margin-top: 0.175rem;
 }
+@media screen and (max-width: 880px) {
+    footer .menu-title.less_margin {
+        margin-top: 1rem;
+    }
+}
 
 footer .menu-link {
     max-width: 20ch;
