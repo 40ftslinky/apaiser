@@ -35,7 +35,7 @@
 
 }
 
-.search-pop-up.is-visible {
+.search-pop-up.has-popped {
     transition: var(--transition-slow);
     visibility: visible;
     opacity: 1;

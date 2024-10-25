@@ -306,7 +306,7 @@ h4 {
 h4.bold {
     font-family: var(--heading-font-family);
     font-size: var(--font-size-h4-bold);
-    font-weight: var(--bold-font-weight);
+    font-weight: var(--med-font-weight);
     line-height: 1.2;
 }
 h4.demibold {
@@ -324,6 +324,10 @@ strong, .bold {
 .demibold {
     font-weight: 600;
     font-weight: var(--demi-font-weight);
+}
+.medium {
+    font-weight: 500;
+    font-weight: var(--med-font-weight);
 }
 .regular {
     font-weight: 500;

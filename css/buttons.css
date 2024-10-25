@@ -53,9 +53,7 @@ input[type=submit],
     }
 }
 
-
-:not([class*="flickity"])[class*="button"][class*="-icon"],
-:not(svg)[class*="-icon"], .button.icon {
+.button-icon {
     padding-right: 3rem;
     &:after {
         position: absolute;
@@ -171,8 +169,6 @@ a.search {
 /* variation */
 
 .button-primary,
-/* .button-carousel, */
-:not(svg)[class*="-icon"],
 .nav-button {
     background-color: var(--white);
     border: 1px solid var(--primary);
@@ -310,7 +306,7 @@ a.search {
 }
 
 .button,
-input[type=submit],
+input[type=submit]:not(input)[class*="-icon"],
 .button-primary {
     background-color: var(--primary);
     border: 1px solid var(--primary);
@@ -326,7 +322,9 @@ input[type=submit],
 /* link button */
 
 a.view_product-link,
-button.view_product-link{
+button.view_product-link,
+a.view_result-link,
+button.view_result-link {
     font-weight: var(--base-font-weight) !important;
     font-size: var(--font-size-sm-link);
     padding: 0;
@@ -341,6 +339,7 @@ button.view_product-link{
     margin-top: 0.5rem;
     text-underline-offset: 3px;
     position: relative;
+    transform: var(--transition-button);
     
     &:hover {
         color: var(--primary);
@@ -349,6 +348,10 @@ button.view_product-link{
         text-decoration-color: var(--tertiary);
         
     }
+}
+a.view_result-link,
+button.view_result-link {
+    margin-top: 1rem;
 }
 
 /* ----------------------- */

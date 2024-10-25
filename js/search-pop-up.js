@@ -9,22 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var body = document.body;
 
     searchButton.addEventListener('click', function() {
-        search_popUp.classList.toggle('is-visible');
+        search_popUp.classList.toggle('has-popped');
         body.classList.toggle('no_scroll');
     });
     mobileSearchButton.addEventListener('click', function() {
-        search_popUp.classList.toggle('is-visible');
+        search_popUp.classList.toggle('has-popped');
         body.classList.toggle('no_scroll');
     });
 
     close.addEventListener('click', function() {
-        search_popUp.classList.remove('is-visible');
+        search_popUp.classList.remove('has-popped');
         body.classList.remove('no_scroll');
     });
 
     search_popUp.addEventListener('click', function(event) {
         if (event.target === search_popUp || event.target === close) {
-            search_popUp.classList.remove('is-visible');
+            search_popUp.classList.remove('has-popped');
             body.classList.remove('no_scroll');
         }
     });

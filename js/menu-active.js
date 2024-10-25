@@ -27,7 +27,11 @@ for (let i = 0; i < desk_menuLinks.length; i++) {
     }
     desk_menuLinks[i].addEventListener('mouseover', function() {
         // code for the hover effect
-        document.querySelector('.search-pop-up').classList.remove('is-visible');
+        document.querySelector('.search-pop-up').classList.remove('has-popped');
+        document.body.classList.add('no_scroll');
+    });
+    // Add mouseout event listener to remove .no_scroll from body
+    desk_menuLinks[i].addEventListener('mouseout', function() {
         document.body.classList.remove('no_scroll');
     });
 }
