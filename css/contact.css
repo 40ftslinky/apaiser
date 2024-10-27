@@ -18,7 +18,7 @@ form {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 0.5rem;
+    gap: var(--gap);
     margin: 1rem 0 0 0;
 }
 
@@ -108,7 +108,7 @@ form button[type="submit"] {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: var(--gap);
     margin-bottom: 2rem;
 }
 
@@ -146,12 +146,13 @@ form textarea::placeholder {
     font-size: var(--font-size-form);
 }
 
+/* ------------------------------------------- */
 /* professionals */
 
 .professionals_form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--gap);
     min-width: 580px;
 }
 
@@ -164,4 +165,107 @@ form textarea::placeholder {
 
 .professionals_form input[type="submit"] {
     margin-top: 1rem;
+}
+
+
+/* ------------------------------------------- */
+/* LOCATIONS */
+
+#location-partners .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: 100%;
+    align-items: center;
+    font-size: var(--font-size-lg);
+}
+#location-partners .content-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: 100%;
+    align-items: center;
+    font-size: var(--font-size-lg);
+}
+
+
+.partner_group, .showroom_group, .offices_group {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-xs);
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 880px) {
+    .partner_group, .showroom_group, .offices_group {
+        flex-direction: column;
+    }   
+}
+
+.country {
+    width: 30%;
+    min-width: 280px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.partners, .showrooms, .offices {
+    display: flex;
+    flex-direction: column;
+    /* gap: var(--gap-xs); */
+    gap: 0;
+    min-width: 580px;
+}
+.offices {
+    gap: var(--gap-xs)
+}
+
+
+.partner, .office, .showroom {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    justify-content: space-between;
+}
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--gap-xs);
+}
+
+.company {
+    width: 50%;
+    min-width: none;
+}   
+
+.location {
+    font-weight: 300;
+}
+
+.phone-link {
+    font-weight: 400;
+    color: var(--primary);
+    text-decoration: none;
+    text-underline-offset: 3px;
+    transition: var(--transition-button);
+    text-decoration-color: var(--tertiary);
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-color: var(--primary);
+    }
+}
+.office-link {}
+
+.showroom-link, 
+.office-link {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: var(--white);
+    &:hover {
+        background-color: var(--white);
+        border: 1px solid var(--primary);
+        color: var(--primary);
+    }
 }
