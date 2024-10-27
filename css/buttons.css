@@ -306,7 +306,7 @@ a.search {
 }
 
 .button,
-input[type=submit]:not(input)[class*="-icon"],
+input[type=submit],
 .button-primary {
     background-color: var(--primary);
     border: 1px solid var(--primary);
