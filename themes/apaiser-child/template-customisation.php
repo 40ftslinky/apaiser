@@ -175,7 +175,7 @@ $palette_image2= get_field("palette_image_2", $post_id);
 $palette_alt2= get_field("palette_alt_2", $post_id);
 $hidden_text =get_field("palette_hidden_text", $post_id);
 ?>
-<section class="featured-hero full-width-bg " style="">
+<section class="featured-hero full-width-bg palettes" style="">
     <div class="row">
 
         
