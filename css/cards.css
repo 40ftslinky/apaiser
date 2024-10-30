@@ -156,11 +156,22 @@
     /* max-width: calc(var(--one-qtr-max-width) + (var(--gap) / 2)); */
     max-width: calc(var(--one-third-max-width));
     /* aspect-ratio: 1 / 1; */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
+
 
 .grid-archive .card:hover,
 .grid-archive a:hover .card  {
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+}
+
+
+.grid-archive a .card-image  {
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+    transition: var(--transition);
+}
+
+.grid-archive a:hover .card-image  {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -185,6 +196,7 @@
     transform-origin: center;
     transition: var(--transition);
 }
+
 
 @media screen and (max-width: 1440px){
     .grid-archive .card, 
@@ -592,7 +604,7 @@
 @media screen and (max-width: 1200px) {
     .grid-projects .column,
     .grid-projects .grid-col.column {
-        gap: var(--gap-xs);
+        /* gap: var(--gap-xs); */
     }
 }
 

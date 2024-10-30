@@ -234,7 +234,7 @@ section.sustainability_hero .hero-content {
     max-width: 100%;
     padding: 0 var(--gap-large);
     box-sizing: border-box;
-    content: url(../assets/heros/Sustainability_crafted.svg);
+    content: url(../assets/heros/sustainability_crafted.svg);
     width: 60vh;
 }
 

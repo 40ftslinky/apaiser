@@ -18,6 +18,11 @@
     --tertiary-rgb: 203,203,203;
     --tertiary-light: #f8f8f8;
     --tertiary-dark: #2c2c2c;
+
+    --palette-muted-grey: #cccccc;
+    --palette-pistachio: #a6ac8a;
+    --palette-latte: #cabea6;
+    --palette-blush: #e7c1bb;
     
     --black: #111111;
 
@@ -170,4 +175,20 @@
 
 .no_bg {
     background-color: transparent !important;
+}
+
+.light-grey_bg {
+    background-color: var(--gray-900);
+}
+.muted-grey_bg {
+    background-color: var(--palette-muted-grey);
+}
+.pistachio_bg {
+    background-color: var(--palette-pistachio);
+}
+.latte_bg {
+    background-color: var(--palette-latte);
+}
+.blush_bg {
+    background-color: var(--palette-blush);
 }

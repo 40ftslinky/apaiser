@@ -215,7 +215,6 @@
     background-position: center center;
     height: var(--hero-height);
     min-height: 50vw;
-    min-height: 50vw;
     /* padding: var(--gap); */
 }
 .featured-hero  .column .card,
@@ -225,6 +224,7 @@
     overflow: hidden;
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
+    gap: var(--gap);
 }
 @media screen and (max-width: 1080px) {
     .featured-hero .column .card,
@@ -246,6 +246,45 @@
         
     }
 }
+
+/* customisation general */
+
+.palettes {}
+
+.palettes .primary_bg {}
+
+@media screen and (max-width: 880px) {
+    .palettes .column,
+    .palettes .primary_bg {
+        max-height: unset;
+        min-height: unset;
+        height: unset;
+    }
+    .palettes .primary_bg {
+        padding: var(--gap);
+    }
+}
+
+.palettes .primary_bg .text_wrap {
+    padding: var(--gap);
+}
+.palettes .text_wrap p {
+    text-align: center;
+}
+
+.palettes .primary_bg .img_wrap img {
+    width: 100%;
+    max-width: 30vw;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 880px) {
+    .palettes .primary_bg .img_wrap img {
+        max-width: 80vw;
+    }
+}
+
+/*  */
 
 .full-width-bg .img_wrap,
 .full-width-bg .img_wrap img,
@@ -569,8 +608,31 @@ section.half_panel-img_padding img {
     overflow: hidden;
 }
 
+.fullwidth-feature h2 {
+    margin-bottom: var(--gap);
+}
 .fullwidth-feature .text_wrap {
-    gap:2rem;
+    gap:1rem;
+}
+
+
+/* banner section */
+
+.banner_section {}
+
+.banner-content {}
+
+.banner-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 50vw;
+}
+
+@media screen and (max-width: 1080px) {
+    .banner-content img {
+        max-width: 100%;
+    }
 }
 
 /*  */
