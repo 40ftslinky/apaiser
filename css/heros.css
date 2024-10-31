@@ -62,21 +62,31 @@ body:not(.home) .hero {
 }
 /* white horiz grad for text */
 
-.dark_grad:after {
+.dark_grad:after, 
+.dark_grad_right:after {
     position: absolute;
     z-index: 11;
     height: var(--hero-height);
     width: 70vw;
     content: '';
+}
+.dark_grad:after {
     left: 0;
     background-image: linear-gradient(91deg, rgba(0, 0, 0, 0.7), transparent);
 }
-.dark_grad .row {
+.dark_grad_right:after {
+    background-image: linear-gradient(-91deg, rgba(0, 0, 0, 0.7), transparent);
+    right: 0;
+}
+
+.dark_grad .row,
+.dark_grad_right .row {
     z-index: 1111;
 }
 
 @media screen and (max-width: 1080px) {
-    .text_only.dark_grad:after {
+    .text_only.dark_grad:after,
+    .text_only_right.dark_grad_right:after {
         height: 50vh;
         width: 100vw;
         bottom: 0;
@@ -300,4 +310,17 @@ section.customisation_hero .hero-content {
 .customisation .text_only .hero-content h1 { 
     
     max-width: 12ch;
+}
+
+/* ----------------------- */
+/* text_only_right */
+
+.text_only_right .col {
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 1080px) {
+    .text_only_right .col {
+        align-items: center;
+    }
 }
