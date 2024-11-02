@@ -26,3 +26,23 @@
     margin-bottom: var(--gap-sm);
     font-size: var(--font-size-sm);
 }
+
+
+/* legacy_post */
+
+.legacy_post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-sm);
+    margin-bottom: var(--gap-lg);
+}
+
+.legacy_post .content {
+    max-width: 800px;
+}
+
+.legacy_post .content img {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
