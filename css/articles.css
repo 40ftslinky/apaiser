@@ -30,6 +30,10 @@
 
 /* legacy_post */
 
+.hero.legacy_hero {
+    height: 70vh;
+}
+
 .legacy_post {
     display: flex;
     flex-wrap: wrap;
