@@ -571,6 +571,7 @@ div.caption_wrap {
 
 .table_section .row {
     max-width: fit-content;
+    align-items: flex-start;
 }
 .table_section .column {
     align-items: center;
