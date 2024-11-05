@@ -93,6 +93,20 @@ body:not(.home) .hero {
         background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
     }
 }
+@media screen and (max-width: 1080px) {
+    .dark_grad_right:after {
+        height: 50vh;
+        width: 100vw;
+        bottom: 0;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+    }
+    .white_grad_right:after {
+        height: 50vh;
+        width: 100vw;
+        bottom: 0;
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), transparent);
+    }
+}
 
 /* horiz grad for text */
 body:not(.home) .hero::before {
