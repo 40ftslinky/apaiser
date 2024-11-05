@@ -94,13 +94,13 @@ body:not(.home) .hero {
     }
 }
 @media screen and (max-width: 1080px) {
-    .dark_grad_right:after {
+    .dark_grad:after {
         height: 50vh;
         width: 100vw;
         bottom: 0;
         background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
     }
-    .white_grad_right:after {
+    .white_grad:after {
         height: 50vh;
         width: 100vw;
         bottom: 0;
