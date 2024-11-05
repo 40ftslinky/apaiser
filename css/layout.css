@@ -573,8 +573,24 @@ div.caption_wrap {
     max-width: fit-content;
     align-items: flex-start;
 }
+@media screen and (max-width: 880px) {
+    .table_section .row {
+        justify-content: center;
+    }
+    
+}
 .table_section .column {
     align-items: center;
+}
+@media screen and (max-width: 880px) {
+    .table_section .column {
+        max-width: 80vw;
+    }
+    
+}
+
+.table_section h2 {
+    text-align: center;
 }
 
 .table_section h4 {
@@ -616,4 +632,7 @@ div.caption_wrap {
 }
 .table_cell:nth-of-type(2n), .download_cell {
     text-align: right;
+}
+.download_cell:has(.read_more-link) {
+    padding-right: 1rem;
 }
