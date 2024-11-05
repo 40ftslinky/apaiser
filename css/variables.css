@@ -19,6 +19,7 @@
     --max-col-width: calc(100vw - (var(--gutter) * 2));
     --header-height: 88px;
     --logo-width: 170px;
+    --logo-height: 56px;
     --nav-width: 615px;
     --nav-seconday-width: 100px;
     --hero-height: calc(100vh - var(--header-height));
@@ -86,6 +87,7 @@
     :root {
         --header-height: 70px;
         --logo-width: 120px;
+        --logo-height: 40px;
         --nav-width: 100%;
     }
     
