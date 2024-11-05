@@ -634,9 +634,13 @@ nav .wp-block-navigation-submenu ul li a span,
     .fullscreen .dropdown.open {
         /* display: block; */
         opacity: 1;
-        height: 100%;
+        height: fit-content;
         visibility: inherit;
     }
+    .fullscreen .submenu.open {
+        margin-bottom: 2rem;
+    }
+
 
     .fullscreen .submenu {
         margin-bottom: 1rem;
