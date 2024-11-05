@@ -187,8 +187,7 @@ footer .logo img {
 
 footer,
 footer p,
-footer .address p,
-footer .address a,
+
 footer a {
     font-family: var(--footer-font-family);
     font-size: var(--font-size-footer);
@@ -197,6 +196,12 @@ footer a {
     /* text-transform: uppercase; */
     text-decoration: none;
 }
+footer .subscribe p,
+footer .address p,
+footer .address a {
+    font-size: var(--font-size-footer-p);
+}
+
 footer p {
     max-width: 35ch;
 }

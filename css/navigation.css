@@ -842,7 +842,8 @@ footer nav {
         gap: 0;
     }
 }
-footer .menu_group {
+footer .menu_group,
+footer .footer-menu_group {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -852,7 +853,8 @@ footer .menu_group {
 
 
 footer nav ul,
-footer .footer_nav .menu {
+footer .footer_nav .menu,
+footer .footer_nav .footer-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -864,9 +866,13 @@ footer .footer_nav .menu {
     margin-left: 0;
     justify-content: flex-start;
 }
+footer .footer_nav .footer-menu {
+    gap: 0.5rem;
+}
 @media screen and (max-width: 1080px){
     footer nav ul,
-    footer .footer_nav .menu {
+    footer .footer_nav .menu,
+    footer .footer_nav .footer-menu {
         flex-direction: column;
         
     }
@@ -875,7 +881,8 @@ footer .footer_nav .menu {
 
 footer nav li a,
 footer nav ul li a span,
-footer .menu-link {
+footer .menu-link,
+footer .footer-menu-link {
     font-family: var(--footer-font-family);
     font-size: var(--font-size-footer);
     font-weight: var(--footer-font-weight);
@@ -888,6 +895,7 @@ footer .menu-link {
     text-transform: none;
     position: relative;
     padding: 0.175rem 0.5rem;
+    width: max-content;
 }
 
 
@@ -900,6 +908,15 @@ footer .menu-link {
     /* to do: */
     /* -> add .active with JS */
     footer li.menu-item:has(a).active {
+        display: block;
+    }
+
+    footer li.footer-menu-item:has(a) {
+        display: none;
+    }
+    /* to do: */
+    /* -> add .active with JS */
+    footer li.footer-menu-item:has(a).active {
         display: block;
     }
 }

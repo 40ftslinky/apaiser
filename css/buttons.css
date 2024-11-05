@@ -34,6 +34,15 @@ input[type=submit],
     max-width: max-content;
     text-transform: uppercase;
     letter-spacing: var(--letterspacing-button);
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
 
@@ -289,6 +298,12 @@ a.search {
         background-color: var(--primary);
         border: 1px solid var(--primary);
         color: var(--white);
+        cursor: pointer;
+    }
+}
+.carousel .button-outline {
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -335,7 +350,7 @@ button.view_result-link {
     text-decoration: none;
     text-transform: unset;
     letter-spacing: unset;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin-top: 0.5rem;
     text-underline-offset: 3px;
     position: relative;
@@ -346,7 +361,7 @@ button.view_result-link {
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-color: var(--tertiary);
-        
+        cursor: pointer;
     }
 }
 a.view_result-link,
@@ -368,7 +383,7 @@ button.read_more-link {
     text-decoration: none;
     text-transform: unset;
     letter-spacing: unset;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin-top: 1rem;
     text-underline-offset: 3px;
     position: relative;
@@ -383,6 +398,7 @@ button.read_more-link {
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-color: var(--tertiary);
+        cursor: pointer;
         &:hover::after {
             transform: translateX(0.25rem);
             /* content: url(../assets/icons/arrow.svg); */
@@ -405,7 +421,7 @@ button.download-link {
     text-decoration: none;
     text-transform: unset;
     letter-spacing: unset;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin-top: 1rem;
     text-underline-offset: 3px;
     &::after {
@@ -418,6 +434,7 @@ button.download-link {
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-color: var(--tertiary);
+        cursor: pointer;
         &::after {
             transform: translateX(0.25rem);
             /* content: url(../assets/icons/download-wht.svg); */
@@ -438,7 +455,7 @@ button.download-link-left {
     text-decoration: none;
     text-transform: unset;
     letter-spacing: unset;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin-top: 1rem;
     margin-left: 1.5rem;
     text-underline-offset: 3px;
@@ -457,6 +474,7 @@ button.download-link-left {
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-color: var(--tertiary);
+        cursor: pointer;
         &::before {
             transform: translateX(-0.25rem);
             /* content: url(../assets/icons/document-wht.svg); */
@@ -480,7 +498,7 @@ button.download-link-left {
     text-decoration: none;
     text-transform: unset;
     letter-spacing: unset;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin-top: 1rem;
     text-underline-offset: 3px;
     transition: var(--transition);
@@ -491,6 +509,7 @@ button.download-link-left {
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-color: var(--tertiary);
+    cursor: pointer;
 }
 
 .pagination a.page::after { }
