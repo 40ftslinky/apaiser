@@ -105,7 +105,7 @@
 }
 
 .top_overflow.img_wrap {
-    margin-top: -15vw;
+    margin-top: -25vw;
 }
 
 @media screen and (max-width: 880px) {
@@ -182,7 +182,7 @@
     
     max-width: calc(50vw - (var(--gutter)*2));
     min-height: calc(var(--hero-height)) - (var(--gutter)*2);
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1; */
     overflow: hidden;
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
@@ -259,14 +259,16 @@
 .customised-hero .column {
     background-size: cover;
     background-position: center center;
-    height: var(--hero-height);
-    min-height: 50vw;
+    /* height: var(--hero-height);
+    min-height: 50vw; */
+    max-height: var(--hero-height);
+    height: 50vw;
     /* padding: var(--gap); */
 }
 .featured-hero  .column .card,
 .customised-hero .column .card {     
     max-width: calc(50vw - (var(--gutter)*2));
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1; */
     overflow: hidden;
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
@@ -604,6 +606,7 @@ section.half_panel-img_padding .img_wrap {
 }
 section.half_panel-img_padding .img_wrap {
     max-width: calc(50vw - (var(--gutter)*2));
+    max-height: calc(var(--hero-height) - (var(--gutter)*2));
     padding: var(--gutter);
 }
 @media screen and (max-width: 1080px) {
@@ -634,11 +637,43 @@ section.half_panel-img_padding img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    /* justify-content: space-between; */
     box-sizing: border-box;
-    
 }
+
+.half_panel .text_wrap:nth-of-type(2),
+.half_panel-img_padding .text_wrap:nth-of-type(2) {
+    justify-content: flex-end;
+    padding-top: 0;
+}
+.half_panel .column:has(.text_wrap:nth-of-type(2)),
+.half_panel-img_padding .column:has(.text_wrap:nth-of-type(2)) {
+    gap:0;
+}
+.half_panel .column:has(.text_wrap:nth-of-type(2)) .text_wrap:nth-of-type(1),
+.half_panel-img_padding .column:has(.text_wrap:nth-of-type(2)) .text_wrap:nth-of-type(1) {
+    padding-bottom: 0;
+}
+/* 
+.half_panel .text_wrap,
+.half_panel-img_padding .text_wrap {
+    padding-top: 0;
+    justify-content: flex-end;
+
+} */
+
+/* .half_panel .text_wrap:first-of-type,
+.half_panel-img_padding :not(.column:last-of-type) .text_wrap:first-of-type {
+    padding-top: var(--gutter);
+    padding-bottom: 0;
+    justify-content: flex-start;
+
+} */
+.half_panel .text_wrap p:last-of-type,
+.half_panel-img_padding .text_wrap p:last-of-type {
+    margin-bottom: 0;
+} 
 
 .half_panel .text_wrap > * {
     width: 100%;

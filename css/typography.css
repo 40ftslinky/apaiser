@@ -49,7 +49,8 @@
     /* 3rem; */
     --font-size-huge: 100px; 
     --font-size-h1: 100px;
-    --font-size-h1: clamp(3.25rem, 0.712rem + 4.615vw, 6.25rem);
+    /* --font-size-h1: clamp(3.25rem, 0.712rem + 4.615vw, 6.25rem); */
+    --font-size-h1: clamp(3rem, 0.0268rem + 4.4048vw, 5.3125rem);
     --font-size-huge-sub: 50px;
     --font-size-blockquote: 60px;
     --font-size-blockquote: clamp(2rem, 0.893rem + 2.381vw, 3.5rem);

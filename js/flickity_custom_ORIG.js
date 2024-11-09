@@ -7,9 +7,6 @@ var flkty = new Flickity( rangeCarousel, {
     contain: true,
     prevNextButtons: true,
     pageDots: true,
-    arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
-    
-    
     // groupCells: 3,
 });
 

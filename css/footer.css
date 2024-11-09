@@ -164,7 +164,8 @@ footer .site-logo-link {
     left: 0;
 }
 footer .logo {
-    width: 600px;
+    width: 520px;
+    max-width: 27.5vw;
     height: 145px;
     /* transform: translate(-50%, -50%); */
     transition: var(--transition);

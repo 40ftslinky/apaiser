@@ -607,3 +607,10 @@ div.cta-gold a:hover {
     background-position: 99% 50%;
     color: #FFFFFF;
 }
+
+/*  */
+
+
+.text_wrap .button-secondary {
+    margin-top: 1rem;
+}

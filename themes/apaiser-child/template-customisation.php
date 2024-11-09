@@ -52,7 +52,7 @@
 				$section2_blockquote= get_field("section2_blockquote", $post_id);
 				//blockquote
 				?>
-                <h2><?php echo $section2_title ?></p>
+                <h2><?php echo $section2_title ?></h2>
                 <cite><?php echo $section2_cite ?></cite>
                 <blockquote><?php echo $section2_blockquote ?></blockquote>
             </div>

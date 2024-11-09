@@ -4,6 +4,10 @@
 /* ----------------------- */
 /* CAROUSEL */
 
+.carousel_sect {
+    gap:var(--gap-sm);
+}
+
 .carousel {
     width: 100%;
 }
@@ -81,10 +85,12 @@
 
 
 .flickity-prev-next-button {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--primary);
     border: none;
     border-radius: 0;
+    max-width: unset;
+    min-width: unset;
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.5rem;
@@ -105,12 +111,25 @@
     left: -50px;
 }
 
+@media screen and (max-width: 880px) {
+    .flickity-prev-next-button {
+        width: 2rem;
+        height: 2rem;
+    }
+    .flickity-prev-next-button.next {
+        right: -2rem;
+    }
+    .flickity-prev-next-button.previous {
+        left: -2rem;
+    }
+}
+
 
 /* ----------------------- */
 /* DOTS */
 
 .flickity-page-dots {
-    bottom: -32px;
+    bottom: -8px;
 }
 
 .flickity-page-dots .dot {
