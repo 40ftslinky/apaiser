@@ -609,9 +609,6 @@
     }
 }
 
-.grid-projects img {
-    width: var(--one-third-max-width);
-}
 
 
 @media screen and (max-width: 1200px) {
@@ -641,6 +638,10 @@
     transition: var(--transition);
     aspect-ratio: 3 / 2;
     /* A4 */
+}
+
+.grid-projects.archive .card img {
+    width: var(--one-third-max-width);
 }
 
 .grid-projects .card:hover img,
