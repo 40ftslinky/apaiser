@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var search_popUp = document.querySelector('.search-pop-up');
     var close = document.querySelector('.search-close');
     // var overlay = document.querySelector('.search-overlay');
-    var searchButton = document.querySelector('a.search');
+    var searchButton = document.querySelector('.search');
     var mobileSearchButton = document.querySelector('.mobile-secondary-menu .search');
     var body = document.body;
 

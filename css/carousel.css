@@ -111,6 +111,16 @@
     left: -50px;
 }
 
+.grid-projects .flickity-prev-next-button {
+    background-color: rgba(var(--white-rgb),0.0);
+}
+.grid-projects .flickity-prev-next-button.next {
+    right: -32px;
+}
+.grid-projects .flickity-prev-next-button.previous {
+    left: -32px;
+}
+
 @media screen and (max-width: 880px) {
     .flickity-prev-next-button {
         width: 2rem;
@@ -134,6 +144,10 @@
 
 .flickity-page-dots .dot {
     background-color: var(--primary);
+}
+
+.grid-projects .flickity-page-dots {
+    bottom: -24px;
 }
 
 /* ----------------------- */

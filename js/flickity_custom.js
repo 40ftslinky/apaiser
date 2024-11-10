@@ -7,14 +7,18 @@ var flkty = new Flickity( rangeCarousel, {
     contain: true,
     prevNextButtons: true,
     pageDots: true,
+    // groupCells: 3,
     arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
     
-    
-    // groupCells: 3,
+
 });
 
+
+var projectPopUp = document.getElementsByClassName("project-pop-up");
+
+/*
 var projectCarousel = document.querySelector('.project-carousel');
-var flkty = new Flickity( projectCarousel, {
+var proj_flkty = new Flickity( projectCarousel, {
     // options
     cellAlign: 'left',
     contain: true,
@@ -23,6 +27,42 @@ var flkty = new Flickity( projectCarousel, {
     // margin: 1,
     // groupCells: 3,
 });
+*/
+
+	// loop thru the pop-ups
+	for (let i = 0; i < projectPopUp.length; i++) {
+		/*
+		projectPopUp[i].addEventListener('click', function(event) {
+			if (event.target === projectPopUp || event.target === closes) {
+				projectPopUp[i].classList.remove('is-visible');
+				body.classList.remove('no_scroll');
+			}
+		});
+		*/
+			const projectOuter = projectPopUp[i];
+			
+
+			const projectCarousel = projectOuter.querySelector('.project-carousel');
+			
+			var proj_flkty = new Flickity( projectCarousel, {
+				// options
+				cellAlign: 'left',
+				contain: true,
+				prevNextButtons: true,
+				pageDots: true,
+                arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
+
+				// margin: 1,
+				// groupCells: 3,
+			});
+		
+			proj_flkty.resize();
+		
+	}
+
+
+
+
 
 // 
 
@@ -35,7 +75,7 @@ var utils = window.fizzyUIUtils;
 document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         // trigger resize method after showing
-        var carousel = document.querySelector('.projects .carousel');
+        var carousel = document.querySelector('.project-carousel');
         if (carousel && typeof Flickity !== 'undefined') {
             var flkty = Flickity.data(carousel);
             if (flkty) {

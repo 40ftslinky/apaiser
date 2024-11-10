@@ -35,7 +35,8 @@
 .project-pop-up_wrapper {
     background-color: white;
     /* max-width: calc(var(--max-col-width) ); */
-    max-width: calc(var(--max-width) * 0.9);
+    width: calc(var(--max-width) * 0.9);
+    max-width: 1080px;
     margin: auto;
     position: relative;
 }
@@ -180,7 +181,11 @@
     overflow-x: hidden; */
     min-width: 300px;
 }
-
+@media screen and (max-width: 1080px){
+    .project-content .project-details {
+        min-width: none;
+    }
+}
 
 .project-details::after {
     /* content: '';
@@ -201,8 +206,8 @@
 
 @media screen and (max-width: 1080px){
     .project-content .project-details {
-        padding: var(--gap-large);
-        max-height: 50vh;
+        /* padding: var(--gap-large); */
+        /* max-height: 50vh; */
         overflow-y: auto;
     }
 }
@@ -223,9 +228,9 @@
 
 .project-description {
     max-height: 25vh;
-    column-width: 30vw;
+    /* column-width: 30vw;
     column-count: 2;
-    column-gap: var(--gap);
+    column-gap: var(--gap); */
 }
 .project-description p {
     max-width: 75ch;
