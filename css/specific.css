@@ -235,6 +235,10 @@
     object-fit: cover;
 }
 
+.home .half_panel-hero img {
+    object-position: bottom;
+}
+
 
 /*  */
 
