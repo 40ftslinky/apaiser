@@ -57,9 +57,10 @@
       font-family: "Austin";
       font-style: normal;
       font-weight: normal;
-      src: 
-            url("../assets/localfonts/austin/Austin-Light.woff") format("woff"),
-            url("../assets/localfonts/austin/Austin-Light.otf") format("opentype");
+      src: url("../assets/localfonts/austin/Austin-Light.woff") format("woff");
+      src: url("../assets/localfonts/Austin-Light.woff2") format("woff2");
+    src: url("../assets/localfonts/Austin-Light.otf") format("opentype");
+            
     } 
     @font-face {
       font-family: "Austin";
