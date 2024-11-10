@@ -609,6 +609,10 @@
     }
 }
 
+.grid-projects img {
+    width: var(--one-third-max-width);
+}
+
 
 @media screen and (max-width: 1200px) {
     .grid-projects .grid-col.column {
