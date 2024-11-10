@@ -63,7 +63,15 @@
     padding-left: var(--gap);
     /* justify-content: flex-start; */
     justify-content: center;
-
+    /*  */
+    max-width: 40vw;
+    /* margin-right: 10vw; */
+    align-items: flex-start;
+}
+@media screen {
+    .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) {
+        max-width: unset;
+    }
 }
 .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) .card {
 
