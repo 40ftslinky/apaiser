@@ -61,7 +61,9 @@
 .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) {
     align-items: center;
     padding-left: var(--gap);
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: center;
+
 }
 .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) .card {
 

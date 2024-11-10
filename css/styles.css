@@ -28,3 +28,10 @@
 @import url('project-popup.css');
 @import url('search.css');
 @import url('search-results.css');
+
+
+/* admin */
+
+#edittag {
+    max-width: 1080px;
+}
