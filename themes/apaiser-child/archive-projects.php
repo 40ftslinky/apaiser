@@ -130,7 +130,7 @@
 				?>
                 <div class="col column">
                     <div class="img_wrap bottom_overflow">
-                        <img src="<?php echo $image1; ?>" alt="image">
+                        <img src="<?php echo $image1; ?>"  alt="image">
                     </div>
                 </div>
 				<?php
@@ -252,8 +252,7 @@
 					$vertical_alignment = get_field('thumbnail_vertical_alignment', $project_id);
 					
 					
-					// Regions
-					$regions = get_the_terms($project_id, 'installation_region');
+
 					
 
 					
@@ -282,17 +281,15 @@
 
 										
 										$Z=0;
-										
+										// Regions
+										$regions = get_the_terms($project_id, 'installation_region');
 										$RegionStr = "";
-										
 										foreach ($regions as $region) {
-
 											if(!empty($RegionStr)){
 												$RegionStr = $RegionStr . ", ";
 											}
 											$regionName = $region->name;
 											$RegionStr = $RegionStr . $regionName;
-
 											$Z++;
 										}
 															
@@ -429,7 +426,7 @@
 							
 							$n = $i;
 							
-							$C = ($posts_per_page * $i);
+							$C = ( $posts_per_page * ( $i - 1 ) );
 							
 							$n = str_pad($n, 2, '0',STR_PAD_LEFT);	// add leading zero to numbers under 10 
 							
@@ -445,7 +442,15 @@
             </div>
 
         </section>
+		<?php
 		
+		
+		if(empty($category)){
+			
+				$category = 'commercial';
+		}
+		
+		?>
 		
 		<script>
 				document.addEventListener('DOMContentLoaded', function() {
@@ -480,7 +485,7 @@
 								type: 'POST',
 								url: '<?php echo admin_url('admin-ajax.php');?>',
 								dataType: "json", // add data type
-								data: { action : 'get_ajax_posts', n: $n },
+								data: { action : 'get_ajax_posts', n: $n, category: '<?php echo $category; ?>' },
 								success: function( response ) {
 									console.log(response);
 									

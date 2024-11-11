@@ -89,6 +89,7 @@
     flex-direction: column;
     padding: var(--gap);
     position: relative;
+    gap: var(--gap-xs);
     /* font-weight: var(--base-font-weight); */
 }
 .card-content .card-text {
@@ -640,8 +641,9 @@
     /* A4 */
 }
 
-.grid-projects.archive .card img {
-    width: var(--one-third-max-width);
+.grid-projects .card,
+.grid-projects .card img {
+    min-width: var(--one-third-max-width);
 }
 
 .grid-projects .card:hover img,
