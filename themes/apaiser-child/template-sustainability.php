@@ -101,7 +101,7 @@
 
 <!-- section -->
 
-<section class="half_panel-img_padding">
+<section id="our-practices" class="half_panel-img_padding">
     <div class="row ">
 		<?php
 		$section4_title= get_field("section4_title", $post_id);
@@ -174,7 +174,7 @@ $section7_title= get_field("section7_title", $post_id);
 $section7_text= get_field("section7_text", $post_id);
 
 ?>
-<section class="fullwidth-feature dark_grad" style="background:url('<?php echo $section7_image; ?>')">
+<section id="Certifications-Declaration" class="fullwidth-feature dark_grad" style="background:url('<?php echo $section7_image; ?>')">
     <div class="row">
 		
         <div class="col column " >

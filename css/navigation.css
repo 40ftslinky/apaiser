@@ -451,6 +451,38 @@ nav .wp-block-navigation-submenu ul li a span,
 }
 
 
+/* MORE LINK */
+
+.submenu-link.more-link {
+    font-weight: var(--link-font-weight);
+    /*  */
+    &:hover {
+        
+    }
+}
+.more-link::after {
+    content: " +";
+    /* font-size: 1.25rem;
+    line-height: 1; */
+    font-weight: var(--link-font-weight);
+    color: var(--primary);
+    transition: var(--transition);
+    transform: rotateZ(0deg);
+    position: absolute;
+    margin-left: 0.25rem;
+
+}
+.more-link {
+    &:hover {
+        &::after {
+            margin-left: 0.35rem;
+            /* content: " ▶"; */
+            /* transform: rotateZ(45deg); */
+        }
+    }
+}
+
+
 @media screen and (max-width: 1080px) {
     .desktop-menu {
         display: none;

@@ -52,7 +52,7 @@
 	$welcome_blockquote= get_field("welcome_blockquote", $post_id);
 	$welcome_paragraph= get_field("welcome_paragraph", $post_id);
 ?>
-<section class="half_panel ">
+<section class="half_panel grey_900_bg">
     <div class="row align-end">
         <div class="col column">
             <div class="text_wrap">
@@ -77,7 +77,7 @@
 	$section3_full_width_image= get_field("section3_full_width_image", $post_id);
 	$section3_full_width_image_alt_tag= get_field("section3_full_width_image_alt_tag", $post_id);
 ?>
-<section class="half_panel-img_padding">
+<section id="our-story" class="half_panel-img_padding">
     <div class="row ">
 
         <div class="col column">
@@ -104,11 +104,15 @@
 
 <!-- section -->
 
-<section class="full-width-img"><div class="row">
-    <div class="column">
-        <div class="img_wrap"><img src="<?php echo $section3_full_width_image; ?>" alt="<?php echo $section3_full_width_image_alt_tag; ?>">        </img></div>
+
+<section class="full-width-img">
+    <div class="row">
+        <div class="column">
+            <div class="img_wrap"><img src="<?php echo $section3_full_width_image; ?>" alt="<?php echo $section3_full_width_image_alt_tag; ?>">        </img></div>
+        </div>
     </div>
-</div></section>
+</section> 
+
 
 <!-- /section -->
 
@@ -119,7 +123,7 @@
 	$section4_image= get_field("section4_image", $post_id);
 	$section4_image_alt= get_field("section4_image_alt", $post_id);
 ?>
-<section class="half_panel-img_padding">
+<section id="our-atelier" class="half_panel-img_padding">
     <div class="row ">
 
         <div class="col column">            
@@ -132,7 +136,7 @@
         </div>
 
         <div class="col column">
-            <div class="img_wrap ">
+            <div class="img_wrap padding-left-nil">
                 <img src="<?php echo $section4_image; ?>" alt="<?php echo $section4_image_alt; ?>">
             </div>
         </div>
@@ -155,6 +159,7 @@
 	$section5_hidden_text= get_field("section5_hidden_text", $post_id);
 	
 ?>
+<!-- 
 <section class="banner_section grey_900_bg">
     <div class="row ">
 
@@ -169,7 +174,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- /section -->
 
@@ -180,12 +185,12 @@
 	$section5_blockquote= get_field("section5_blockquote", $post_id);
 	$section5_paragraph= get_field("section5_paragraph", $post_id);
 ?>
-<section class="half_panel grey_900_bg">
+<section class="half_panel-img_padding grey_900_bg">
     <div class="row">
 
         <div class="col column " >
             <!-- <div class="column-content" style="background-image: url(assets/about/designed_in_australia_lrg.jpg);"></div> -->
-            <div class="img_wrap ">
+            <div class="img_wrap padding-right-nil">
                 <img class="object-position-right" src="<?php echo $section5_large_image; ?>" alt="<?php echo $section5_large_image_alt; ?>">
             </div>
         </div>  
@@ -209,7 +214,7 @@ $section6_image= get_field("section6_image", $post_id);
 $section6_title= get_field("section6_title", $post_id);
 $section6_text= get_field("section6_text", $post_id);
 ?>
-<section class="fullwidth-feature dark_grad" style="background:url('<?php echo $section6_image; ?>')">
+<section id="apaisermarble" class="fullwidth-feature dark_grad" style="background:url('<?php echo $section6_image; ?>')">
     <div class="row">
 
         <div class="col column " >

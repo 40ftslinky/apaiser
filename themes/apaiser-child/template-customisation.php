@@ -40,7 +40,7 @@
 
 <!-- section -->
 
-<section class="half_panel-img_padding secondary_bg">
+<section class="half_panel-img_padding journey secondary_bg">
     <div class="row ">
 
         <div class="col column">
@@ -53,7 +53,7 @@
 				//blockquote
 				?>
                 <h2><?php echo $section2_title ?></h2>
-                <cite><?php echo $section2_cite ?></cite>
+                <h4><?php echo $section2_cite ?></h4>
                 <blockquote><?php echo $section2_blockquote ?></blockquote>
             </div>
         </div>
@@ -82,7 +82,7 @@
 
 <!-- section -->
 
-<section class="half_panel-img_padding">
+<section class="half_panel-img_padding expression">
     <div class="row ">
 		<?php
 		$section3_image= get_field("section3_image", $post_id);
@@ -115,7 +115,7 @@
 	$section3_full_width_image= get_field("section3_full_width_image", $post_id);
 	$section3_alt_tag_2= get_field("section3_alt_tag_2", $post_id);
 ?>
-<section class="full-width-img"><div class="row">
+<section class="full-width-img masterpiece"><div class="row">
     <div class="column">
         <div class="img_wrap"><img src="<?php echo $section3_full_width_image; ?>" alt="<?php echo $section3_alt_tag_2; ?>">        </img></div>
     </div>

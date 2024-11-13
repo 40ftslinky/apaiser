@@ -64,6 +64,10 @@
     margin-top: var(--gap);
 }
 
+.article-results-tab-wrap a {
+    text-decoration: none;
+}
+
 .article-results-tab-item {
     font-weight: var(--base-font-weight) !important;
     font-size: var(--font-size-sm-link);
@@ -93,6 +97,9 @@
         text-decoration: underline;
         text-underline-offset: 5px;
         text-decoration-color: var(--tertiary);
+    }
+    &.active:hover {        
+        text-decoration-color: var(--primary);
     }
 }
 a.article-results-tab-item,

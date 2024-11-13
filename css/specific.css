@@ -314,7 +314,37 @@
 
 /* customisation general */
 
+
+.journey .column:last-of-type {
+    gap: var(--gap-large);
+}
+
+.journey .column .img_wrap {
+    padding-bottom: 0;
+    max-height: unset;
+}
+
+.journey .column .text_wrap .button-secondary {
+    margin-top: 2rem;
+}
+
+.expression.half_panel-img_padding .column {
+    /* align-items: flex-start; */
+    justify-content: flex-start;
+}
+
+.expression.half_panel-img_padding .column:last-of-type {
+    gap: 0;
+    /* padding-top: 0; */
+}
+
 .palettes {}
+
+.palettes :not(.primary_bg).column .img_wrap img {
+    max-height: var(--hero-height);
+    object-fit: contain;
+    background: #dad7d3;
+}
 
 .palettes .primary_bg {}
 
@@ -347,6 +377,10 @@
     .palettes .primary_bg .img_wrap img {
         max-width: 80vw;
     }
+}
+
+.palettes p {
+    max-width: 45ch;
 }
 
 /*  */
@@ -492,7 +526,19 @@ section.full-width-img img {
     height: 100%;
     object-fit: cover;
 }
+section.full-width-img.masterpiece {
+    max-height: unset;
+}
+section.full-width-img.masterpiece .img_wrap {
+    /* max-height: var(--hero-height); */
+    max-height: unset;
 
+    object-fit: contain;
+    background: #edeeea;
+}
+.masterpiece .img_wrap img {
+    /* object-fit: contain; */
+}
 
 /* ----------------------- */
 /* full-width-img-padding section */
@@ -578,7 +624,9 @@ section.half-width-img img {
     width: 50vw;
     /* height: 100%;
     flex: 1;  */
-    /* or flex-grow: 1  */;
+    /* or  */
+    flex-grow: 1; 
+    /* min-height: (var(--hero-height) - (var(--gutter)*2)) */
 }
 @media screen and (max-width: 1080px) {
     .half_panel .column,
@@ -630,6 +678,8 @@ section.half_panel-img_padding .img_wrap {
     section.half_panel-img_padding .img_wrap {
         width: 100%;
         max-width: var(--max-col-width);
+        /* max-height: unset; */
+        overflow-y: hidden;
     }
 }
 
@@ -665,7 +715,7 @@ section.half_panel-img_padding img {
 }
 .half_panel .column:has(.text_wrap:nth-of-type(2)),
 .half_panel-img_padding .column:has(.text_wrap:nth-of-type(2)) {
-    gap:0;
+    /* gap:0; */
 }
 .half_panel .column:has(.text_wrap:nth-of-type(2)) .text_wrap:nth-of-type(1),
 .half_panel-img_padding .column:has(.text_wrap:nth-of-type(2)) .text_wrap:nth-of-type(1) {

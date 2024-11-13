@@ -10,6 +10,16 @@ document.getElementById('menu-button').onclick = function() {
 	document.getElementsByClassName('submenu')[0].classList.remove('open');
     // document.getElementsByClassName('wp-block-navigation-submenu')[0].classList.remove('open');
     document.body.classList.toggle('no_scroll'); // Add 'no_scroll' class to body
+	
+
+	// Select all 'ul' elements and remove the 'open' class from each
+	const ulElements = document.querySelectorAll('ul');
+	ulElements.forEach(function(ul) {
+		ul.classList.remove('open');
+	});
+
+	
+
 }
 
 // Get all elements with class 'menu-link'
@@ -66,10 +76,11 @@ for (let j = 0; j < mob_hasDropdownElements.length; j++) {
             
             dropdownElement[l].classList.toggle('open');
         }
-        // Toggle the 'open' class on the submenu element
-        if (dropdownElement) {
-            dropdownElement.classList.toggle('open');
-        }
+
+		// Toggle the 'open' class on the submenu element
+		if (dropdownElement && dropdownElement.classList) {
+			dropdownElement.classList.toggle('open');
+		}       
     }
 }
 
@@ -100,4 +111,48 @@ for (let m = 0; m < mob_hasSubmenuElements.length; m++) {
             submenuElement.classList.toggle('open');
         }
     }
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all elements with the class 'menu-link'
+    const menuLinks = document.querySelectorAll('.menu-link');
+    
+    // Add a click event listener to each 'menu-link' element
+    menuLinks.forEach(function(menuLink) {
+        menuLink.addEventListener('click', function() {
+            // Select all 'ul' elements and remove the 'open' class from each
+            const ulElements = document.querySelectorAll('ul');
+            ulElements.forEach(function(ul) {
+                ul.classList.remove('open');
+            });
+        });
+    });		
+});
+
+
+// smoothly scroll to the target element
+
+// get all elements with link to id
+const links = document.querySelectorAll('.submenu-link[href^="#"]');
+
+// loop through the links
+for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(event) {
+
+        // prevent default action
+        event.preventDefault();
+
+        // get the target element
+        const target = document.querySelector(this.getAttribute('href'));
+
+        // scroll to the target element minus the height of the header
+        window.scrollTo({
+            top: target.offsetTop - document.querySelector('header').offsetHeight,
+            behavior: 'smooth'
+        });
+    });
 }

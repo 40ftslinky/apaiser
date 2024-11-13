@@ -293,7 +293,7 @@ section.sustainability_feature  {
     z-index: 2;
     width: 100%;
     max-width: 100%;
-    padding: 0 var(--gap-large);
+    padding: 0 var(--gap-large) var(--gap-xlarge);
     box-sizing: border-box;
     content: url(../assets/sustainability/designed_in_australia.svg);
     width: 60vh;
