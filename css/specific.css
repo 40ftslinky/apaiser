@@ -342,7 +342,7 @@
 
 .palettes :not(.primary_bg).column .img_wrap img {
     max-height: var(--hero-height);
-    object-fit: contain;
+    /* object-fit: contain; */
     background: #dad7d3;
 }
 
@@ -532,7 +532,6 @@ section.full-width-img.masterpiece {
 section.full-width-img.masterpiece .img_wrap {
     /* max-height: var(--hero-height); */
     max-height: unset;
-
     object-fit: contain;
     background: #edeeea;
 }
