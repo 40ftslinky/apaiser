@@ -223,6 +223,20 @@ a {
     /* text-underline-offset: 3px;
     text-decoration-thickness: 1px; */
 }
+.content a {
+    color: var(--primary);
+    font-weight: var(--link-font-weight);
+    text-decoration: none;
+    text-underline-offset: none;
+    text-decoration-color: var(--tertiary);
+    transition: var(--transition);
+}
+.content a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--primary);
+}
 
 /* headings */
 

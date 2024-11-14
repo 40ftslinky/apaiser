@@ -161,6 +161,7 @@
 }
 
 
+
 .grid-archive .card:hover,
 .grid-archive a:hover .card  {
     /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
@@ -513,6 +514,11 @@
     max-width: calc(var(--one-third-max-width-smgap));
     overflow: hidden;
     align-items: flex-start;
+}
+
+
+.grid-collection a.card_link[href*="uncategorized"] {
+    display: none;
 }
 
 .grid-collection a:hover .card-img  {
