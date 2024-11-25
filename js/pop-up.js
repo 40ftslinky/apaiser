@@ -1,7 +1,7 @@
 // pop-up.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    var popUp = document.querySelector('.pop-up');
+    var popUp = document.querySelector('.subscribe_popup');
     var close = document.querySelector('.close');
     var overlay = document.querySelector('.overlay');
     var popUpButton = document.querySelector('.pop-up-link');

@@ -103,9 +103,10 @@
 }
 
 input.search-icon,
-.search-icon {
+.search-icon,
+form.searchform input[type="submit"] {
     padding: 0.5rem 1rem;
-    width: 2rem;
+    width: 4rem;
     height: 2.5rem;
     border-radius: 8px;
     position: relative;
@@ -117,6 +118,8 @@ input.search-icon,
     background-size: 1rem 1rem;
     background-repeat: no-repeat;
     background-position: center;
+    color: transparent; 
+    font-size: 2px;
     &:after {
         /* content: "url(../assets/icons/search-blk.svg)"; */
         width: 16px;
@@ -148,7 +151,8 @@ input.search-icon,
 
 /* refine-search */
 
-input[class*="-icon"] {
+input[class*="-icon"],
+form.searchform input[type="submit"] {
     display:block;
 }
 
@@ -180,13 +184,19 @@ input[class*="-icon"] {
 
 /* --------------------------------- */
 /* SEARCH RESULTS */
+
+
 .grid-results {
     max-width: calc(var(--results-col-mw) + var(--results-col));
     min-height: 825px;
+    padding-left: var(--results-col);
+    align-items: flex-start;
 }
 @media screen and (max-width: 880px) {
     .grid-results {
         min-height:unset;
+        margin-left: 0;
+        align-items: flex-start;
     }
     
 }
@@ -239,6 +249,7 @@ input[class*="-icon"] {
     /* max-width: calc(((100vw - var(--results-col)) - (var(--gap) * (3/2))) / 3); */
     max-width: var(--results-cards-mw);
     overflow: hidden;
+    align-items: flex-start;
 }
 
 .grid-col-horiz .card {
@@ -388,4 +399,10 @@ input[class*="-icon"] {
 a.search-results-tab-item,
 button.search-results-tab-item {
     margin-top: 1rem;
+}
+
+form .submit-wrapper input[type="submit"],
+form.searchform input[type="submit"] {
+    margin-top: 0;
+    margin-bottom: 0;
 }

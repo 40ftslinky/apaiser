@@ -511,6 +511,13 @@ button.download-link-left {
     text-decoration-color: var(--tertiary);
     cursor: pointer;
 }
+.pagination a.page.previous:hover,
+.pagination a.page.more:hover {
+    text-decoration: none;
+    background-color: rgba(var(--primary-rgb),0.1);
+}
+
+
 
 .pagination a.page::after { }
 .pagination a.page:hover::after { }
@@ -522,9 +529,12 @@ button.download-link-left {
     text-decoration-color: var(--tertiary);
 }
 
-.pagination a.page.more, .pagination a.page.more:hover {
+.pagination a.page.previous, 
+.pagination a.page.previous:hover,
+.pagination a.page.more, 
+.pagination a.page.more:hover {
     text-decoration: none;
-    text-transform: unset;
+    /* text-transform: unset; */
     letter-spacing: unset;
 }
 

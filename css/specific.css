@@ -6,6 +6,48 @@
 - specific sections outside of generic design
 
 */
+/* home */
+
+/* circle_image */
+
+.circle_image_sect {}
+
+.circle_image_col {}
+
+.circle_image_wrap {
+    padding-top: var(--gap);
+}
+
+img.circle_image,
+.overflow_section .circle_image_col img.circle_image {
+    min-width: 35vw;
+    width: 100%;
+    max-width: 35vw;
+    min-height: 35vw;
+    height: 100%;
+    max-height: 35vw;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1);
+    transform-origin: center;
+    transition: var(--transition);
+    aspect-ratio: 1 / 1;
+    border-radius:50%;
+}
+
+@media screen and (max-width: 880px) {
+    img.circle_image,
+    .overflow_section .circle_image_col img.circle_image {
+        min-width: 90vw;
+        width: 100%;
+        max-width: 90vw;
+        height: 100%;
+        max-height: 90vw;
+    }
+    
+}
+
 
 
 /* ----------------------- */
@@ -71,6 +113,7 @@
 @media screen {
     .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) {
         max-width: unset;
+        padding-left: 0;
     }
 }
 .overflow_section .row:not(.column-reverse-mob) .column:not(.four-tenths) .card {
@@ -107,6 +150,7 @@
 @media screen and (max-width: 880px) {
     .overflow_section .img_wrap {
         width: var(--max-col-width);
+        height: auto;
     }
 }
 
@@ -163,7 +207,7 @@
         width: 100vw;
     }
     .half_panel-hero .column.full-width-bg:first-of-type {
-        max-width: calc(100% - (var(--gap)*2));
+        /* max-width: calc(100% - (var(--gap)*2)); */
         height: calc((var(--hero-height)) - (var(--gutter)*2)/2);
         position: absolute;
         z-index: 11;
@@ -245,7 +289,7 @@
     object-fit: cover;
 }
 
-.home .half_panel-hero img {
+.collections.half_panel-hero img {
     object-position: bottom;
 }
 
@@ -280,6 +324,12 @@
     max-height: var(--hero-height);
     height: 50vw;
     /* padding: var(--gap); */
+}
+@media screen and (max-width: 1080px) {
+    .featured-hero .column,
+    .customised-hero .column {
+        height: auto;
+    }
 }
 .featured-hero  .column .card,
 .customised-hero .column .card {     
@@ -317,6 +367,10 @@
 
 .journey .column:last-of-type {
     gap: var(--gap-large);
+}
+
+.journey .column .text_wrap {
+    gap: var(--gap);
 }
 
 .journey .column .img_wrap {
@@ -383,6 +437,14 @@
     max-width: 45ch;
 }
 
+/* palettes & brochures */
+
+#house-palettes .card h3,
+#brochures .card h3 {
+    font-size: var(--font-size-h3-sm);
+}
+
+
 /*  */
 
 .full-width-bg .img_wrap,
@@ -400,6 +462,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+@media screen and (max-width: 880px) {
+    .full-width-bg {
+        padding: var(--gutter);
+    }
 }
 
 /* restricted width block quote section */

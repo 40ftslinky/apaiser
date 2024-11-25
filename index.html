@@ -305,7 +305,7 @@
 <!-- /section -->
 <!-- section -->
 
-        <section class="overflow_section grey_900_bg">
+        <section class="overflow_section grey_900_bg circle_image_sect">
             <div class="row column-reverse-mob">
                 <div class="col column">
                     <blockquote>
@@ -313,9 +313,9 @@
                         <cite>Belinda Try, Founder & Creative Director</cite>
                     </blockquote>
                 </div>
-                <div class="col column">
-                    <div class="img_wrap bottom_overflow">
-                        <img src="assets/images/placeholder.jpg" alt="image">
+                <div class="col column circle_image_col">
+                    <div class="img_wrap bottom_overflow circle_image_wrap">
+                        <img class="circle_image" src="assets/images/Belinda-Try.jpg" alt="image">
                     </div>
                 </div>
             </div>
@@ -538,7 +538,7 @@
                 <div class="column">
                     <div class="subscribe">
                         <p>Subscribe to receive news of our latest collections, new projects and inspiring designs.</p>
-                        <a class="button-primary">Subscribe</a>
+                        <a class="button-primary subscribe_link">Subscribe</a>
                     </div>
 
                     <div class="address">
@@ -695,6 +695,34 @@
         </div>
     </div>   
 
+    <!--Subscribe Popup-->
+    <div id="subscribe" class="subscribe-pop-up">
+        <div class="subscribe-pop-up_wrapper">
+            <div class="subscribe-close">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.364 1.36395L1.63604 14.0919M1.63604 1.36395L14.364 14.0919" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </div>                            
+                        
+            <!-- <h4 class="desc-copy_mlg "></h4> -->
+            <!-- <p class="desc-copy _reg">To find out more about our process, contact us, and we’ll get back to you with more details.</p> -->
+
+            <div class="subscribe-content">
+                
+                <form class="subscribe" action="" method="get">
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <button type="submit">Subscribe</button>
+                </form>
+
+        
+                
+            </div>
+            
+            
+        </div>
+    </div>   
+
     
     <!-- <script src="js/scripts.js"></script> -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -704,6 +732,7 @@
     <script src="js/video-pause.js"></script>
     <!-- <script src="js/pop-up.js"></script> -->
     <script src="js/search-pop-up.js"></script>
+    <script src="js/subscribe-pop-up.js"></script>
     <script src="js/truncate.js"></script>
     <script src="js/in-focus.js"></script>
 

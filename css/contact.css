@@ -6,8 +6,14 @@
     gap: 0.25rem;
 }
 
+.dropdown_group {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
 footer .form_group {
     min-width: 300px;
+    max-width: 350px;
 }
 
 form {
@@ -18,7 +24,7 @@ form {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: var(--gap);
+    gap: var(--gap-sm);
     margin: 1rem 0 0 0;
 }
 
@@ -93,10 +99,14 @@ form input:not([type="submit"]) {
 
 form label {
     font-size: 0.8rem;
+    width: 100%;
 }
 
-form button[type="submit"] {
+form button[type="submit"],
+input[type="submit"] {
+    margin-top: 1rem;
 }
+
 
 
 [type="checkbox"] + span {
@@ -146,27 +156,73 @@ form textarea::placeholder {
     font-size: var(--font-size-form);
 }
 
+/* specific forms */
+
 /* ------------------------------------------- */
 /* professionals */
 
-.professionals_form {
+
+
+/* ------------------------------------------- */
+/* professionals */
+
+.enquiry_form form,
+#enquiry_form form,
+.contact_form form,
+#contact_form form,
+.professionals_form form,
+#professionals_form form {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
-    min-width: 580px;
+    /* align-items: stretch; */
+    gap: var(--gap-sm);
+    /* min-width: 580px; */
+    max-height: fit-content;
 }
 
 @media screen and (max-width: 880px) {
-    .professionals_form {
+    .enquiry_form form,
+    #enquiry_form form,
+    .contact_form form,
+    #contact_form form,
+    .professionals_form form,
+    #professionals_form form {
         min-width: 90vw;
         width: 100%
     }
 }
 
-.professionals_form input[type="submit"] {
-    margin-top: 1rem;
+.enquiry_form input[type="submit"],
+#enquiry_form input[type="submit"],
+.enquiry_form input[type="submit"],
+.enquiry_form button[type="submit"] {
+    /* max-height: fit-content;
+    max-height: -moz-fit-content; */
+    margin-top: 0;
+}
+.contact_form input[type="submit"],
+#contact_form input[type="submit"],
+.professionals_form input[type="submit"],
+#professionals_form input[type="submit"],
+footer form button[type="submit"] {
+    margin-top: 0;
 }
 
+#enquiry_form label span {
+}
+
+
+/*  */
+
+.contact-info .col {
+    align-items: center;
+}
+@media screen and (max-width: 880px) {
+    .contact-info .col {
+        align-items: flex-start;
+    }
+    
+}
 
 /* ------------------------------------------- */
 /* LOCATIONS */
@@ -242,7 +298,8 @@ form textarea::placeholder {
     font-weight: 300;
 }
 
-.phone-link {
+.phone-link,
+.content a.phone-link {
     font-weight: 400;
     color: var(--primary);
     text-decoration: none;

@@ -15,6 +15,11 @@
     --gap-xs: 0.75rem;
     
     /* sizes */
+    /* (to allow for browswers with scroll bars) */
+    /* --fullwidth: calc(100vw - (100vw - 100%)); */
+    /* --max-width: var(--fullwidth); */
+    /* --max-col-width: calc(var(--fullwidth) - (var(--gutter) * 2)); */
+    
     --max-width: 100vw;
     --max-col-width: calc(100vw - (var(--gutter) * 2));
     --header-height: 88px;
@@ -106,7 +111,7 @@
 
 
 :root {
-    --column-width-xs: calc(var(--max-width) - var(--gap-xs) * 2);
+    --column-width-xs: calc(var(--max-width) - var(--gap) * 2);
     --column-width: calc(var(--max-width) - var(--gutter) * 2);
     --fourth-width: calc((var(--column-width) / 4) - (var(--gap) * 3/4));
     --third-width: calc(var(--max-width) / 3);

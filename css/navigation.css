@@ -282,6 +282,7 @@ nav.desktop ul li a span:hover,
     text-decoration: underline;
     text-underline-offset: 0.325rem;
     text-decoration-thickness: 1px;
+    cursor: pointer;
 }
 
 /* ------------------------------------ */
@@ -390,7 +391,7 @@ nav.desktop ul li a span:hover,
 }
 
 .dropdown ul.submenu li {
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 
@@ -405,10 +406,10 @@ nav.desktop ul li a span:hover,
     text-decoration: underline; */
 }
 
-.desktop .submenu .submenu-item:hover {
+/* .desktop .submenu .submenu-item:hover a,
+.desktop .submenu .submenu-item a:hover {
     background-color: var(--gray-800);
-    /* #f3f3f3; */
-}
+} */
 
 
 .desktop .menu-link.has-submenu:hover + .dropdown {
@@ -448,6 +449,14 @@ nav .wp-block-navigation-submenu ul li a span,
     text-decoration: none;
     transition: var(--transition);
     position: relative;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.desktop .submenu .submenu-item a:hover {
+    background-color: var(--gray-800);
+    /* #f3f3f3; */
 }
 
 

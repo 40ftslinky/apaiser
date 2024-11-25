@@ -191,7 +191,7 @@ body.post .hero::before {
 .hero h1 {
     /* backdrop-filter: drop-shadow(0px 0px 2rem rgba(var(--primary-rgb),0.8)); */
     text-shadow: 2px 2px 0px rgba(var(--primary-rgb),0.8);
-    max-width: 10ch;
+    max-width: 12ch;
     /* text-align: left; */
 }
 
@@ -332,8 +332,7 @@ section.customisation_hero .hero-content {
     width: 60vh;
 }
 
-.customisation .text_only .hero-content h1 { 
-    
+.customisation .text_only .hero-content h1 {
     max-width: 12ch;
 }
 

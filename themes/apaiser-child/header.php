@@ -4,6 +4,7 @@
 	<?php
 		// wp_head();
 		// add_filter( 'wpseo_debug_markers', '__return_false' );
+		// other options
 		// add_filter( 'wpseo_canonical', '__return_false' );
 		// add_filter( 'wpseo_opengraph_url', '__return_false' );
 		// add_filter( 'wpseo_twitter_url', '__return_false' );

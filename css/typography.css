@@ -64,6 +64,7 @@
     /* --font-size-h3: clamp(1.5rem, 1.048rem + 1.731vw, 3rem); */
     --font-size-h3: 50px;
     --font-size-h3: clamp(2.5rem, 1.458rem + 1.389vw, 3.125rem);
+    --font-size-h3-sm: clamp(2rem, 1.458rem + 1.389vw, 2.3077vw);
     --font-size-grid-title: 16px;
     --font-size-h2-subtitle: 20px;
     --font-size-h4: 20px;
@@ -113,6 +114,9 @@
     --blockquote-line-height: 1.16;
     --heading-line-height: 1.05;
 }
+
+/* scale */
+/* https://clamp.font-size.app/ */
 
 @media screen and (max-width: 880px){
     :root {
