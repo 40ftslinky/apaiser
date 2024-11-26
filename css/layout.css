@@ -90,6 +90,10 @@ section.half_panel-img_padding .img_wrap.padding-right-nil {
         padding-left: var(--gutter);
         max-width: calc(100vw - (var(--gutter)*2));
     }
+    section#our-atelier.half_panel-img_padding .img_wrap,
+    section#our-atelier.half_panel-img_padding img {
+        max-width: unset;
+    } 
     
 }
 

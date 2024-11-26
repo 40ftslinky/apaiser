@@ -36,3 +36,5 @@
 #edittag {
     max-width: 1080px;
 }
+
+.grecaptcha-badge { visibility: hidden; }
