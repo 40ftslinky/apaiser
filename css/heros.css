@@ -167,7 +167,7 @@ body.post .hero::before {
 }
 @media screen and (max-width: 1080px) {
     .hero .row {
-        bottom:10%
+        bottom:15vh
     }
 }
 

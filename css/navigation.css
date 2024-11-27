@@ -553,6 +553,9 @@ nav .wp-block-navigation-submenu ul li a span,
     nav .fullscreen ul li a{
         text-decoration: none;
     }
+    a.submenu-title-link {
+        font-weight: unset;
+    }
 
     nav .fullscreen li.has-child a,
     nav .fullscreen ul li a span,

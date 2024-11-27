@@ -142,3 +142,37 @@ a.article-results-tab-item,
 button.article-results-tab-item {
     margin-top: 1rem;
 }
+
+/* projects article listing */
+
+.hero.legacy_hero h1 {
+    max-width: 80vw;
+}
+
+.legacy_post .content .project-content {
+    padding: 0 2rem;
+}
+
+.legacy_post .content .project-carousel img {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.legacy_post .content .project-description {
+    max-height: unset;
+}
+
+.legacy_post .content .project-content .project-details {
+    min-width: fit-content;
+}
+
+.legacy_post .content .project-content .flickity-prev-next-button.previous {
+    left: -40px;
+}
+.legacy_post .content .project-content .flickity-prev-next-button.next {
+    right: -40px;
+}
+
+.legacy_post .content .project-content .flickity-page-dots {
+    bottom: -24px;
+}

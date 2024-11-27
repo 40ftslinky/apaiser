@@ -125,7 +125,7 @@
 
 <!-- section -->
 <!-- RECENT PROJECTS -->
-<section class="grid-projects archive">
+<section id="process" class="grid-projects archive">
 	<?php
 	$process_title= get_field("process_title", $post_id);
 	$process_cards= get_field("process_cards", $post_id);
@@ -217,77 +217,43 @@ $hidden_text =get_field("palette_hidden_text", $post_id);
 	$cards= get_field("projects_cards", $post_id);
 	?>
 
+
+
+
+
+
+
+
+
 <!-- section -->
 <!-- RECENT PROJECTS -->
-<section class="grid-projects archive">
-
-    <div class="row ">
-        <div class="col align-center">
-            <h2 class="center-align"><?php echo $projects_title ?></h2>
-        </div>
-    </div>
-
-
-    <div class="row">
-        
-        <div class="grid-col column ">   
-			<?php
-				foreach($cards as $card){
-				?>
-				<!-- 01  -->
-				<a class="card_link" href="<?php echo $card['link'] ?>">
-					<div class="card center no_border">
-						<div class="card-image">
-							<img src="<?php echo $card['image'] ?>" alt="<?php echo $card['alt'] ?>">
-						</div>
-						<div class="card-content align-center">
-							<h3 class="subtitle"><?php echo $card['subtitle'] ?></h3>                
-							<h3><?php echo $card['title'] ?></h3>
-							<p class="center-align"><?php echo $card['text'] ?></p>
-							<button class="button-outline"><?php echo $card['button'] ?></button>
-						</div>
-					</div>
-				</a>
-				<?php
-				}
-				?>
-            
-            <!-- 03 -->
-
-            
-        </div>
-
-    </div>
-
-</section>
-
-<!-- /section -->
-
-<!-- hero section (text only) -->
 <?php
 
-$hero2_image= get_field("hero2_image", $post_id);
-$hero2_title= get_field("hero2_title", $post_id);
-$hero2_link= get_field("hero2_link", $post_id);
-$hero2_button= get_field("hero2_button", $post_id);
 
-?>
-<section class="hero text_only dark_grad" style="background-image: url(<?php echo $hero2_image; ?>);">
-    <div class="row">
-        <div class="col column " >
-                    
-        </div>  
-        <div class="col">
-            <div class="hero-content">
-                <!-- <h1 class="subtitle">Explore</h1> -->
-                <h1><?php echo $hero2_title; ?></h1>
-                <a class="button-rev-outline" href="<?php echo $hero2_link; ?>"><?php echo $hero2_button; ?></a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- /section -->
+	include_once "other_projects_section.php";
+
+
+
+	
+	///////////////////////////////////////////////////////////////////////////////
+	//
+	//			OUR LATEST COLLECTIONS 
+	//
+	/////////////////////////////////////////////////////////////////////////////
+
+	include "section_our_latest_collections.php";
+	
+	///////////////////////////////////////////////////////////////////////////////
+	//
+	//			END OUR LATEST COLLECTIONS 
+	//
+	/////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	
+		?>
 
         
     </main>

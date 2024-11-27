@@ -763,6 +763,11 @@ section.half_panel-img_padding img {
        
 }
 
+section#our-practices.half_panel-img_padding img {
+    background-position: bottom;
+    object-position: bottom;
+}
+
 .half_panel .text_wrap,
 .half_panel-img_padding .text_wrap {
     width: 100%;
@@ -838,6 +843,12 @@ section.half_panel-img_padding img {
     gap:1rem;
 }
 
+#apaisermarble h4,
+#Certifications-Declaration h4 {
+    text-transform: uppercase;
+    text-shadow:2px 2px black;
+    letter-spacing: 0.3px;
+}
 
 /* banner section */
 
@@ -876,4 +887,24 @@ section.half_panel-img_padding img {
 
 .text_wrap p {
     margin-right: auto;
+}
+
+
+/* triage */
+
+.triage .double
+.double {
+    
+}
+
+.double a h1, 
+.double a h2.subtitle {
+    text-decoration: none;
+}
+h1, a * {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: unset;
 }

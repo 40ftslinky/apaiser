@@ -111,11 +111,11 @@
 <!-- GRID Collection  -->
 <section class="grid-collection plain">
 
-     <!-- <div class="row">
+     <div class="row">
         <div class="column align-center no_gap">
             <h2 class="center-align collection-title">Ode Collection</h2>            
         </div>
-    </div> -->
+    </div>
 
     <div class="row">
         
@@ -127,7 +127,7 @@
             <a class="card_link" href="#link">
                 <div class="card">                        
                     <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/images/placeholder.jpg" alt="image">
+                        <img src="<?php echo $child_themedir; ?>assets/images/placeholder.jpg" alt="image">
                     </div>
                     <div class="card-content">
                         <h3 class="product-title">Heading 01</h3>
@@ -140,7 +140,7 @@
             <a class="card_link" href="#link">
                 <div class="card">                        
                     <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/images/placeholder.jpg" alt="image">
+                        <img src="<?php echo $child_themedir; ?>assets/images/placeholder.jpg" alt="image">
                     </div>
                     <div class="card-content">
                         <h3 class="product-title">Heading 02</h3>
@@ -152,7 +152,7 @@
             <a class="card_link" href="#link">
                 <div class="card">                        
                     <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/images/placeholder.jpg" alt="image">
+                        <img src="<?php echo $child_themedir; ?>assets/images/placeholder.jpg" alt="image">
                     </div>
                     <div class="card-content">
                         <h3 class="product-title">Heading 03 abcde fghig klmno pqrstuv asdasd asdasda asdasd asdasd asdas</h3>

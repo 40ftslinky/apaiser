@@ -57,9 +57,9 @@
     width: 100%;
     max-width: calc(var(--results-col) - var(--gap-xs));
     box-sizing: border-box;
-
     position: absolute;
     left: var(--gap);
+    padding-right: var(--gap);
 }
 @media screen and (max-width: 880px) {
     .sidebar {
@@ -364,8 +364,12 @@ form.searchform input[type="submit"] {
     }
 }
 
-.grid-results .card-content {
+.search-results .grid-results .card-content {
     padding: var(--gap-sm) 0;
+    gap: var(--gap-sm);
+}
+.search-results .grid-results #articles .card-content {
+    padding: 0;
 }
 
 .grid-col-horiz .card-content {
@@ -386,6 +390,10 @@ form.searchform input[type="submit"] {
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
 }
+.grid-results #articles h3 {
+    text-transform: uppercase;
+}
+
 
 .grid-results.archive h3 {
     font-family: var(--heading-serif);
@@ -400,6 +408,12 @@ form.searchform input[type="submit"] {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    margin-top: 0;
+}
+
+.grid-results button {
+    margin-top: 0;
+    padding: 0.25rem 0.25rem 0.25rem 0;
 }
 
 /* filter tabs */
