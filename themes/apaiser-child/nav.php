@@ -73,7 +73,7 @@
                                     <div class="content">
                                         
                                         <div class="submenu_col">
-                                            <h2 class="submenu-title"><a href="/products/">Product</a></h2>
+                                            <h2 class="submenu-title"><a href="/products">Products</a></h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bath/">Baths</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basin</a></li>
@@ -123,7 +123,7 @@
                                     <div class="content">
                                         
                                         <div class="submenu_col">
-                                            <h2 class="submenu-title">Projects</h2>
+                                            <h2 class="submenu-title"><a href="/projects/">Projects</a></h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/projects-commercial">Commercial</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/projects-residential">Residential</a></li>
@@ -194,7 +194,7 @@
                                     <div class="content">
                                         
                                         <div class="submenu_col">
-                                            <h2 class="submenu-title has-submenu">Product</h2>
+                                            <h2 class="submenu-title has-submenu">Products</h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bath/">Baths</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basin</a></li>
@@ -219,8 +219,8 @@
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Terra">Terra</a></li>
                                             </ul>
                                         </div>
-                                        <div class="submenu_col has-submenu">
-                                            <h2 class="submenu-title">Explore</h2>
+                                        <div class="submenu_col">
+                                            <h2 class="submenu-title has-submenu">Explore</h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/explore#brochures">Brochures</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/explore#house-palettes">House Palettes</a></li>
@@ -232,7 +232,7 @@
                             <li class="menu-item"><a class="menu-link " href="/customisation">Customisation</a></li>
                             <li class="menu-item"><a class="menu-link " href="/professionals">Professionals</a></li>
                             <li class="menu-item has-dropdown">
-                                <span class="menu-link ">Projects</span>
+                                <span class="menu-link "><a href="/projects/">Projects</a></span>
                                 <div class="dropdown">
                                     <div class="content">
                                         

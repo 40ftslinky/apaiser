@@ -52,7 +52,7 @@
 	$welcome_blockquote= get_field("welcome_blockquote", $post_id);
 	$welcome_paragraph= get_field("welcome_paragraph", $post_id);
 ?>
-<section class="half_panel grey_900_bg">
+<section id="our-story" class="half_panel grey_900_bg">
     <div class="row align-end">
         <div class="col column">
             <div class="text_wrap">
@@ -77,7 +77,7 @@
 	$section3_full_width_image= get_field("section3_full_width_image", $post_id);
 	$section3_full_width_image_alt_tag= get_field("section3_full_width_image_alt_tag", $post_id);
 ?>
-<section id="our-story" class="half_panel-img_padding">
+<section id="our-atelier" class="half_panel-img_padding">
     <div class="row ">
 
         <div class="col column">
@@ -123,7 +123,7 @@
 	$section4_image= get_field("section4_image", $post_id);
 	$section4_image_alt= get_field("section4_image_alt", $post_id);
 ?>
-<section id="our-atelier" class="half_panel-img_padding">
+<section id="apaisermarble" class="half_panel-img_padding">
     <div class="row ">
 
         <div class="col column">            
@@ -185,7 +185,7 @@
 	$section5_blockquote= get_field("section5_blockquote", $post_id);
 	$section5_paragraph= get_field("section5_paragraph", $post_id);
 ?>
-<section class="half_panel-img_padding grey_900_bg">
+<section id="globalbrand" class="half_panel-img_padding grey_900_bg">
     <div class="row">
 
         <div class="col column " >
@@ -214,7 +214,7 @@ $section6_image= get_field("section6_image", $post_id);
 $section6_title= get_field("section6_title", $post_id);
 $section6_text= get_field("section6_text", $post_id);
 ?>
-<section id="apaisermarble" class="fullwidth-feature dark_grad" style="background:url('<?php echo $section6_image; ?>')">
+<section id="earth" class="fullwidth-feature dark_grad" style="background:url('<?php echo $section6_image; ?>')">
     <div class="row">
 
         <div class="col column " >

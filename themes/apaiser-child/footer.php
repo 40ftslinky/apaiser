@@ -12,9 +12,18 @@
             <div class="row footer_top">
                 
                 <div class="col">
-				
+					<?php
+					
+					$homepage_id = getHomepagePostId();
+					
+					
+					
+					$make_an_enquiry =get_field('enquiry_make_an_enquiry', $homepage_id);
+					
+					
+					?>
                     <div class="text_wrap">
-                        <h4>Make An Enquiry</h4>
+                        <h4><?php echo $make_an_enquiry; ?></h4>
                         <p>Get in touch and our team will connect with you to help bring your vision to life.</p>
                     </div>
 					
@@ -64,18 +73,25 @@
                     </div>
 
                     <div class="address">
-                        <h6>HQ</h6>
-                            <p>Suite 203/26 Rokeby St, <br>
-                            Collingwood, <br>
-                            Victoria, 3066, Australia</p>
-                        <a href="tel:+61 3 9421 5722">+61 3 9421 5722</a>
+                        <h6>
+                            <a class="email-link" href="/contact#melbourne">Melbourne</a> | 
+                            <a class="email-link" href="/contact#new-york">New York</a> | 
+                            <a class="email-link" href="/contact#bangkok">Bangkok</a> | 
+                            <a class="email-link" href="/contact#singapore">Singapore</a> | 
+                            <a class="email-link" href="/contact#london">London</a> | 
+                            <a class="email-link" href="/contact#dubai">Dubai</a>
+
+                        </h6>
+                        <p>344 Burnley St, Richmond, Victoria. Austalia</p>
+                        <p>T: <a href="tel:+61 3 9421 5722">+61 3 9421 5722</a></p>
                     </div>
                     <div class="certifications">
                         <h6>Certifications</h6>
                         <div class="certifications_group">                        
                             <img src="<?php echo $child_themedir; ?>assets/brand/certifications/CE.svg" alt="CE">
                             <img src="<?php echo $child_themedir; ?>assets/brand/certifications/cUPC.svg" alt="cUPC">
-                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/mark-of-trust-certified-ISO-9001-quality-management-systems.svg" alt="ISO-9001">
+                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/iso_standards.png" alt="ISO-19001 IS0-4001">
+                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/saso-logo.png" alt="Saudi Standards, Metrology and Quality Organization">
                         </div>
                     </div>
                 </div>
@@ -100,7 +116,7 @@
                             
                                 <li class="footer-menu-item"><a href="/collections/" class="footer-menu-link">Collections</a></li>                                
                             
-                                <li class="footer-menu-item"><a href="/projects/" class="footer-menu-link">Projects</a></li>                                
+                                <li class="footer-menu-item"><a href="/explore/" class="footer-menu-link">Explore</a></li>                                
                             </ul>
                                                     
                         </div>
@@ -113,14 +129,14 @@
                             
                                 <li class="footer-menu-item"><a href="/privacy-policy/" class="footer-menu-link">Privacy Policy</a></li>
 
-                                <li class="footer-menu-item"><a href="/explore/#warranty" class="footer-menu-link">Warranty</a></li>
+                                <li class="footer-menu-item"><a href="/brochure/?f=apaiser-Warranty.pdf" class="footer-menu-link">Warranty</a></li>
                             </ul>
                            
                         </div>
 
                         <div class="footer-menu_group">
                             <ul class="footer-menu">
-                                <li class="footer-menu-item"><a href="/explore/#installation" class="footer-menu-link">Installation & Care</a></li>                                
+                                <li class="footer-menu-item"><a href="/brochure/?f=apaiser-Installation-Care-Guide.pdf" class="footer-menu-link">Installation & Care</a></li>                                
                             
                                 <li class="footer-menu-item"><a href="/contact" class="footer-menu-link">Consult With Us</a></li>
                             

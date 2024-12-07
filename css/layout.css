@@ -85,9 +85,9 @@ section.half_panel-img_padding .img_wrap.padding-right-nil {
     padding-right: 0; 
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1080px) {
     .padding-left-nil,
-    section.half_panel-img_padding .img_wrap.padding-left-nil 
+    section.half_panel-img_padding .img_wrap.padding-left-nil, 
     .padding-right-nil,
     section.half_panel-img_padding .img_wrap.padding-right-nil { 
         padding-right: var(--gutter); 
@@ -96,7 +96,7 @@ section.half_panel-img_padding .img_wrap.padding-right-nil {
     }
     section#our-atelier.half_panel-img_padding .img_wrap,
     section#our-atelier.half_panel-img_padding img {
-        max-width: unset;
+        /* max-width: unset; */
     } 
     
 }
@@ -401,7 +401,8 @@ section.projects-sect {
 /* ----------------------- */
 /* containers */
 
-[class*='-container'] {
+:not(.cky-consent-container)[class*='-container'],
+[class*='-container']:not(.cky-consent-container) {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;

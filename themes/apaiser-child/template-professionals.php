@@ -34,7 +34,8 @@
                     <div class="hero-content">
                         <!-- <h1 class="subtitle">Contact</h1> -->
                         <h1>Coming Soon</h1>
-                        <p>Sign up to join the apaiser family and be the first to know when we launch our Professionals Page. You'll gain exclusive access to download tech drawings, brochures, color samples, and more.</p>
+                        <p>Something exciting is coming! Our professionals section will give you exclusive access to technical information, brochures, colour samples and more.</p>
+                        <p>Sign up now and be the first to know when we go live.</p>
                     </div>
                 </div>
             </div>

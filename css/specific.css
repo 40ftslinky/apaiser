@@ -159,6 +159,12 @@ img.circle_image,
     height: 80vh;
     object-fit: cover;
 }
+@media screen and (max-width: 880px) {
+    .overflow_section img {
+        width: var(--max-col-width);
+        height: auto;
+    }
+}
 
 .top_overflow.img_wrap {
     margin-top: -25vw;
@@ -339,6 +345,7 @@ img.circle_image,
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     gap: var(--gap);
+    box-sizing: content-box;
 }
 @media screen and (max-width: 1080px) {
     
@@ -467,6 +474,11 @@ img.circle_image,
     .full-width-bg {
         padding: var(--gutter);
     }
+}
+
+section.featured-hero.full-width-bg {
+    justify-content: center;
+    /* min-height: 50vw; */
 }
 
 /* restricted width block quote section */
@@ -737,9 +749,13 @@ section.half_panel-img_padding .img_wrap {
 }
 section.half_panel-img_padding .img_wrap {
     max-width: calc(50vw - (var(--gutter)*2));
-    max-height: calc(var(--hero-height) - (var(--gutter)*2));
+    /* max-height: calc(var(--hero-height) - (var(--gutter)*2)); */
     padding: var(--gutter);
 }
+body.about section.half_panel-img_padding .img_wrap {
+    min-height: calc(50vw - (var(--gutter)*2));
+}
+
 @media screen and (max-width: 1080px) {
     /* section.half_panel .img_wrap, */
     section.half_panel-img_padding .img_wrap {
@@ -761,6 +777,10 @@ section.half_panel-img_padding img {
         max-width: var(--max-col-width);
     }  
        
+}
+
+#globalbrand.half_panel-img_padding img {
+    object-position: left;
 }
 
 section#our-practices.half_panel-img_padding img {
@@ -831,7 +851,8 @@ section#our-practices.half_panel-img_padding img {
     background-size: cover;
 }
 #Certifications-Declaration.fullwidth-feature,
-#apaisermarble.fullwidth-feature {
+#apaisermarble.fullwidth-feature,
+#earth.fullwidth-feature {
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
@@ -843,6 +864,7 @@ section#our-practices.half_panel-img_padding img {
     gap:1rem;
 }
 
+#earth h4,
 #apaisermarble h4,
 #Certifications-Declaration h4 {
     text-transform: uppercase;
@@ -895,6 +917,43 @@ section#our-practices.half_panel-img_padding img {
 .triage .double
 .double {
     
+}
+
+.double.half_panel-hero {}
+.double.half_panel-hero .row {}
+.double.half_panel-hero .col.column.full-width-bg  {}
+
+.double a .card {
+    transition: var(--transition);
+}
+.double a:hover .card {
+    background-color: rgba(var(--white-rgb), 0.8);
+}
+
+@media screen and (max-width: 1080px) {
+    .double.half_panel-hero {
+        height: 100%;
+    }
+    .double.half_panel-hero .row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .double.half_panel-hero .col.column.full-width-bg  {
+        max-height: 50vh;
+        height: calc(var(--hero-height)/2);
+        justify-content: center;
+        position: relative;
+        top:0;
+    }
+
+    
+}
+@media screen and (max-width: 400px) {
+
+    .double.half_panel-hero h1 {
+        font-size: var(--font-size-h1);
+    }
+
 }
 
 .double a h1, 

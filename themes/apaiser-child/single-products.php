@@ -180,16 +180,19 @@
 	
 	$product_paragraph = get_field('product_paragraph', 'product_cat_'.$term_id);	
 	
-	if(!empty($cols_paragraph)){
+
 		
 		$p2 = $cols_paragraph . $product_paragraph;
 		
-	} else {
+		//$p2 = $product_paragraph;
 		
-		$p2 = $post_content . $product_paragraph;
 		
-	}
-	
+		//$p2 = $post_content . $product_paragraph;
+		
+		//$p2 = $product_paragraph;
+		
+		
+
 	
 	$p2 = clean_up_old_post($p2);
 	
@@ -198,7 +201,7 @@
 	?>
     <!-- **** removed .plain + added .text_wrap around blockquote -->
     <section class="half_panel ">
-        <div class="row align-end">
+        <div class="row">
                 <div class="col column">
                     <div class="text_wrap">
                         <blockquote>
@@ -658,6 +661,99 @@
 						endwhile;
 						
 					}
+					
+					
+					
+					
+				/////////////////////////////////////////////////////////////////////
+				//
+				//  DOCUMENTS - COMMON  
+				//
+				/////////////////////////////////////////////////////////////////////
+				
+				$terms = wp_get_post_terms($post_id, "product_type");
+				
+
+				
+				$term_Slug = $terms[0]->slug;
+				$term_ID = $terms[0]->term_id;
+				
+				print "<!--    $term_Slug ,       term_ID = $term_ID         -->";
+				
+
+			if(!empty($term_ID)){
+			// Arguments for the query
+			
+			print "<!-- term_ID = $term_ID          -->";
+			
+			$args = array(
+			
+				'post_type' => 'product_files',
+				
+				'posts_per_page' => -1,
+				
+				'post_status'       => array("publish"),	
+
+				'tax_query' => array(
+				
+					array(
+						'taxonomy' => 'product_type',
+						'field'    => 'term_id',
+						'terms'    => $term_ID,
+					),
+					
+				),
+
+			);
+
+			// Execute the query
+			$query = new WP_Query($args);
+			
+			$TypeFiles = array();
+
+			// Check if there are any posts
+			if ($query->have_posts()) {
+				
+				while ($query->have_posts()) {
+					
+					$query->the_post();
+					
+					$Post_id = $query->post->ID;
+					
+					$TypeFiles[$Post_id]=array();
+					
+					$T = get_the_title();
+					
+					$F = get_field('file', $Post_id);
+
+					$TypeFiles[$Post_id][]= $T;
+					
+					$TypeFiles[$Post_id][]= $F;
+					
+				}
+				
+			} else {
+				
+				echo '<!-- No posts found for the given term ID. -->';
+				
+			}
+
+				// Reset post data
+				wp_reset_postdata();
+			}
+
+			foreach($TypeFiles as $FILE){
+				
+				$Title = $FILE[0];
+				
+				$Url = $FILE[1]['url'];
+
+				outputFileRow($Url, $Title);
+				
+			}
+			
+				
+				
 					
 					?>
                 </div>

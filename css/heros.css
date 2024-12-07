@@ -28,6 +28,14 @@ section.hero {
 }
 
 
+[class*="allegra"] section.hero,
+[class*="lunar"] section.hero,
+[class*="ode"] section.hero,
+[class*="lotus"] section.hero {
+    background-position: right bottom;
+}
+
+
 .post .hero,
 body:not(.home) .hero {
     /* max-height: 30vh; */
@@ -48,6 +56,7 @@ body:not(.home) .hero {
     min-width: 100vw;
     object-fit: cover;
 }
+
 
 /* white horiz grad for text */
 

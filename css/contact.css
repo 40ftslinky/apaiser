@@ -212,10 +212,20 @@ footer form button[type="submit"] {
 }
 
 
-/*  */
+/* ------------------------- */
+
+.contact-info {
+    padding: var(--gutter);
+}
+.contact-info .row {
+    max-width: 900px;
+    gap: var(--gap);
+    justify-content: center;
+}
 
 .contact-info .col {
-    align-items: center;
+    align-items: flex-start;
+    gap: var(--gap);
 }
 @media screen and (max-width: 880px) {
     .contact-info .col {
@@ -223,6 +233,122 @@ footer form button[type="submit"] {
     }
     
 }
+
+h2.intro-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--heading-font-weight);
+    margin-bottom: 0;
+}
+
+.contact-info h4 {
+    font-weight: var(--heading-font-weight);
+    text-transform: uppercase;
+}
+.contact-info h5 {
+    font-weight: var(--heading-font-weight);
+    margin-bottom: 0;
+}
+
+.contact-info h4,
+.contact-info p,
+.contact-info a {
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+.contact-info p,
+.contact-info a {
+    font-weight: var(--base-font-weight);
+}
+
+.contact-info p.intro {
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+
+} 
+
+#headquarters, #showrooms, #salesoffices {
+    /* min-width: 200px; */
+    width: 100%;
+    /* max-width: 50%; */
+    gap: var(--gap);
+    align-items: flex-start;
+}
+#headquarters {
+    /* width: calc(100% *1/3); */
+}
+#showrooms {
+    /* width: calc(100% *2/3); */
+}
+@media screen and (max-width: 880px) {
+    #headquarters, #showrooms, #salesoffices {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+}
+
+
+.listing {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap: var(--gap);
+    width: 100%;
+    /* max-width: 200px; */
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+@media screen and (max-width: 600px) {
+    .listing {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+#salesoffices .listing,
+#globalpartners .listing {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    align-items: flex-start;
+    justify-content: flex-start;
+}   
+
+[class*="_address"], 
+.showroom_address, 
+.salesoffice_address,
+.globalpartners_address {
+    display: flex;
+    flex-direction: column;
+    /* gap: var(--gap); */
+    width: 100%;
+    min-width: 200px;
+    align-items: flex-start;
+    font-size: var(--font-size-lg);
+}
+
+.salesoffice_address,
+.globalpartners_address {
+    width:calc(100/3* 1% - (var(--gap)*2/3 ));
+}
+@media screen and (max-width: 880px) {
+    .salesoffice_address,
+    .globalpartners_address {
+        width:calc(100/2* 1% - (var(--gap)*1/2 ));
+    } 
+}
+@media screen and (max-width: 600px) {
+    .salesoffice_address,
+    .globalpartners_address {
+        width:100%;
+    } 
+    
+}
+
+
+
+
 
 /* ------------------------------------------- */
 /* LOCATIONS */
@@ -299,7 +425,9 @@ footer form button[type="submit"] {
 }
 
 .phone-link,
-.content a.phone-link {
+.content a.phone-link,
+.email-link,
+.content a.email-link {
     font-weight: 400;
     color: var(--primary);
     text-decoration: none;

@@ -22,7 +22,7 @@
     --serif-font-weight: normal;
     --serif-font-weight: 400;
     --blockquote-font-weight: normal;
-    --heading-font-weight: 700;
+    --heading-font-weight: 500;
     --menu-font-weight: 400;
     --submenu-font-weight: 300;
     --footer-font-weight: 400;
@@ -113,6 +113,8 @@
 
     --blockquote-line-height: 1.16;
     --heading-line-height: 1.05;
+    --line-height: 1.35;
+    --line-height-sm: 1;
 }
 
 /* scale */
@@ -150,6 +152,14 @@
         --font-size-h5: 14px;
         --font-size-h6: 12px;
     }
+}
+
+@media screen and (max-width: 400px) {
+    :root {
+        --font-size-h1: 36px;
+
+    }
+    
 }
 
 * {
@@ -263,7 +273,7 @@ h1, h2 {
 h4, h5, h6 {
     font-family: var(--heading-font-family);
     font-weight: 500;
-    font-weight: var(--base-font-weight); 
+    font-weight: var(--heading-font-weight); 
     /* letter-spacing: var(--letterspacing-sm-heading); */
     line-height: 1.2;
     margin: 0 0 0.5rem 0;

@@ -282,6 +282,12 @@ footer img {
     gap: var(--gap);
 }
 
+.certifications_group img {
+    width: 100%;
+    height: auto;
+    max-height: 55px;
+}   
+
 /* ------------------------------------- */
 /* footer form */
 

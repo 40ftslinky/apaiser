@@ -35,7 +35,7 @@
 <!-- section -->
 <!-- hero section (text only) -->
 
-        <section class="hero text_only dark_grad" style="background-image: url(<?php echo $child_themedir; ?>/assets/heros/collections_hero.jpg);">
+        <section class="hero text_only dark_grad" style="background-image: url(<?php echo $child_themedir; ?>assets/heros/collections_hero.jpg);">
             <div class="row">
                 <div class="col">
                     <div class="hero-content">
@@ -181,12 +181,12 @@ if(!empty($bq) || !empty($in)){
 			if(empty($IMG)){
 				$stylesheet_directory = basename(get_stylesheet_directory());
 				$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
-				$IMG=$child_themedir."/assets/images/placeholder.jpg";
+				$IMG=$child_themedir."assets/images/placeholder.jpg";
 			}
 				
 			
 			?>
-            <!--  01 -->
+            <!--  01* -->
             <a class="card_link" href="<?php echo $Link; ?>">
                 <div class="card">                        
                     <div class="card-image">

@@ -559,7 +559,8 @@ nav .wp-block-navigation-submenu ul li a span,
 
     nav .fullscreen li.has-child a,
     nav .fullscreen ul li a span,
-    .fullscreen .menu-link {
+    .fullscreen .menu-link,
+    .fullscreen .menu-link a {
         font-family: var(--heading-serif);
         font-size: var(--font-size-menu);
         font-weight: var(--serif-font-weight);

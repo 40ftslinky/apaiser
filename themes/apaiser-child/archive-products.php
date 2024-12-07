@@ -2,12 +2,12 @@
 /**
  * The template for displaying the post.
  *
- * Template name: Products Archive
+ * Template name: Products Archive (Products)
  *
  * @package storefront
  */
 
-	
+
 	$body_class="post-list";
 	
 	$template_class="blog";
@@ -27,225 +27,122 @@
 	$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
 	
 	
+	$Heroes = array();
+	
 	
 	// ACF
 
+	if (have_rows('hero')) {
+		
+					
+					while (have_rows('hero')) :
+					
+							the_row();	
+							
+							$image = get_sub_field('image');
+							
+							$link = get_sub_field('link');
+							
+							$title = get_sub_field('title');
+							
+							$subtitle = get_sub_field('subtitle');
+						
+							//	print_r($image);
 
+							$Heroes[] = array($image, $link, $title, $subtitle);
+						
+						endwhile;
+		
+		
+	}
 	
 	
 	?>
 
     <main >
 
-<!-- section -->
-<!-- hero section (text only) -->
 
-        <section class="hero text_only dark_grad" style="background-image: url(<?php echo $child_themedir; ?>/assets/heros/baths_hero.jpg);">
-            <div class="row">
-                <div class="col">
-                    <div class="hero-content">
-                        <h1 class="subtitle category-title">Stone Bath</h1>
-                        <h1 class="product-title">Baths</h1>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p> -->
+
+<!-- triage hero section (double half panel) -->
+
+        <section class="double half_panel-hero">
+            <div class="row">     
+					<?php
+					foreach($Heroes as $Hero){
+						//$image, $link, $title, $subtitle
+						
+						/*
+
+						Array ( 
+						[ID] => 21940 
+						[id] => 21940 
+						[title] => projects_residential_hero 
+						[filename] => projects_residential_hero.jpg 
+						[filesize] => 190067 
+						[url] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero.jpg 
+						[link] => https://staging.apaiser.screenrage.com.au/projects-residential/projects_residential_hero/ 
+						[alt] => [author] => 2 [description] => [caption] => [name] => projects_residential_hero [status] => inherit [uploaded_to] => 19863 [date] => 2024-11-10 23:29:26 [modified] => 2024-11-10 23:29:26 [menu_order] => 0 [mime_type] => image/jpeg [type] => image [subtype] => jpeg [icon] => https://staging.apaiser.screenrage.com.au/wp-includes/images/media/default.png [width] => 1920 [height] => 992 [sizes] => Array ( [thumbnail] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero-150x150.jpg [thumbnail-width] => 150 [thumbnail-height] => 150 [medium] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero-300x155.jpg [medium-width] => 300 [medium-height] => 155 [medium_large] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero-768x397.jpg [medium_large-width] => 768 [medium_large-height] => 397 [large] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero-1024x529.jpg [large-width] => 1024 [large-height] => 529 [1536x1536] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero-1536x794.jpg [1536x1536-width] => 1536 [1536x1536-height] => 794 [2048x2048] => https://staging.apaiser.screenrage.com.au/wp-content/uploads/2024/11/projects_residential_hero.jpg [2048x2048-width] => 1920 [2048x2048-height] => 992 ) )
+						*/
+						
+						$image_url = $Hero[0]['url'];
+						
+						$image_large = $Hero[0]['sizes']['large'];
+						
+						$image_medium = $Hero[0]['sizes']['medium'];
+						
+						$thumbnail = $Hero[0]['sizes']['thumbnail'];
+						
+						$link = $Hero[1];
+						
+						$title = $Hero[2];
+						
+						$sub = $Hero[3];
+		
+						
+						?>			
+						<div class="col column full-width-bg " style="background-image: url(<?php echo $image_url ?>);">
+							<a href="<?php echo $link ?>">
+
+								<div class="card card-center">
+									<div class="card-content">
+										<h1><?php echo $title; ?></h1>
+										<h2 class="subtitle"><?php echo $sub; ?></h2>
+									</div>
+								</div>
+							</a>
+
+						</div>  
+						<?php
+					}
+					
+					?>
+                    <!-- 
+					
+                    <div class="col column full-width-bg " style="background-image: url(assets/projects/heros/projects_residential_hero.jpg);">
+                        <a href="projects-residential.html">
+                            <div class="card card-center">
+                                <div class="card-content">
+                                    <h1>Residential</h1>
+                                    <h2 class="subtitle">Projects</h2>
+                                </div>
+                            </div>
+                        </a>
+
                     </div>
-                </div>
+					
+					-->
             </div>
         </section>
 
 <!-- /section -->
 
 
-<!-- section (text only) -->
-
-<section class="half_panel ">
-    <div class="row align-end">
-        <div class="col column">
-            <div class="text_wrap">
-                <blockquote>
-                    <p>We are the experts in crafting sumptuous, immersive stone bathtubs designed to elevate the bathing experience. Discover our collection of handmade, luxury freestanding baths. Divine pieces of functional bathroom art.</p>
-                </blockquote>
-            </div>
-        </div>
-        <div class="col column">
-            <div class="text_wrap">
-                <p>Each luxury stone bath is handcrafted in our atelier from apaiserMARBLE® – a blend of reclaimed marble, enriched with minerals sourced from the rich soils of the Australian Barossa Region. Through years of research and development, our high-performing material is stain-resistant, warm to touch and lighter than natural stone, making our luxury baths ideal for both commercial and residential bathrooms around the world.</p>
-                <p>Every apaiser piece is available in a palette of 18 organic apaiserMARBLE® finishes and designed to work as a complete collection or combined to create your own personal bathroom experience. Embrace a new definition of bathroom luxury with your own sanctuary in stone.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- /section -->
- 
-
-<!-- section -->
-<!-- GRID product  -->
-<section class="grid-collection ">
-     
-
-    <div class="row">
         
-        <div class="grid-col column ">   
-            
-            <!--  01 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/chameleon.jpg" alt="image">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">A-Series Chameleon Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            <!--  02 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Allegra.jpg" alt="image">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Allegra Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            <!--  03 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Chi.jpg" alt="image">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Chi Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            <!--  04 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Eclipse.jpg" alt="image">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Eclipse Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            <!--  05 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image ">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Emerald.jpg" alt="image">
-                    </div>
-
-                    <div class="card-content">
-                        <h3 class="product-title">Emerald Bath</h3>
-                        <button class="view_product-link">View Product</button>
-
-                    </div>
-                </div>
-            </a>
-
-            <!--  06 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Haven.jpg" alt="image">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Haven Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            <!--  07 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image ">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Lotus.jpg" alt="image">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Lotus Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-
-            <!--  08 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Lunar.jpg" alt="image 08">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Lunar Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            <!--  09 -->
-            <a class="card_link" href="#link">
-                <div class="card">                        
-                    <div class="card-image">
-                        <img src="<?php echo $child_themedir; ?>/assets/baths/thumbs/Ode.jpg" alt="image 09">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Ode Bath</h3>
-                        <button class="view_product-link">View Product</button>
-                    </div>
-                </div>
-            </a>
-
-            
-            
-            
-            <!-- 09 / per page default  -->
-        </div>
-
-    </div>
-
-    <div class="row ">
-        <div class="column align-center">
-            <div class="pagination">
-                <a href="" class="page previous"><span class="left_arrow">&#x2B60;</span></a> <a href="" class="page current">01</a> | <a href="" class="page">02</a> | <a href="" class="page">03</a> | <a href="" class="page">04</a> | <a href="" class="page more"><span class="right_arrow">&#x2B62;</span></a> 
-            </div>
-            
-        </div>
-    </div>
-
-
-</section> 
-
-<!-- /section -->
 
 
 
-<?php
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//			RANGE CAROUSEL
-		//
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-			include "carousel_range.php";
 
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//			END RANGE CAROUSEL
-		//
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-?>
 
 
     </main>
