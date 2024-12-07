@@ -543,7 +543,7 @@
     /* A4 */
 }
 
-.grid-collection .card:hover img,
+/* .grid-collection .card:hover img, */
 .grid-collection a:hover .card img {
     transform: scale(1.05);
     transform-origin: center;
@@ -552,7 +552,7 @@
 
 /* .grid-collection .card img::after, */
 /* .grid-collection a .card img::after,  */
-.grid-collection .card .card-image::after,
+/* .grid-collection .card .card-image::after, */
 .grid-collection a .card .card-image::after {
     content: '';
     /* width: 100%; */
@@ -577,7 +577,7 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .grid-collection .card .card-image::after, 
+    /* .grid-collection .card .card-image::after,  */
     .grid-collection a .card .card-image::after {
         max-width: var(--one-half-max-width-smgap);
         max-height: calc(var(--one-half-max-width-smgap)* 2 / 3);
@@ -585,10 +585,9 @@
 }
 
 /*
-.grid-collection .card:hover img::after,
 .grid-collection a:hover .card img::after, 
  */
-.grid-collection .card:hover .card-image::after,
+
 .grid-collection a .card:hover .card-image::after {
     height: 100%;
     opacity: 1;
