@@ -2,200 +2,12 @@
 /**
  * The template for displaying the post.
  *
- * Template name: Projects Archive (Triage)
+ * Template name: Projects Archive (Single Residential & Commercial)
  *
  * @package storefront
  */
 
-	global $wp_query;
-	
 
-
-	if ( is_home() && ! in_the_loop() ) {
-		$ID = get_option('page_for_posts');
-	} elseif ( is_post_type_archive()) {
-		//reference a custom archive page based it's slug
-		//eg. for a 'houses' custom post type, you would create a page called `houses` and store any archive front matter on this page
-		$query = get_queried_object();
-		$slug = $query->name;
-		$pageobj = get_page_by_path($slug);
-		$ID = $pageobj->ID;
-	} else {
-		$ID = get_the_ID();
-	}
-
-
-
-
-
-
-	$post_id = $ID;
-
-
-
-
-	$body_class="post-list";
-	
-	$template_class="blog";
-
-	get_header();
-
-	include_once "nav.php";
-	
-
-	
-	
-	
-	print "<!-- ***post_id=$post_id -->";
-	
-	$post_title=get_the_title($post_id);
-	
-	print "<!-- ***post_title=$post_title -->";
-	
-	$stylesheet_directory = basename(get_stylesheet_directory());
-	
-	$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
-	
-	
-	$Heroes = array();
-	
-
-	
-	// ACF
-
-	if (have_rows('hero', $post_id)) {
-		
-					print "<!-- ***have_rows=hero -->";
-					
-					
-					while (have_rows('hero', $post_id)) :
-					
-							the_row();	
-							
-							$image = get_sub_field('image');
-							
-							$link = get_sub_field('link');
-							
-							print "<!-- ***link=$link -->";
-							
-							$title = get_sub_field('title');
-							
-							print "<!-- ***title=$title -->";
-							
-							$subtitle = get_sub_field('subtitle');
-						
-							//	print_r($image);
-
-							$Heroes[] = array($image, $link, $title, $subtitle);
-						
-						endwhile;
-		
-		
-	}
-	
-	
-	
-	
-	print "<!-- ***Heroes***  ";
-
-	print_r($Heroes);
-
-	print " -->";
-	
-	
-	
-	
-	?>
-
-    <main >
-
-
-
-<!-- triage hero section (double half panel) -->
-
-        <section class="double half_panel-hero">
-            <div class="row">     
-					<?php
-					foreach($Heroes as $Hero){
-
-						
-						$image_url = $Hero[0]['url'];
-						
-						$image_large = $Hero[0]['sizes']['large'];
-						
-						$image_medium = $Hero[0]['sizes']['medium'];
-						
-						$thumbnail = $Hero[0]['sizes']['thumbnail'];
-						
-						$link = $Hero[1];
-						
-						$title = $Hero[2];
-						
-						$sub = $Hero[3];
-		
-						
-						?>			
-						<div class="col column full-width-bg " style="background-image: url(<?php echo $image_url ?>);">
-							<a href="<?php echo $link ?>">
-
-								<div class="card card-center">
-									<div class="card-content">
-										<h1><?php echo $title; ?></h1>
-										<h2 class="subtitle"><?php echo $sub; ?></h2>
-									</div>
-								</div>
-							</a>
-
-						</div>  
-						<?php
-					}
-					
-					?>
-                    <!-- 
-					
-                    <div class="col column full-width-bg " style="background-image: url(assets/projects/heros/projects_residential_hero.jpg);">
-                        <a href="projects-residential.html">
-                            <div class="card card-center">
-                                <div class="card-content">
-                                    <h1>Residential</h1>
-                                    <h2 class="subtitle">Projects</h2>
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-					
-					-->
-            </div>
-        </section>
-
-<!-- /section -->
-
-
-        
-
-
-
-
-
-
-
-    </main>
-<!-- /end main -->
-	
-	
-	
-	<?php
-
-
-
-
-
-
-
-		get_footer();
-
-/*
 
 function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related, $post_content)
 {
@@ -297,6 +109,8 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 }
 	
 	$body_class="post-list";
+	
+	print "<!-- :::project_id_2 body_class=$body_class       -->";
 	
 	$template_class="blog";
 
@@ -490,9 +304,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 		
 		$post_content_1 =  $intro_link_1->post_content;
 		
-		
-		
-		//
+
 		
 		$title_2 =  $intro_link_2->post_title;
 		
@@ -518,10 +330,16 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 		$_images_2 = array();
 		
+		print "<!-- :::project_id_2 =$project_id_2       -->";
+		
 		if (have_rows('installation_photos', $project_id_2)) :
+			print "<!-- :::have_rows =$project_id_2       -->";
 			while (have_rows('installation_photos', $project_id_2)) :
 				the_row();
 				$_images_2[] = get_sub_field('photo');
+				print "<!-- ::: _images_2::: ";
+				print_r($_images_2);
+				print "	-->";
 			endwhile;
 		endif;
 		
@@ -540,8 +358,8 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 							</blockquote>
 							<?php echo $intro_paragraph; ?>
 						</div>
-
-						<a class="button-secondary pop-up-link-2"> <?php echo $intro_button; ?></a>
+						<!-- discover_button 1 -->
+						<a class="button-secondary pop-up-link-2 "> <?php echo $intro_button; ?></a>
 
 
 					</div>
@@ -821,7 +639,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 			
 			<?php
 			
-			project_pop_up($project_id_1, 10, $title_1, $RegionStr_1, $_images_1, $related_1, $post_content_1);
+			//	project_pop_up($project_id_1, 10, $title_1, $RegionStr_1, $_images_1, $related_1, $post_content_1);
 			
 
 			
@@ -860,10 +678,17 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 				
 				?>
                     <div class="pagination">
-					
-                        <a href="" class="page previous load-more-link"  data="prev" id="prev">
+						<?php
+						print "<!-- :::current=$current  -->";
+						if($current>1){
+							?>
+							<a href="" class="page previous load-more-link"  data="prev" id="prev">
+							<span class="left_arrow">&#x2B60;</span></a> 
+							<?php
+						}
+						?>
 						
-						<span class="left_arrow">&#x2B60;</span></a> 
+						
 						
 						<?php 
 
@@ -1069,18 +894,25 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 					// Select the element with the ID 'card_title_0'
 					const cardTitle = document.getElementById('card_title_' + $X);
-					// Replace the text content with the desired text
-					cardTitle.textContent = title;
+					console.log("X=" + $X);
+					if(cardTitle){
+						// Replace the text content with the desired text
+						cardTitle.textContent = title;
+					}
 					
 					//popup_project_title_
 					const popup_project_title_ = document.getElementById('popup_project_title_' + $X);
 					// Replace the text content with the desired text
-					popup_project_title_.textContent = title;
+					if(popup_project_title_){
+						popup_project_title_.textContent = title;
+					}
 					
 					//card_image_
 					var image = obj['image'];
 					var card_image = document.getElementById('card_image_' + $X);
-					card_image.src = image;
+					if(card_image){
+						card_image.src = image;
+					}
 					
 					
 					
@@ -1330,4 +1162,3 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 		get_footer();
 
-*/

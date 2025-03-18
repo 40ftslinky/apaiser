@@ -2,7 +2,7 @@
 /**
  * The template for displaying the post.
  *
- * Template name: Collection Archive
+ * Template name: Products Page (Archive)
  *
  * @package storefront
  */
@@ -26,6 +26,19 @@
 	
 	$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
 
+
+	$HeroImage = get_field('hero_image', $post_id);
+	
+	
+	if(empty($HeroImage['sizes']['large'])){
+		
+		$IMG = $child_themedir . "assets/heros/collections_hero.jpg";
+		
+	} else {
+		
+		$IMG = $HeroImage['sizes']['large'];
+		
+	}
 	
 	?>
 
@@ -35,19 +48,20 @@
 <!-- section -->
 <!-- hero section (text only) -->
 
-        <section class="hero text_only dark_grad" style="background-image: url(<?php echo $child_themedir; ?>assets/heros/collections_hero.jpg);">
+        <section class="hero text_only dark_grad" style="background-image: url(<?php echo $IMG; ?>);">
             <div class="row">
                 <div class="col">
                     <div class="hero-content">
-                        <!-- <h1 class="subtitle">Explore</h1> -->
-                        <h1>Collections</h1>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p> -->
+
+                        <h1>Products</h1>
+
                     </div>
                 </div>
             </div>
         </section>
-		
+
 <!-- /section -->
+
 
 <!-- section (text only) -->
 <?php
@@ -115,14 +129,13 @@ if(!empty($bq) || !empty($in)){
 			//
 			///////////////////////////
 			// Define the taxonomy
-			$taxonomy = 'product_cat';
-			
-			
-			$X=0;
+			$taxonomy = 'product_type';
 
 			// Get all terms for the specified taxonomy
 			$terms = get_terms([
 				'taxonomy' => $taxonomy,
+				'order_by' => 'id',
+				'order'=> 'asc',
 				'hide_empty' => false, // Set to true to hide terms without posts
 			]);
 
@@ -130,27 +143,21 @@ if(!empty($bq) || !empty($in)){
 			if (!empty($terms) && !is_wp_error($terms)) {
 				// Loop through each term
 				foreach ($terms as $term) {
-				//	echo 'Term name: ' . $term->name . '<br>';
-				//	echo 'Term slug: ' . $term->slug . '<br>';
-				//	echo 'Term description: ' . $term->description . '<br>';
-				//	echo 'Term ID: ' . $term->term_id . '<br>';
-				//	echo 'Term count: ' . $term->count . '<br>';
-				//	echo '<br>';
-				
+
 				$med='';
 				
 				$term_id=$term->term_id;
 				$TN=$term->name;
-				$Link = "/products-cat/".$term->slug;
+				$Link = "/products-types/".$term->slug;
 				
 					
 			$hero_image = get_field('hero_image', 'product_cat_'.$term_id);
 			
-			print "<!-- hero_image: $hero_image -->";
+
 			
 			$hero_image2 = get_field('hero_image2', 'product_cat_'.$term_id);
 			
-			print "<!-- hero_image2: $hero_image2 -->";
+
 			
 			$category_image = get_field('category_image', 'product_cat_'.$term_id);
 			
@@ -181,38 +188,27 @@ if(!empty($bq) || !empty($in)){
 			}
 			
 			if(empty($IMG)){
-				$stylesheet_directory = basename(get_stylesheet_directory());
-				$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
-				$IMG=$child_themedir."assets/images/placeholder.jpg";
-			}
+			//	$stylesheet_directory = basename(get_stylesheet_directory());
+			//	$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
+			//	$IMG=$child_themedir."assets/images/placeholder.jpg";
+			} 
 				
-			
-			?>
-            <!--  01* -->
-            <a class="card_link" href="<?php echo $Link; ?>">
-                <div class="card">                        
-                    <div class="card-image" id="card_image_<?php echo $X; ?>">
-                        <img src="<?php echo $IMG; ?>" alt="<?php echo $TN; ?>">
-                    </div>
-                    <div class="card-content">
-                        <h3><?php echo $TN; ?></h3>
-                        <button class="view_product-link">View Range</button>
-                    </div>
-                </div>
-            </a>
-			<style>	
-				.grid-collection a .card:hover #card_image_<?php echo $X; ?>::after {
-					height: 100%;
-					opacity: 1;
-					background-image: url("");
-
-				}
-			</style>
-		
-			
-			<?php
-			
-			$X++;
+			if(!empty($IMG)){
+				?>
+				<!--  01* -->
+				<a class="card_link" href="<?php echo $Link; ?>">
+					<div class="card">                        
+						<div class="card-image">
+							<img src="<?php echo $IMG; ?>" alt="<?php echo $TN; ?>">
+						</div>
+						<div class="card-content">
+							<h3><?php echo $TN; ?></h3>
+							<button class="view_product-link">View Range</button>
+						</div>
+					</div>
+				</a>
+				<?php
+			}
 			
 			/////////////////////////////
 			//
@@ -261,7 +257,7 @@ if(!empty($bq) || !empty($in)){
 		//
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-			include "carousel_range.php";
+		//	include "carousel_range.php";
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//

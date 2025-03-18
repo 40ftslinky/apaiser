@@ -1516,18 +1516,15 @@
 									
 									$n = str_pad($n, 2, '0',STR_PAD_LEFT);	// add leading zero to numbers under 10 
 									
-									$link = make_pagination_link($i);
 
+									$link = make_pagination_link($i);
+								
+								
+									
 									?>
-									<a href="<?php echo $link; ?>" class="<?php echo $class; ?>" data="<?php echo $C; ?>" id="<?php echo $i; ?>"><?php echo $n; ?></a>
+										<a href="<?php echo $link; ?>" class="<?php echo $class; ?>" data="<?php echo $C; ?>" id="<?php echo $i; ?>"><?php echo $n; ?></a>&nbsp;|&nbsp;
 									<?php
-									
-									// only show pipe if not last link
-									if( $i < $page_count ){
-										print "&nbsp;|&nbsp;";
 									}
-									
-								}	// end for loop 
 								
 								
 								$next = $current + 1;
@@ -1555,28 +1552,17 @@
 							if ($page_count > 1){
 								
 								print '<div class="pagination wp_pagination pagination_product_search">';
-								
-								
-								print "<!-- ::_GET['_paged']=".$_GET['_paged']."  -->";
 
-								if(!empty($_GET['_paged'])){
-									$current_page = $_GET['_paged'];
-								} else {
-									$current_page = max(1, get_query_var('paged'));
-								}
+								$current_page = max(1, get_query_var('paged'));
 								
 								
 								print "<!-- ::current_page=$current_page  -->";
-								
-								$nLink = get_pagenum_link(1);
-								
-								print "<!-- ::nLink=$nLink  -->";
 
 								add_filter( 'number_format_i18n', 'give_numbers_leading_zero' );
 								
 								$paginate_links = paginate_links(
 									array(
-										'base' => html_entity_decode($nLink . '%_%'),
+										'base' => html_entity_decode(get_pagenum_link(1) . '%_%'),
 										'format' => '&_paged=%#%',
 										'current' => $current_page,
 										'show_all'=> true,
@@ -1587,13 +1573,9 @@
 									)
 								);
 								
-								
-								print "<!-- :::paginate_links    ";
 
-								print_r($paginate_links);
+
 						
-						
-								print "  -->";
 
 								$x=0;
 

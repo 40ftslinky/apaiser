@@ -16,32 +16,25 @@
 					
 					$homepage_id = getHomepagePostId();
 					
-					
-					
 					$make_an_enquiry =get_field('enquiry_make_an_enquiry', $homepage_id);
 					
+					$footer_intro_text =get_field('enquiry_footer_intro_text', $homepage_id);
+					
+					$enquiry_subscribe_text =get_field('enquiry_subscribe_text', $homepage_id);
+					
+					$enquiry_subscribe_button =get_field('enquiry_subscribe_button', $homepage_id);
 					
 					?>
                     <div class="text_wrap">
                         <h4><?php echo $make_an_enquiry; ?></h4>
-                        <p>Get in touch and our team will connect with you to help bring your vision to life.</p>
+                        <p><?php echo $footer_intro_text; ?></p>
                     </div>
 					
                 </div>
                 <div class="col">
                     <div id="enquiry_form" class="form_wrap">
                         <?php echo apply_shortcodes( '[contact-form-7 id="ad4cf44" title="Enquiry Form"]' ); ?>
-                        <!-- <form action="" method="post">
 
-                            <div class="form_group">
-                                <input type="text" name="name" id="name" placeholder="Name">
-                                <input type="email" name="email" id="email" placeholder="Email">
-                                <input type="tel" name="phone" id="phone" placeholder="Phone">
-                            </div>
-
-                            <button class="button-primary" type="submit">Enquire Now</button>
-
-                        </form> -->
                     </div>
                 </div>
 
@@ -68,30 +61,70 @@
 
                 <div class="column">
                     <div class="subscribe">
-                        <p>Subscribe to receive news of our latest collections, new projects and inspiring designs.</p>
-                        <button class="button-primary subscribe_link" >Subscribe</button>
+                        <p><?php echo $enquiry_subscribe_text ?></p>
+                        <button class="button-primary subscribe_link" ><?php echo $enquiry_subscribe_button ?></button>
                     </div>
 
                     <div class="address">
                         <h6>
-                            <a class="email-link" href="/contact#melbourne">Melbourne</a> | 
-                            <a class="email-link" href="/contact#new-york">New York</a> | 
-                            <a class="email-link" href="/contact#bangkok">Bangkok</a> | 
-                            <a class="email-link" href="/contact#singapore">Singapore</a> | 
-                            <a class="email-link" href="/contact#london">London</a> | 
-                            <a class="email-link" href="/contact#dubai">Dubai</a>
 
+						<?php
+						
+								$rows = get_field('address_location', $homepage_id);
+								
+								if($rows){
+									
+									$Z = 0;
+									
+									$count = count($rows);
+									
+									foreach($rows as $key=> $row)
+									{
+											
+											echo '<a class="email-link" href="/contact#salesoffices">'.$row['location_name'].'</a>';
+											
+											$Z++;
+											
+											if($Z != $count){
+												
+												echo "&nbsp;|&nbsp;";
+											}
+											
+									}
+
+								}
+														
+						$street_address = get_field('address_street_address', $homepage_id);
+						
+						$address_phone = get_field('address_phone', $homepage_id);
+						
+						$phone_link = get_field('address_phone_link', $homepage_id);
+						?>
                         </h6>
-                        <p>344 Burnley St, Richmond, Victoria. Austalia</p>
-                        <p>T: <a href="tel:+61 3 9421 5722">+61 3 9421 5722</a></p>
+                        <p><?php echo $street_address ?></p>
+                        <a href="tel:<?php echo $phone_link ?>"><?php echo $address_phone ?></a>
                     </div>
                     <div class="certifications">
-                        <h6>Certifications</h6>
-                        <div class="certifications_group">                        
-                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/CE.svg" alt="CE">
-                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/cUPC.svg" alt="cUPC">
-                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/iso_standards.png" alt="ISO-19001 IS0-4001">
-                            <img src="<?php echo $child_themedir; ?>assets/brand/certifications/saso-logo.png" alt="Saudi Standards, Metrology and Quality Organization">
+					<?php
+					$certification_name = get_field('certification_name', $homepage_id);
+					
+					$certification_images = get_field('certification_images', $homepage_id);
+					
+					$copyright = get_field('copyright', $homepage_id);
+					
+					
+					?>
+                        <h6><?php echo $certification_name ?></h6>
+                        <div class="certifications_group">
+						<?php
+
+							foreach($certification_images as $image){
+								
+								print '<img src="'.$image['logo'].'" alt="'.$image['alt'].'" class="footer_logo">';
+							}
+							
+							
+							?>
                         </div>
                     </div>
                 </div>
@@ -102,47 +135,93 @@
                         <!-- simplified site map  -->
                         <div class="footer-menu_group">
                             <ul class="footer-menu">
-                                <li class="footer-menu-item"><a href="/about" class="footer-menu-link">About</a></li>                                
-                            
-                                <li class="footer-menu-item"><a href="/contact/" class="footer-menu-link ">Contact</a></li>                        
-                            
-                                <li class="footer-menu-item"><a href="/sustainability" class="footer-menu-link ">Sustainability</a></li>                                
+							<?php
+							
+							$menu_items = wp_get_nav_menu_items('footer-group-01');
+
+							foreach($menu_items as $menu_item){
+
+								$title = $menu_item->title;
+								
+								$url = $menu_item->url;
+								
+								echo '<li class="footer-menu-item"><a href="'.$url.'" class="footer-menu-link">'.$title.'</a></li>';
+								
+								echo "\n";
+
+							}
+							
+							?>
                             </ul>                            
                         </div>
 
                         <div class="footer-menu_group">
-                            <ul class="footer-menu">                                
-                                <li class="footer-menu-item"><a href="/products/" class="footer-menu-link">Products</a></li>                                
-                            
-                                <li class="footer-menu-item"><a href="/collections/" class="footer-menu-link">Collections</a></li>                                
-                            
-                                <li class="footer-menu-item"><a href="/explore/" class="footer-menu-link">Explore</a></li>                                
+                            <ul class="footer-menu">           
+
+							<?php
+							
+							$menu_items = wp_get_nav_menu_items('footer-group-02');
+
+							foreach($menu_items as $menu_item){
+
+								$title = $menu_item->title;
+								
+								$url = $menu_item->url;
+								
+								echo '<li class="footer-menu-item"><a href="'.$url.'" class="footer-menu-link">'.$title.'</a></li>';
+								
+								echo "\n";
+
+							}
+							
+							?>								
                             </ul>
                                                     
                         </div>
 
                         <div class="footer-menu_group">
                             <ul class="footer-menu">
-                                <li class="footer-menu-item"><a href="/customisation" class="footer-menu-link">Customisation</a></li>                                
-                            
-                                <li class="footer-menu-item"><a href="/Journal" class="footer-menu-link">Journal</a></li>
-                            
-                                <li class="footer-menu-item"><a href="/privacy-policy/" class="footer-menu-link">Privacy Policy</a></li>
+							<?php
+							
+							$menu_items = wp_get_nav_menu_items('footer-group-03');
 
-                                <li class="footer-menu-item"><a href="/brochure/?f=apaiser-Warranty.pdf" class="footer-menu-link">Warranty</a></li>
+							foreach($menu_items as $menu_item){
+
+								$title = $menu_item->title;
+								
+								$url = $menu_item->url;
+								
+								echo '<li class="footer-menu-item"><a href="'.$url.'" class="footer-menu-link">'.$title.'</a></li>';
+								
+								echo "\n";
+
+							}
+							
+							?>			
                             </ul>
                            
                         </div>
 
                         <div class="footer-menu_group">
                             <ul class="footer-menu">
-                                <li class="footer-menu-item"><a href="/brochure/?f=apaiser-Installation-Care-Guide.pdf" class="footer-menu-link">Installation & Care</a></li>                                
-                            
-                                <li class="footer-menu-item"><a href="/contact" class="footer-menu-link">Consult With Us</a></li>
-                            
-                                <li class="footer-menu-item"><a href="/projects" class="footer-menu-link">Projects</a></li>                                
+							
+							<?php
+							
+							$menu_items = wp_get_nav_menu_items('footer-group-04');
 
-                                <li class="footer-menu-item"><a href="/professionals" class="footer-menu-link">Professionals</a></li>                                
+							foreach($menu_items as $menu_item){
+
+								$title = $menu_item->title;
+								
+								$url = $menu_item->url;
+								
+								echo '<li class="footer-menu-item"><a href="'.$url.'" class="footer-menu-link">'.$title.'</a></li>';
+								
+								echo "\n";
+
+							}
+							
+							?>											
                             </ul>
                            
                         </div>
@@ -155,28 +234,38 @@
 
             <div class="row footer_bottom">
                 <div class="column_wrap">
-    
+
                     <div class="column credits">
-                        <div><p>&copy; 2024 Apaiser. All rights reserved.</p></div><div><a href="/conditions">Terms of Use</a></div><div><a href="/cookies">Cookies</a></div>
+                        <div><p>&copy; <?php echo $copyright ?></p></div>
+						<?php
+							$footer_links = get_field('footer_links', $homepage_id);
+
+							foreach($footer_links as $link){
+								
+								print '<div class="footer_link"><a href="'.$link['url'].'">'.$link['text'].'</a></div>';
+							}
+						?>
+
                     </div>
     
                     <div class="column">
                         <div class="social_wrap">
-                            <a href="https://www.facebook.com/apaiserbathware" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <img src="<?php echo $child_themedir; ?>assets/brand/social/facebook.svg" alt="facebook social-icon">
-                            </a>
-                            <a href="https://www.instagram.com/apaiserbathware/" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <img src="<?php echo $child_themedir; ?>assets/brand/social/instagram.svg" alt="instagram social-icon">
-                            </a>
-                            <a href="https://www.linkedin.com/company/apaiser" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <img src="<?php echo $child_themedir; ?>assets/brand/social/linkedin.svg" alt="linkedin">
-                            </a>
-                            <!-- <a href="https://www.x.com/apaiser" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <img src="<?php echo $child_themedir; ?>assets/brand/social/x-twitter.svg" alt="x social-icon">
-                            </a> -->
-                            <a href="https://www.pinterest.com.au/apaiser_bathware/" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <img src="<?php echo $child_themedir; ?>assets/brand/social/pinterest.svg" alt="pintrest social-icon">
-                            </a>
+						<?php
+							
+							$socials = get_field('socials', $homepage_id);
+							
+							foreach($socials as $link){
+								
+								print '<a href="'.$link['url'].'" target="_blank" rel="noopener noreferrer" class="social-link">';
+								
+								print '<img src="'.$link['image'].'" alt="'.$link['alt'].'">';
+								
+								print '</a>';
+								
+							}
+
+							
+							?>
                         </div>
                     </div>
 
@@ -186,13 +275,6 @@
 
 
     </footer>
-
-
-
-
-
-
-
 
 
  <!--Search Popup-->
@@ -217,11 +299,30 @@
                 </form>
 
                 <div class="search-details">
+				
+					<?php
+					
+						$terma = $_COOKIE['apaiser_search_terms_a'];
+						
+						$termb = $_COOKIE['apaiser_search_terms_b'];
+						
+						$termc = $_COOKIE['apaiser_search_terms_c'];
+					
+					?>				
                 
                     <!-- <h2 class="search-title">Search</h2> -->
                     <div class="search-heading">
-                        <div class="search-subtitle">Recent Searches</div>
-                        <div class="search-clear">Clear All</div>
+					<?php
+					
+						if(!empty($terma) || !empty($termb) || !empty($termc)){
+					
+							?>
+							<div class="search-subtitle">Recent Searches</div>
+							<div class="search-clear" onclick="clear_all_cookies();">Clear All</div>
+							<?php
+						
+						}
+						?>
                     </div>
 					<?php
 					
@@ -230,30 +331,42 @@
 					?>
                     <div class="search-filters">
                         <ul class="search-list">
+
 							<?php
 							
-								$terma = $_COOKIE['apaiser_search_terms_a'];
-								
-								$termb = $_COOKIE['apaiser_search_terms_b'];
-								
-								$termc = $_COOKIE['apaiser_search_terms_c'];
+							if(!empty($terma)){
 							
+								?>
+								<li class="pre-filter">
+									<a href="/?s=<?php echo $terma; ?>"><?php echo $terma; ?></a>
+								</li>
+								<?php
+							}
+							
+							if(!empty($termb)){
+							
+								?>
+								<li class="pre-filter">
+									<a href="/?s=<?php echo $termb; ?>"><?php echo $termb; ?></a>
+								</li>
+								<?php
+							}
+							
+							if(!empty($termc)){
+							
+								?>							
+								<li class="pre-filter">
+									<a href="/?s=<?php echo $termc; ?>"><?php echo $termc; ?></a>
+								</li>
+								<?php
+							
+							}
 							?>
-                            <li class="pre-filter">
-								<a href="/?s=<?php echo $terma; ?>"><?php echo $terma; ?></a>
-							</li>
-                            <li class="pre-filter">
-								<a href="/?s=<?php echo $termb; ?>"><?php echo $termb; ?></a>
-							</li>
-                            <li class="pre-filter">
-								<a href="/?s=<?php echo $termc; ?>"><?php echo $termc; ?></a>
-							</li>
                             <!-- <li class="pre-filter">White</li>
                             <li class="pre-filter">Stone</li> -->
                         </ul>
                     </div>
 
-                   <!--  <p>lorem ipsum autlaciis pa dolesequae nempore mporesedic dior audit in re dus int pore ero volorporpost.</p> -->
                                         
                 </div>
                 
@@ -314,16 +427,88 @@
 
     <script src="<?php echo $child_themedir; ?>/js/flickity_custom.js"></script>
 	<!-- <script src="<?php echo $child_themedir; ?>/js/custom-ajax.js"></script> -->
+	<style>
 	
+	.pre-filter a[data-has-after]::after { pointer-events: auto; /* Make the pseudo-element clickable */ }
 	
+	</style>
 	
+	<script>
+
+				document.querySelectorAll('.pre-filter a').forEach(anchor => {
+					anchor.setAttribute('data-has-after', 'true');
+				});
+
+				document.addEventListener('click', function(event) {
+					if (event.target.matches('li.pre-filter') && !event.target.matches('li.pre-filter a')) {
+						
+							var parentUl = event.target.parentElement; 
+							
+							var index = Array.prototype.indexOf.call(parentUl.children, event.target); 
+							
+							console.log('Position of clicked li:', index);
+						
+						
+						
+						clear_search_cookie(index);
+					}
+				});
+
+				// Function to be called
+				function clear_search_cookie(index) {
+					console.log('clear_search_cookie called');
+					
+						// use Ajax to get posts 
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo admin_url('admin-ajax.php');?>',
+							dataType: "json", // add data type
+							data: { action : 'clear_cookies', n: index },
+							success: function( response ) {
+								
+								console.log(response);
+								
+								var X = Number(response);	// covert str to num 
+								
+								if (!isNaN(X) && typeof X === 'number') {
+									
+									var searchList = document.querySelector('.search-filters .search-list');
+									
+									// hide appropriate LI in UL 
+									searchList.children[X].style.display = 'none'
+									
+								}
+
+								
+							}
+					
+						});
+					
+					
+				}
+
+
+
+
+			function clear_all_cookies(){
+				
+				clear_search_cookie(0);
+				
+				clear_search_cookie(1);
+				
+				clear_search_cookie(2);
+				
+			}
+
+	</script>
+
 	<?php
 	
-	
 	wp_footer();
-	
-	
-	
+
 	?>
+	
+	
+	
 </body>
 </html>

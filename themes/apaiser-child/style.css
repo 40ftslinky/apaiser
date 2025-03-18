@@ -1,0 +1,30 @@
+/*
+Theme Name:   Apaiser-Store-Child
+Author:       Ross Tess
+Template: storefront
+Description:  Theme for Apaiser website.
+Version:      1.0.01
+Updated: 01/10/2024
+
+*/
+
+/* admin */
+
+body.wp-admin #edittag {
+    max-width: 1080px;
+}
+body.wp-admin .acf-fields.-left>.acf-field>.acf-input {
+	width:calc(100% - 10px);
+}
+
+body.wp-admin .acf-image-uploader .image-wrap img {
+	max-height: 200px;
+	object-fit: contain;
+}
+
+th.acf-th[data-name*="spec"] {
+	width: 20%  !important;
+}
+th.acf-th[data-name*="name"] {
+	width: 34%  !important;
+}

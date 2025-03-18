@@ -21,13 +21,19 @@
     flex-wrap: wrap;
     box-sizing: border-box;
 }
+
+#wpfront-notification-bar-spacer[style="top: 0px; height: 40px;"] ~ main section .project-pop-up {
+    /* top: var(--notification-height);
+    height: calc(100% - var(--notification-height)); */
+}
+
 .project-pop-up {
     overflow-y: scroll;
 
 }
 
 .project-pop-up.is-visible {
-    z-index: 9999;
+    z-index: 999999;
     visibility: visible;
     opacity: 1;
 }
@@ -140,10 +146,16 @@
 @media screen and (max-width: 1080px){
     .project-content .project-image {
         height: 30vh;
-        width: 100%;
-        min-width: 100%;
-        min-height: unset;
+        /* width: 100%; */
+        /* min-width: 100%; */
+        /* min-height: unset; */
         /* max-height: 30%; */
+    }
+}
+@media screen and (max-height: 880px){
+    .project-content .project-image {
+        height: 30vh;
+        width: auto;
     }
 }
 
@@ -158,8 +170,15 @@
 @media screen and (max-width: 1080px){
     .project-content .project-image img,
     .project-carousel .carousel-cell img {
-        width: 100%;
+        width: unset;
         height: 30vh;
+        /* object-fit: contain; */
+    }
+}
+@media screen and (max-width: 600px){
+    .project-content .project-image img,
+    .project-carousel .carousel-cell img {
+        object-fit: contain;
     }
 }
 
@@ -223,7 +242,7 @@
 .project-header h2.project-title {
     font-family: var(--heading-serif);
     font-size: 1.5em;
-    font-size: var(--font-size-h2);
+    font-size: var(--font-size-h3);
     text-transform: none !important;
     margin-bottom: 0;
 }
@@ -233,6 +252,14 @@
         font-size: 1.5em;
     }
 }
+@media screen and (max-height: 880px){
+    .project-content h2.project-title,
+    .project-header h2.project-title {
+        font-size: 1.5em;
+    }
+}
+
+
 
 .project-details h4 {
     text-transform: uppercase;
@@ -263,11 +290,19 @@
     max-width: 75ch;
     margin-bottom: 0.5rem;
 }
+.project-description a {
+    color: var(--primary) !important;
+}
 
 .project_featured_products a {
     text-decoration: none;
     font-weight: var(--base-weight);
     transition: var(--transition-button);
+}
+@media screen and (max-width: 1080px){
+    .project_featured_products a {
+        font-size: 1em;
+    }
 }
 .project_featured_products a:hover {
     text-decoration: underline;

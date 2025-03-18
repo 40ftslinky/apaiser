@@ -38,27 +38,43 @@
                                 <div class="dropdown">
                                     <div class="content">
                                         
+										<!--       ::submenu_col::                  -->
                                         <div class="submenu_col">
                                             <h2 class="submenu-title"><a href="/about">About Us</a></h2>
                                             <ul class="submenu">
-                                                <li class="submenu-item"><a class="submenu-link" href="/about#our-story">Our Story</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/about#our-atelier">Our Atelier</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/about#apaisermarble">Apaisermarble</a></li>
+											<?php
+											// Get the current page URL
+											$current_url = get_permalink();
+
+											// Parse the URL to get the path without the domain
+											$path = parse_url($current_url, PHP_URL_PATH);
+											if (substr($path, -1) == '/') {
+												$path = rtrim($path, '/');
+											}
+											?>
+
+											<?php if($path=="/about"){$LINK = "#";} else {$LINK = "/about#";} ?>
+
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>our-story">Our Story</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>our-atelier">Our Atelier</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>apaisermarble">Apaisermarble</a></li>
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
                                             <h2 class="submenu-title"><a href="/sustainability">Sustainability</a></h2>
                                             <ul class="submenu">
-                                                <li class="submenu-item"><a class="submenu-link" href="/sustainability#our-practices">Our Practices</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/sustainability#Certifications-Declaration">Certifications & Declaration</a></li>                                                
+												<?php if($path=="/sustainability"){$LINK = "#";} else {$LINK = "/sustainability#";} ?>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-practices">Our Practices</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>Certifications-Declaration">Certifications & Declaration</a></li>                                                
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
                                             <h2 class="submenu-title"><a href="/contact">Contact</a></h2>
                                             <ul class="submenu">
-                                                <li class="submenu-item"><a class="submenu-link" href="contact#our-partners">Our Partners</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="contact#our-showrooms">Our Showrooms</a></li>                                                
-                                                <li class="submenu-item"><a class="submenu-link" href="contact#our-headquarters">Our Headquarters  </a></li>                                                
+												<?php if($path=="/contact"){$LINK = "#";} else {$LINK = "/contact#";} ?>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-partners">Our Partners</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-showrooms">Our Showrooms</a></li>                                                
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-headquarters">Our Headquarters  </a></li>                                                
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
@@ -73,7 +89,8 @@
                                     <div class="content">
                                         
                                         <div class="submenu_col">
-                                            <h2 class="submenu-title"><a href="/products">Products</a></h2>
+                                            <!-- <h2 class="submenu-title"><a href="/products">Products</a></h2> -->
+											<h2 class="submenu-title">Products</h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bath/">Baths</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basin</a></li>
@@ -106,10 +123,11 @@
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
+											<?php if($path=="/explore"){$LINK = "#";} else {$LINK = "/explore#";} ?>
                                             <h2 class="submenu-title"><a href="/explore/">Explore</a></h2>
                                             <ul class="submenu ">
-                                                <li class="submenu-item"><a class="submenu-link" href="/explore#brochures">Brochures</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/explore#house-palettes">House Palettes</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>brochures">Brochures</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>house-palettes">House Palettes</a></li>
                                             </ul>                                                                                            
                                         </div>
                                     </div>
@@ -118,7 +136,7 @@
                             <li class="menu-item"><a class="menu-link " href="/customisation">Customisation</a></li>
                             <li class="menu-item"><a class="menu-link " href="/professionals">Professionals</a></li>
                             <li class="menu-item has-dropdown">
-                                <span class="menu-link has-submenu">Projects</span>
+                                <span class="menu-link has-submenu"><a class="menu-link " href="/projects">Projects</a></span>
                                 <div class="dropdown">
                                     <div class="content">
                                         
@@ -161,25 +179,30 @@
                                         <div class="submenu_col">
                                             <h2 class="submenu-title has-submenu">About Us</h2>
                                             <ul class="submenu">
-                                                <li class="submenu-item"><a class="submenu-link" href="/about#our-story">Our Story</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/about/#our-atelier">Our Atelier</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/about/#apaisermarble">Apaisermarble</a></li>
+											 <li class="submenu-item"><a class="submenu-link" href="/about">About Us</a></li>
+												<?php if($path=="/about"){$LINK = "#";} else {$LINK = "/about#";} ?>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-story">Our Story</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-atelier">Our Atelier</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>apaisermarble">Apaisermarble</a></li>
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
                                             <h2 class="submenu-title has-submenu">Sustainability</h2>
                                             <ul class="submenu">
-                                                <li class="submenu-item"><a class="submenu-link" href="/sustainability/#our-practices">Our Practices</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/sustainability/#Certifications-Declaration">Certifications & Declaration</a></li>                                                
+												<?php if($path=="/sustainability"){$LINK = "#";} else {$LINK = "/sustainability#";} ?>
+												<li class="submenu-item"><a class="submenu-link" href="/sustainability/">Sustainability</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-practices">Our Practices</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>Certifications-Declaration">Certifications & Declaration</a></li>                                                
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
                                             <h2 class="submenu-title has-submenu">Contact</h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/contact/">Contact Us</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/locations#our-partners">Our Partners</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/locations#our-showrooms">Our Showrooms</a></li>                                                
-                                                <li class="submenu-item"><a class="submenu-link" href="/locations#our-headquarters">Our Headquarters  </a></li>                                                
+												<?php if($path=="/contact"){$LINK = "#";} else {$LINK = "/contact#";} ?>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-partners">Our Partners</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-showrooms">Our Showrooms</a></li>                                                
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-headquarters">Our Headquarters  </a></li>                                                
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
@@ -206,6 +229,7 @@
                                         <div class="submenu_col">
                                             <h2 class="submenu-title has-submenu">Collections</h2>
                                             <ul class="submenu has-column">
+                                                <li class="submenu-item"><a class="submenu-link" href="/collections/">Collections</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Haven">Haven</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Chi">Chi</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Lunar">Lunar</a></li>
@@ -216,14 +240,17 @@
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Sol">Sol</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Zen">Zen</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-cat/Tulle">Tulle</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products-cat/Terra">Terra</a></li>
+                                                <!-- <li class="submenu-item"><a class="submenu-link" href="/products-cat/Terra">Terra</a></li> -->
+												<li class="submenu-item more-item"><a class="submenu-link more-link" href="/collections">More</a></li>
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
                                             <h2 class="submenu-title has-submenu">Explore</h2>
                                             <ul class="submenu">
-                                                <li class="submenu-item"><a class="submenu-link" href="/explore#brochures">Brochures</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/explore#house-palettes">House Palettes</a></li>
+												<?php if($path=="/explore"){$LINK = "#";} else {$LINK = "/explore#";} ?>
+												<li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>">Explore</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>brochures">Brochures</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>house-palettes">House Palettes</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -232,11 +259,12 @@
                             <li class="menu-item"><a class="menu-link " href="/customisation">Customisation</a></li>
                             <li class="menu-item"><a class="menu-link " href="/professionals">Professionals</a></li>
                             <li class="menu-item has-dropdown">
-                                <span class="menu-link "><a href="/projects/">Projects</a></span>
+                                <span class="menu-link "><a href="#">Projects</a></span>
                                 <div class="dropdown">
                                     <div class="content">
                                         
                                         <div class="submenu_col">
+											<h2 class="submenu-title has-submenu"><a class="submenu-title-link" href="/projects/">Projects</a></h2>
                                             <h2 class="submenu-title has-submenu"><a class="submenu-title-link" href="/projects-commercial">Commercial</a></h2>
                                             <h2 class="submenu-title has-submenu"><a class="submenu-title-link" href="/projects-residential">Residential</a></h2>                                        
                                         </div>
@@ -247,6 +275,7 @@
 
                         <!-- secondary nav -->
                         <ul class="secondary-menu">
+							
                             <li class="menu-item"><a class="menu-link" href="/contact">Contact Us</a></li>
                             <li class="menu-item"><a class="search" href="#search" aria-label="Click here to search"></a></li>
                         </ul>

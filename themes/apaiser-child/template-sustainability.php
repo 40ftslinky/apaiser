@@ -44,7 +44,7 @@
 	$section2_alt= get_field("section2_alt", $post_id);
 	$section2_paragraph= get_field("section2_paragraph", $post_id);
 ?>
-<section class="half_panel-img_padding">
+<section id="imagine" class="half_panel-img_padding">
     <div class="row ">
 
         <div class="col column">
@@ -70,6 +70,8 @@
 	$section3_alt= get_field("section3_alt", $post_id);
 	$section3_title= get_field("section3_title", $post_id);
 	$section3_subtitle= get_field("section3_subtitle", $post_id);
+	$section3_button_link= get_field("section3_button_link", $post_id);
+	$section3_button_text= get_field("section3_button_text", $post_id);
 ?>
 <section class="featured-hero full-width-bg grey_800_bg" style="">
     <div class="row">
@@ -87,6 +89,7 @@
                 <div class="card-content ">
                     <h1 class=""><?php echo $section3_title; ?></h1>
                     <h2 class="subtitle "><?php echo $section3_subtitle; ?></h2>
+                    <a class="button-outline" href="<?php echo $section3_button_link['url'] ?>"><?php echo $section3_button_text ?></a>
 
                 </div>
             </div>

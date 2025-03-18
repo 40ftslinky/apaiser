@@ -27,14 +27,157 @@ section.hero {
     background-size: cover;
 }
 
+#wpfront-notification-bar-spacer[style="top: 0px; height: 40px;"] ~ main section.hero {
+    /* top: var(--notification-height); */
+    /* height: calc(var(--hero-height) - var(--notification-height)); */
+}
+
+
 
 [class*="allegra"] section.hero,
 [class*="lunar"] section.hero,
 [class*="ode"] section.hero,
+[class*="oman"] section.hero,
+[class*="relection"] section.hero,
+[class*="sapphire"] section.hero,
+[class*="seascapes"] section.hero,
+[class*="sentosa"] section.hero,
 [class*="lotus"] section.hero {
     background-position: right bottom;
 }
 
+[class*="stone-basin"] section.hero {
+    background-position: center bottom;
+}
+
+@media screen and (max-width: 1080px) {
+     
+    section.hero.text_only.dark_grad {
+        /* background-position: center bottom; */
+    }
+    
+    [class*="stone-bath"] section.hero {
+        background-position: 62% center;
+    }
+
+    [class*="freestanding-basin"] section.hero {
+        background-position: 88% center;
+    }
+
+    [class*="stone-vanities"] section.hero {
+        background-position: 93% center;
+    }
+
+    [class*="stone-bathroom-accessories"] section.hero {
+        background-position: 75% center;
+    }
+
+    [class*="zen"] section.hero,
+    [class*="seascapes"] section.hero,
+    [class*="soka"] section.hero,
+    [class*="emerald"] section.hero,
+    [class*="lotus"] section.hero
+    {
+        background-position: center bottom;
+    }
+
+    [class*="chi"] section.hero {
+        background-position: left center;
+    }
+
+    [class*="oman"] section.hero {
+        background-position: 13% center;
+    }
+
+    [class*="eclipse"] section.hero {
+        background-position: 15% center;
+    }
+
+    [class*="projects-commercial"] section.hero,
+    [class*="tulle"] section.hero {
+        background-position: 25% bottom;
+    }
+
+    [class*="projects-commercial"] section.hero.text_only {
+        background-position: 90% bottom;
+    }
+
+    [class*="projects-residential"] section.hero {
+        background-position: 70% bottom;
+    }
+
+    [class*="projects-residential"] section.hero.text_only {
+        background-position: 25% bottom;
+    }
+
+    body[class*="reflection"] section.hero {
+        background-position: 28% bottom;
+    }
+
+    [class*="haven"] section.hero  {
+        background-position: 33% bottom;
+    }
+
+    [class*="chameleon"] section.hero {
+        background-position: 40% bottom;
+    }
+
+    [class*="sublime"] section.hero {
+        background-position: 48% bottom;
+    }
+
+    [class*="lunar"] section.hero {
+        background-position: 52% bottom;
+    }
+
+    [class*="sentosa"] section.hero {
+        background-position: 60% bottom;
+    }    
+
+    [class*="collections"] section.hero, 
+    [class*="collections"] section.hero.text_only.dark_grad {
+        background-position: 63% bottom;
+    }
+
+    [class*="sampan"] section.hero {
+        background-position: 66% bottom;
+    }
+
+    [class*="sol"] section.hero {
+        background-position: 72% bottom;
+    }
+
+    [class*="sapphire"] section.hero {
+        background-position: 77% bottom;
+    }
+    
+    [class*="home"] section.hero {
+        background-position: 82% center;
+    }
+
+    [class*="ode"] section.hero {
+        background-position: 87% center;
+    }
+
+    [class*="allegra"] section.hero {
+        background-position: 93% bottom;
+    }
+    [class*="sustainability"] section.hero {
+        background-position: 80% bottom;
+    }
+    [class*="sustainability"] section.hero.sustainability_feature.dark_grad {
+        background-position: 41% bottom;
+    }
+
+
+}
+@media screen and (max-width: 880px) {
+    [class*="tulle"] section.hero {
+        /* background-position: 15% bottom; */
+        background-position: 27% bottom;
+        /* background-size: auto 180vh; */
+    }
+}
 
 .post .hero,
 body:not(.home) .hero {
@@ -97,26 +240,24 @@ body:not(.home) .hero {
 
 @media screen and (max-width: 1080px) {
     .text_only.dark_grad:after,
+    .text_only.dark_grad_right:after,
     .text_only_right.dark_grad_right:after {
-        height: 50vh;
+        height: 80vh;
         width: 100vw;
         bottom: 0;
-        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
     }
-    
-}
-@media screen and (max-width: 1080px) {
     .dark_grad:after {
-        height: 50vh;
+        height: 80vh;
         width: 100vw;
         bottom: 0;
-        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
     }
     .white_grad:after {
-        height: 50vh;
+        height: 80vh;
         width: 100vw;
         bottom: 0;
-        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), transparent);
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.7), transparent);
     }
     .fullwidth-feature.dark_grad:after {
         height: var(--hero-height);
@@ -177,6 +318,9 @@ body.post .hero::before {
 @media screen and (max-width: 1080px) {
     .hero .row {
         bottom:15vh
+    }
+    .sustainability .hero .row {
+        bottom:45vh
     }
 }
 
@@ -246,6 +390,11 @@ section.about_hero  {
     background-position: 0% center;
     background-repeat: no-repeat;
 }
+@media screen and (max-width: 1080px) {
+    section.about_hero  {
+        background-position: 70% center;
+    }
+}
 
 section.about_hero .hero-content { 
     z-index: 2;
@@ -256,6 +405,16 @@ section.about_hero .hero-content {
     content: url(../assets/heros/AboutUs_Step_inside_the_atelier.svg);
     width: 60vh;
 }
+@media screen and (max-width: 1080px) {
+    section.about_hero  {
+        background-position: 70% center;
+    }
+    section.about_hero .hero-content { 
+        content: url(../assets/heros/about_mobile.svg);
+
+    }
+}
+
 
 section.about_hero .hero-content h1 { 
     display: none;
@@ -281,6 +440,12 @@ section.sustainability_hero .hero-content {
     content: url(../assets/heros/sustainability_crafted.svg);
     width: 60vh;
 }
+@media screen and (max-width: 1080px) {
+    
+    section.sustainability_hero .hero-content { 
+        /* content: url(../assets/heros/sustainability_mobile.svg); */
+    }
+}
 
 section.sustainability_hero .hero-content h1 { 
     display: none;
@@ -294,9 +459,14 @@ section.sustainability_hero .hero-content h1 {
 
 section.sustainability_feature  {
     background-size: cover;
-    background-position: 0% center;
+    background-position: center 70%;
     background-repeat: no-repeat;
 }
+@media screen and (max-width: 1080px) {
+    section.sustainability_feature  {
+        background-position: 41% center;
+    }
+}                       q                                                                                                           
 
 .sustainability_feature .hero-content { 
     z-index: 2;

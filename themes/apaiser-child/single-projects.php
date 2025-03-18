@@ -23,7 +23,7 @@
 	
 	$post_title=get_the_title($post_id);
 	
-	//$post_content = get_the_content($post_id);
+	$post_content = get_the_content($post_id);
 	
 	
 	$stylesheet_directory = basename(get_stylesheet_directory());
@@ -39,8 +39,15 @@
 	$hero_visible = get_field('hero_visible', $post_id);
 	$hero_background = get_field('hero_background', $post_id);
 	
+	
 	$hero_image = get_field('hero_image', $post_id);
+	
+	
 
+	
+	
+	
+		
 	$hero_alt = get_field('hero_alt', $post_id);
 	$hero_title = get_field('hero_title', $post_id);
 	$hero_subtitle = get_field('hero_subtitle', $post_id);
@@ -62,216 +69,93 @@
  
  ?>
 
-<!-- hero section v01-->
-		<?php
-		if($hero_visible){
-			?>
-			<section class="half_panel-hero">
-				<div class="row">                
-					<?php
-					if(!empty($hero_image)){
-						if(empty($hero_alt)){
-							$hero_alt = $hero_title;
-						}
-						?>
-						<div class="col column full-width-bg" >
-							<div class="img_wrap ">
-								<img src="<?php echo $hero_image; ?>" alt="<?php echo $hero_alt; ?>">
-							</div>
-						</div>  
-						<?php
-					}
-					?>
-					<div class="col column full-width-bg " style="background-image: url(<?php echo $hero_background; ?>);">
-						<div class="card card-center">
-							<div class="card-content">
-								<h1><?php echo $hero_title ?></h1>
-								<?php
-								
-								if(!empty($hero_subtitle)){
-									?>
-									<h2 class="subtitle"><?php echo $hero_subtitle ?></h2>
-									<?php
-								}
-								?>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</section>
-			<?php
-			$hero_count++;
-		} 
-		?>
-<!-- /section -->
-
-<?php
-	$hero_visible = get_field('hero2_visible', $post_id);
-	$hero_background = get_field('hero2_background', $post_id);
-
-	$hero_title = get_field('hero2_title', $post_id);
-	$hero_subtitle = get_field('hero2_subtitle', $post_id);
-	if(empty($hero_title)){
-		$hero_title = $post_title;
-	}
-	if(empty($hero_background)){
-		$hero_background =$child_themedir."assets/projects/thumbs/placeholder.jpg";
-	}		
-?>
-<?php
-		if($hero_visible){
-			?>
-			<!-- hero section v02 -->
-
-				<section class="hero projects_hero dark_grad" style="background-image: url(<?php echo $hero_background; ?>);">
-					<div class="row">
-						<div class="col">
-							<div class="hero-content">
-								<?php
-								if(!empty($hero_subtitle)){
-									?>
-									<h1 class="subtitle"><?php echo $hero_subtitle; ?></h1>
-									<?php
-								}
-								?>
-								<h1 class=""><?php echo $hero_title; ?></h1>
-							</div>
-						</div>
-					</div>
-				</section>
-
-			<!-- /section -->
-		<?php
-		$hero_count++;
-}
-?>
 
 
-<?php
-
-	$hero_visible = get_field('hero3_visible', $post_id);
-	
-	$hero_image = get_field('hero3_image', $post_id);
-	
-	$hero_alt = get_field('hero3_alt', $post_id);
-	
-	$hero_title = get_field('hero3_title', $post_id);
-	
-	$hero_subtitle = get_field('hero3_subtitle', $post_id);
-	
-	if(empty($hero_title)){
-		
-		$hero_title = $post_title;
-		
-	}
-	
-	if(empty($hero_alt)){
-		
-		$hero_alt = $post_title;
-		
-	}	
-	
-	if(empty($hero_image)){
-		
-		$hero_image=getFeaturedImage($post_id);
-		
-	}
-	
-	if(empty($hero_image)){
-		//	$hero_image =$child_themedir."assets/projects/thumbs/placeholder.jpg";
-	}		
-?>
-<?php
-		if($hero_visible){
-			?>
-		<!-- hero section v03 -->
-
-				<section class="half_panel-hero" >
-					<div class="row">
-						<?php
-						if(!empty($hero_image)){
-							
-							?>
-						<div class="col column">
-							<div class="img_wrap ">
-								<img src="<?php echo $hero_image; ?>" alt="<?php echo $hero_alt; ?>">
-							</div>
-						</div>
-						<?php
-						}
-						?>
-						<div class="col column">
-							<div class="hero-content">             
-						<?php
-							if(!empty($hero_subtitle)){
-							
-								?>
-								<h1 class="subtitle"><?php echo $hero_subtitle; ?></h1>
-								<?php
-							}
-						?>								
-								<h1 class="center"><?php echo $hero_title; ?></h1>
-							</div>
-						</div>
-					</div>
-				</section>
-
-		<!-- /section -->
-		<?php
-		$hero_count++;
-		}
-?>
 
 
 		<!--  POST CONTENT -->
 		<?php
 		
-		//$post_content = get_the_content($post_id);
+		$post_content = get_the_content($post_id);
 		
-		$post_content1 = clean_up_old_post(get_the_content($post_id));
+		$post_content = clean_up_old_post($post_content);
 		
-		if(!empty($post_content1)){
+		//if(!empty($post_content)){
 		
 			if($hero_count==0 && !empty($post_title)){
 				
 				
-				$hero_image = get_field('hero_image', $post_id);
+				$hero_image = getFeaturedImage($post_id);
+				
 				
 				if(empty($hero_image)){
 				
-					$hero_image = get_field('hero3_image', $post_id);
+					$hero_image = get_field('thumbnail', $post_id)['url'];
 				
 				}
-							
+				
+				
 
 
+
 				if(empty($hero_image)){
-					$hero_image = get_field('hero2_background', $post_id);
-				}
-				
-				if(empty($hero_image)){
-					$hero_image = getFeaturedImage($post_id);
-				}
-				
-				if(empty($hero_image)){
-					//	$hero_image = get_largest_image_url($post_id);
-				}
-				
-				
-				if(is_array($hero_image)){
 					
-					
-					print_r($hero_image);
-					
+					$hero_image = get_largest_image_url($post_id);
 				}
+				
+				
+
+				$project_id = $post_id;
+				
+
+				$subTitle = get_custom_excerpt($project_id);
+				
+				$yoast_description = get_post_meta($project_id, '_yoast_wpseo_metadesc', true);
+				
+				$perma_link =get_permalink($post_id);	
+				
+				$related = get_field('related_product', $project_id);
+				
+				// SLIDE IMAGES 
+				
+				$_images=array();
+				
 
 
-				$subTitle = get_custom_excerpt($post_id);
+				if (have_rows('installation_photos', $project_id)) :
 				
+					while (have_rows('installation_photos', $project_id)) :
+					
+						the_row();
+						
+						$_images[] = get_sub_field('photo');
+						
+					endwhile;
 				
-				//$yoast_description = substr(get_post_meta($post_id, '_yoast_wpseo_metadesc', true), 0, 100);
+				endif;
+
 				
+				// REGIONS
+				
+				$Z=0;
+				// Regions
+				$regions = get_the_terms($project_id, 'project_region');
+				$RegionStr = "";
+				foreach ($regions as $region) {
+					
+					if(!empty($RegionStr)){
+						
+						$RegionStr = $RegionStr . ", ";
+						
+					}
+					
+					$regionName = $region->name;
+					
+					$RegionStr = $RegionStr . $regionName;
+					
+					$Z++;
+				}
+										
 				
 				
 				?>
@@ -284,7 +168,7 @@
 								<div class="hero-content">
 								
 									<h1 class=""><?php echo $post_title; ?></h1>
-									<h1 class="subtitle"><?php echo $subTitle ?></h1>
+									<h1 class="subtitle"><?php echo $RegionStr ?></h1>
 									
 								</div>
 								
@@ -295,18 +179,101 @@
 				
 			}
 			
+			$XX=0;
+			
 			?>
 			<section class="legacy_post" style="">
 				<div class="row">
 					<div class="col align-center"><div class="content">
-					<?php
-						echo $post_content1;
-					?>				
+
+
+						<div class="project-single_wrapper">                        
+												
+									<div class="project-content single-project-carousel range">
+									
+
+										<div class="project-carousel flickity-js carousel" id="single_project_carousel_<?php echo $XX; ?>">
+											<?php
+												//foreach($proj_images[$project_id] as $p){
+													
+												foreach($_images as $p){
+													
+													$thumb = "";
+													
+													
+													if(isset($p['sizes']['medium-large'])){
+														
+														$thumb = $p['sizes']['medium-large'];
+														
+													}
+													
+													if(empty($thumb)){
+														
+														if(isset($p['sizes']['large'])){
+															
+															$thumb = $p['sizes']['large'];
+															
+														}
+														
+													}
+													if(!empty($thumb)){
+														
+														?>
+														
+														<div class="carousel-cell project-image">
+
+															<img src="<?php echo $thumb; ?>"   alt="<?php echo $title; ?>">
+
+														</div>
+														
+														<?php
+														
+													}
+													
+													$X++;
+												}
+										
+											?>
+										</div>
+										<div class="project-bottom">
+											<div class="project-details">
+												<h4 class="project-feature" >Featured Products</h4>
+												<div class="project_featured_products" id="project_featured_products_<?php echo $XX; ?>">
+												<?php
+												
+													foreach ($related as $relat) {
+														
+														$relName = htmlentities($relat->post_title);
+														
+														$relID=$relat->ID;
+														
+														$rel_url = get_permalink( $relID );
+														
+														$Y=0;
+														
+														$item = '<p><a href="'.$rel_url.'">'.$relName.'</a></p>';
+														
+														echo $item;
+														
+														$Y++;
+														
+													}
+												?>
+												</div>
+											</div>
+											<div class="project-description" id="project_description_<?php echo $XX; ?>"><?php echo $post_content; ?></div>
+										</div>
+									</div>
+						</div>
+							
+
+
+							
 					</div></div>
 				</div>
 			</section>
 			<?php
-		}
+		//}
 		?>
 
 

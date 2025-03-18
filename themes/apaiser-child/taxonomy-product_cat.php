@@ -1,5 +1,7 @@
 <?php 
 
+		
+
 
 
 	if(empty($taxonomy_name)){
@@ -8,42 +10,64 @@
 	}
 
 
-	$body_class="post";
-	$template_class="post";
-	
-	
-	//$template_name
-	
-
+		$body_class="post";
+		$template_class="post";
+		
 
 	
-	$stylesheet_directory = basename(get_stylesheet_directory());
-	
-	$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
-	
+		$stylesheet_directory = basename(get_stylesheet_directory());
+		
+		$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
+
+		$term_id = get_queried_object_id();
+
+		$termDetails = getTaxonomyTermDetails($term_id);
+
+		$term1 = get_term($term_id, $taxonomy_name);
 
 
+		if (!is_wp_error($term1)) {
+			
+			$slug = $term1->slug;
+			
+		} 
 
-	$term_id = get_queried_object_id();
-	
 
-
-
-	$termDetails = getTaxonomyTermDetails($term_id);
-	
-	
 	global $PageName;
 	
 	
 	if (is_array($termDetails)) {
 		
 		$PageName = $termDetails['name'];
+		
 
-		//	print "<p>^PageName=$PageName</p>";
 		
 	} 
+
+	
 	
 	$Description = $termDetails['description'];	
+	
+	
+
+		
+		
+
+		
+
+		if(!empty($slug)){
+			
+			$template_name=$slug;
+			
+		} else {
+			
+			$template_name='product';
+			
+		}
+		
+
+
+	
 	
 	
 	get_header();
@@ -220,7 +244,9 @@
 
 	 if (have_posts()) {
 		
-		query_posts($query_string . '&posts_per_page=20&orderby=menu_order&order=ASC&post_type=products');
+		query_posts($query_string . '&posts_per_page=200&orderby=title&order=ASC&post_type=products');
+		
+		$X=0;
 		
 		while (have_posts()) :
 		//foreach ($products as $product) {
@@ -236,12 +262,12 @@
 				$image = $default;
 			}
 			
-	?>
+		?>
 
 				<!--  01**  -->
 				<a class="card_link" href="<?php echo $Link; ?>">
 					<div class="card">                        
-						<div class="card-image">
+						<div class="card-image" id="card_image_<?php echo $X; ?>">
 							<img src="<?php echo $image; ?>" alt="<?php echo $prod_post_title ?>">
 						</div>
 						<div class="card-content">
@@ -250,8 +276,37 @@
 						</div>
 					</div>
 				</a>
+				
+				
+					<?php
+					
+						$rollover = get_field('rollover', $prod_id);
+						
+						if(empty($rollover)){
+							
+							//$rollover_img = $image;
+							
+							$rollover_img ='';
+						} else {
+							
+							$rollover_img = $rollover['sizes']['medium_large'];
+							
+							
+						}
+					
+					?>
+				<style>	
+					.grid-collection a .card:hover #card_image_<?php echo $X; ?>::after {
+						height: 100%;
+						opacity: 1;
+						background-image: url(<?php echo $rollover_img ?>);
+
+					}
+				</style>
 
 	<?php
+	
+		$X++;
 
 		endwhile;
 	 }

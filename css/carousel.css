@@ -31,11 +31,13 @@
 /* ----------------------- */
 /* CELL */
 
-.range .carousel-cell {
+.range .carousel-cell,
+.process_carousel .carousel-cell {
     width: calc(var(--one-third-max-width));
 }
 
-.range .carousel-cell:not(:last-of-type) {
+.range .carousel-cell:not(:last-of-type),
+.process_carousel .carousel-cell:not(:last-of-type) {
     margin-right: var(--gap-large);
 }
 /* .range .carousel-cell:last-of-type {
@@ -45,23 +47,26 @@
 
 
 @media screen and (max-width: 1440px){
+    .process_carousel .carousel-cell,
     .range .carousel-cell {
         width: calc(var(--one-third-max-width));
     }
    
 }
 @media screen and (max-width: 1200px){
+    .process_carousel .carousel-cell,
     .range .carousel-cell {
         width: calc(var(--one-half-max-width));
     } 
-    /* .range .carousel-cell:last-of-type {
-        width: calc(var(--one-half-max-width) + 2vw);
-        max-width: unset;
-    }   */
+    
 }
 
 
 @media screen and (max-width: 600px) {
+    .process_carousel .row,
+    .process_carousel .column,
+    .process_carousel .carousel,
+    .process_carousel .carousel-cell,
     .range .row,
     .range .column,
     .range .carousel,
@@ -71,10 +76,12 @@
     }
 }
 
+.process_carousel .carousel .card img,
 .range .carousel .card img {
     transition: var(--transition-button);
     transform: scale(1);
 }
+.process_carousel .carousel .card:hover img,
 .range .carousel .card:hover img {
     transform: scale(1.05);
 }
@@ -122,6 +129,9 @@
 }
 
 @media screen and (max-width: 880px) {
+    .grid-projects .flickity-prev-next-button {
+        background-color: rgba(var(--white-rgb),0.4);
+    }
     .flickity-prev-next-button {
         width: 2rem;
         height: 2rem;
@@ -131,6 +141,12 @@
     }
     .flickity-prev-next-button.previous {
         left: -2rem;
+    }
+    .grid-projects .flickity-prev-next-button.previous {
+        left: -1rem;
+    }
+    .grid-projects .flickity-prev-next-button.next {
+        right: -1rem;
     }
 }
 
@@ -151,3 +167,18 @@
 }
 
 /* ----------------------- */
+
+
+.flickity-viewport {
+    margin-bottom: 2rem;
+}
+.project-pop-up .flickity-viewport {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 1201px) {
+    .process_carousel .flickity-page-dots,
+    .process_carousel .flickity-button {
+        display:none
+    }
+}

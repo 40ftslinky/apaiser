@@ -46,14 +46,23 @@
 
 @media screen and (max-width: 1200px) {
     .subscribe-pop-up_wrapper {
-        max-width: calc(var(--max-width) * 0.9);
+        width: 100%;
+        /* max-width: calc(var(--max-width) * 0.9); */
     }
 }
 
 @media screen and (max-width: 480px) {
     .subscribe-pop-up_wrapper {
-        /* max-width: calc(var(--max-width)); */
+        max-width: 95vw;
+        padding: 1rem;
     }
+}
+
+.subscribe-content .wpcf7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .subscribe-close {

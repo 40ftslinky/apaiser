@@ -38,7 +38,21 @@
 	$body_class="post";
 	$template_class="post";
 	
+	global $post;
+	
+	$slug = $post->post_name;
+	
 
+	if(!empty($slug)){
+		
+		$template_name=$slug;
+		
+	} else {
+		
+		$template_name='product';
+		
+	}
+	
 	get_header();
 
 	include_once "nav.php";
@@ -129,7 +143,7 @@
         <!-- hero section (half panel) single-products.php  -->
         <!-- section -->
 
-        <section class="half_panel-hero">
+        <section class="half_panel-hero product">
             <div class="row">                
             
                 <div class="col column full-width-bg" >
@@ -678,13 +692,12 @@
 				$term_Slug = $terms[0]->slug;
 				$term_ID = $terms[0]->term_id;
 				
-				print "<!--    $term_Slug ,       term_ID = $term_ID         -->";
+
 				
 
 			if(!empty($term_ID)){
 			// Arguments for the query
-			
-			print "<!-- term_ID = $term_ID          -->";
+
 			
 			$args = array(
 			
@@ -770,18 +783,13 @@
 						// Get the terms for the given post
 						$terms = wp_get_post_terms($post_id, $taxonomy);
 						
-						print "<!-- post_id=$post_id             -->";
-						print "<!-- ";
-						print_r($terms);
-						print " -->";
+
 
 						if (!empty($terms) && !is_wp_error($terms)) {
 							// Get the term IDs
 							$term_ids = wp_list_pluck($terms, 'term_id');
 							
-							print "<!-- ";
-							print_r($term_ids);
-							print " -->";
+
 							
 							
 							// Set up the query arguments
@@ -875,7 +883,66 @@
 ?>
     </main>
 <!-- /end main -->
+	<script>
 
+	
+	function adjustHeight() {
+    if (window.innerWidth < 880) {
+        // Get the height of the div with class "img_wrap"
+        var imgWrapHeight = document.querySelector('.img_wrap')?.offsetHeight || 0;
+		
+        // Get the height of the div with class "card-center"
+        var cardCenterHeight = document.querySelector('.card-center')?.offsetHeight || 0;
+
+        // Get the first div with class "full-width-bg"
+        var fullWidthBgFirst = document.querySelector('.full-width-bg');
+        var paddingTop = parseFloat(window.getComputedStyle(fullWidthBgFirst).paddingTop) || 0;
+        var paddingBottom = parseFloat(window.getComputedStyle(fullWidthBgFirst).paddingBottom) || 0;
+
+        // Calculate the total height
+        var totalHeight = imgWrapHeight + cardCenterHeight + paddingTop + paddingBottom;
+
+        // Set the height of the  div with class "full-width-bg"
+        var fullWidthBgSecond0 = document.querySelectorAll('.full-width-bg')[0];
+        if (fullWidthBgSecond0) {
+            fullWidthBgSecond0.style.height = totalHeight + 'px';
+        }		
+		
+        var fullWidthBgSecond = document.querySelectorAll('.full-width-bg')[1];
+        if (fullWidthBgSecond) {
+            fullWidthBgSecond.style.height = totalHeight + 'px';
+			//fullWidthBgSecond.style.top = '0';
+			//fullWidthBgSecond.style.position = 'absolute';
+        }
+    } else {
+		
+			// remove attributes when 880px or above
+			document.querySelectorAll('.full-width-bg').forEach(function(div) {
+				div.style.removeProperty('height');
+				//div.style.removeProperty('top');
+				//div.style.removeProperty('position');
+			});
+
+		
+	}
+}
+
+jQuery( document ).ready(function($) {
+	
+	// Run the function when the window is resized
+	
+	window.addEventListener('resize', adjustHeight);
+
+	// Run the function on initial load
+	
+	adjustHeight();
+	
+	
+});
+
+
+	
+	</script>
 	<?php
 
 

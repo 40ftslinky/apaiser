@@ -27,7 +27,7 @@ if(empty($hero2_link)){
 
 }
 
-$default_image ="/wp-content/themes/".$stylesheet_directory."/assets/images/placeholder.jpg";
+$default_image ="/wp-content/themes/".$stylesheet_directory."assets/images/placeholder.jpg";
 
 
 

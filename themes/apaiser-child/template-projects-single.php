@@ -2,200 +2,15 @@
 /**
  * The template for displaying the post.
  *
- * Template name: Projects Archive (Triage)
+ * Template name: Projects (Single Residential & Commercial)
  *
  * @package storefront
  */
 
-	global $wp_query;
-	
-
-
-	if ( is_home() && ! in_the_loop() ) {
-		$ID = get_option('page_for_posts');
-	} elseif ( is_post_type_archive()) {
-		//reference a custom archive page based it's slug
-		//eg. for a 'houses' custom post type, you would create a page called `houses` and store any archive front matter on this page
-		$query = get_queried_object();
-		$slug = $query->name;
-		$pageobj = get_page_by_path($slug);
-		$ID = $pageobj->ID;
-	} else {
-		$ID = get_the_ID();
-	}
 
 
 
 
-
-
-	$post_id = $ID;
-
-
-
-
-	$body_class="post-list";
-	
-	$template_class="blog";
-
-	get_header();
-
-	include_once "nav.php";
-	
-
-	
-	
-	
-	print "<!-- ***post_id=$post_id -->";
-	
-	$post_title=get_the_title($post_id);
-	
-	print "<!-- ***post_title=$post_title -->";
-	
-	$stylesheet_directory = basename(get_stylesheet_directory());
-	
-	$child_themedir = "/wp-content/themes/".$stylesheet_directory."/";
-	
-	
-	$Heroes = array();
-	
-
-	
-	// ACF
-
-	if (have_rows('hero', $post_id)) {
-		
-					print "<!-- ***have_rows=hero -->";
-					
-					
-					while (have_rows('hero', $post_id)) :
-					
-							the_row();	
-							
-							$image = get_sub_field('image');
-							
-							$link = get_sub_field('link');
-							
-							print "<!-- ***link=$link -->";
-							
-							$title = get_sub_field('title');
-							
-							print "<!-- ***title=$title -->";
-							
-							$subtitle = get_sub_field('subtitle');
-						
-							//	print_r($image);
-
-							$Heroes[] = array($image, $link, $title, $subtitle);
-						
-						endwhile;
-		
-		
-	}
-	
-	
-	
-	
-	print "<!-- ***Heroes***  ";
-
-	print_r($Heroes);
-
-	print " -->";
-	
-	
-	
-	
-	?>
-
-    <main >
-
-
-
-<!-- triage hero section (double half panel) -->
-
-        <section class="double half_panel-hero">
-            <div class="row">     
-					<?php
-					foreach($Heroes as $Hero){
-
-						
-						$image_url = $Hero[0]['url'];
-						
-						$image_large = $Hero[0]['sizes']['large'];
-						
-						$image_medium = $Hero[0]['sizes']['medium'];
-						
-						$thumbnail = $Hero[0]['sizes']['thumbnail'];
-						
-						$link = $Hero[1];
-						
-						$title = $Hero[2];
-						
-						$sub = $Hero[3];
-		
-						
-						?>			
-						<div class="col column full-width-bg " style="background-image: url(<?php echo $image_url ?>);">
-							<a href="<?php echo $link ?>">
-
-								<div class="card card-center">
-									<div class="card-content">
-										<h1><?php echo $title; ?></h1>
-										<h2 class="subtitle"><?php echo $sub; ?></h2>
-									</div>
-								</div>
-							</a>
-
-						</div>  
-						<?php
-					}
-					
-					?>
-                    <!-- 
-					
-                    <div class="col column full-width-bg " style="background-image: url(assets/projects/heros/projects_residential_hero.jpg);">
-                        <a href="projects-residential.html">
-                            <div class="card card-center">
-                                <div class="card-content">
-                                    <h1>Residential</h1>
-                                    <h2 class="subtitle">Projects</h2>
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-					
-					-->
-            </div>
-        </section>
-
-<!-- /section -->
-
-
-        
-
-
-
-
-
-
-
-    </main>
-<!-- /end main -->
-	
-	
-	
-	<?php
-
-
-
-
-
-
-
-		get_footer();
-
-/*
 
 function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related, $post_content)
 {
@@ -444,7 +259,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 		
 		
 		
-		$intro_link_1= get_field("intro_link_1", $post_id);
+		//$intro_link_1= get_field("intro_link_1", $post_id);
 		
 		$intro_link_2= get_field("intro_link_2", $post_id);
 		
@@ -452,9 +267,9 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 		
 
 		
-		$project_id_1 = $intro_link_1->ID;
+		//$project_id_1 = $intro_link_1->ID;
 		
-		$title_1 =  $intro_link_1->post_title;
+		//$title_1 =  $intro_link_1->post_title;
 		
 		$RegionStr_1='';
 		
@@ -486,9 +301,9 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 		
 		
 		
-		$related_1 = get_field('related_product', $project_id_1);
+		//$related_1 = get_field('related_product', $project_id_1);
 		
-		$post_content_1 =  $intro_link_1->post_content;
+		//$post_content_1 =  $intro_link_1->post_content;
 		
 		
 		
@@ -540,8 +355,9 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 							</blockquote>
 							<?php echo $intro_paragraph; ?>
 						</div>
-
-						<a class="button-secondary pop-up-link-2"> <?php echo $intro_button; ?></a>
+						<!-- discover_button*  -->
+						
+						<a href="#recent_projects_section" class="button-secondary"> <?php echo $intro_button; ?></a>
 
 
 					</div>
@@ -617,6 +433,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 <!-- section -->
 <!-- RECENT PROJECTS -->
+	<a name="recent_projects_section" id="recent_projects_section"></a>
         <section id="recent_projects" class="grid-projects archive">
 
             <div class="row ">
@@ -821,7 +638,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 			
 			<?php
 			
-			project_pop_up($project_id_1, 10, $title_1, $RegionStr_1, $_images_1, $related_1, $post_content_1);
+
 			
 
 			
@@ -842,17 +659,13 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					
 					$page_count = ceil($post_count / $posts_per_page);
 					
-					print "<!--  post_count = $post_count          -->";
-					
-					print "<!--  posts_per_page = $posts_per_page          -->";
-					
-					print "<!--  page_count = $page_count          -->";
-					
+
 					
 					if(!isset($_GET['page'])){
 						$current = 1;
 						
 					} else {
+						
 						$current =$_GET['page'];
 					}
 					
@@ -860,11 +673,20 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 				
 				?>
                     <div class="pagination">
-					
-                        <a href="" class="page previous load-more-link"  data="prev" id="prev">
+						<?php
+						print "<!-- :::current=$current  -->";
+						if($current>1){
+							$Style='display: block';
+						} else {
+							$Style='display: none';
+						}
+							?>
+							<a href="" class="page previous load-more-link" style="<?php echo $Style; ?>"  data="prev" id="prev">
+							<span class="left_arrow">&#x2B60;</span></a> 
+							<?php
+						//}
 						
-						<span class="left_arrow">&#x2B60;</span></a> 
-						
+						?>
 						<?php 
 
 						for ($i = 1; $i <= $page_count; $i++){
@@ -886,9 +708,15 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 						<?php
 						}
 						?>
+						<?php
+						if($current<$page_count){
+							?>
+							<a class="page more load-more-link"  data="next" id="next"><span class="right_arrow">&#x2B62;</span></a> 
+							<?php
+						}
+							
 						
-						<a class="page more load-more-link"  data="next" id="next"><span class="right_arrow">&#x2B62;</span></a> 
-						
+						?>
                     </div>
                     
                 </div>
@@ -1006,6 +834,23 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 							
 						}
 						
+						if(Curr == '1' || Curr == 1){
+							// hide right arrow
+							jQuery('.load-more-link .left_arrow').hide();
+						} else {
+							// show right arrow
+							jQuery('.load-more-link .left_arrow').show();
+						}
+						
+						
+						if(Curr == MaxPage){
+							// hide right arrow
+							jQuery('.load-more-link .right_arrow').hide();
+						} else {
+							// show right arrow
+							jQuery('.load-more-link .right_arrow').show();
+						}
+						
 							// use Ajax to get posts 
 							$.ajax({
 								type: 'POST',
@@ -1066,33 +911,51 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					
 
 					var title = obj['title'];
-
+					
+					console.log("*X=" +$X);
 					// Select the element with the ID 'card_title_0'
 					const cardTitle = document.getElementById('card_title_' + $X);
 					// Replace the text content with the desired text
-					cardTitle.textContent = title;
+					if(cardTitle){
+						cardTitle.textContent = title;
+					}
 					
 					//popup_project_title_
 					const popup_project_title_ = document.getElementById('popup_project_title_' + $X);
 					// Replace the text content with the desired text
+					if(popup_project_title_){
 					popup_project_title_.textContent = title;
+					}
 					
 					//card_image_
 					var image = obj['image'];
 					var card_image = document.getElementById('card_image_' + $X);
+					if(card_image){
 					card_image.src = image;
+					}
 					
 					
 					
 					//popup_project_regions_0
 					const popup_project_regions = document.getElementById('popup_project_regions_' + $X);
 					// Replace the text content with the desired text
-					popup_project_regions.textContent = obj['subtitle'];
+					if(popup_project_regions){
+						popup_project_regions.textContent = obj['subtitle'];
+					}
 					
 
 					//project_description_7
 					const project_description  = document.getElementById('project_description_' + $X);  
-					project_description.textContent = obj['description'];
+					if(project_description){
+						project_description.textContent = obj['description'];
+						
+					}
+					//project_description_7
+					const card_description_  = document.getElementById('card_description_' + $X);  
+					if(card_description_){
+						card_description_.textContent = obj['description'];
+						
+					}
 					
 					
 					// Related
@@ -1105,16 +968,17 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					const project_related_products  = document.getElementById('project_featured_products_' + $X);  
 					
 					// remove inner html from related product div 
-					
-					project_related_products.innerHTML = '';
-					
+					if(project_related_products){
+						project_related_products.innerHTML = '';
+					}
 
 					
 						for (const row of related) { 
 							//for (const item of row) { 
-							
-								const strToAppend = '<p><a href="'+row[2]+'">'+row[1]+'</a></p>';
-								project_related_products.innerHTML +=strToAppend;
+								if(project_related_products){
+									const strToAppend = '<p><a href="'+row[2]+'">'+row[1]+'</a></p>';
+									project_related_products.innerHTML +=strToAppend;
+								}
 							//}
 						}
 
@@ -1133,24 +997,25 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 
 
+					if(popup_project_carousel){
+						// Select all divs with the class 'carousel-cell' within the selected element
+						const carouselCells = popup_project_carousel.querySelectorAll('.carousel-cell');
 
-					// Select all divs with the class 'carousel-cell' within the selected element
-					const carouselCells = popup_project_carousel.querySelectorAll('.carousel-cell');
-
-					// Loop through each element and remove it
-					carouselCells.forEach(function(cell) {
-						cell.remove();
-					});
-
+						// Loop through each element and remove it
+						carouselCells.forEach(function(cell) {
+							cell.remove();
+						});
+					}
 
 
 					//	popup_project_carousel.innerHTML = '';
 					
 					// remove classes	//	flickity-enabled is-draggable
-					
-					popup_project_carousel.classList.remove('flickity-enabled');
-					
-					popup_project_carousel.classList.remove('is-draggable');
+					if(popup_project_carousel){
+						popup_project_carousel.classList.remove('flickity-enabled');
+						
+						popup_project_carousel.classList.remove('is-draggable');
+					}
 					
 					var flkty = Flickity.data(popup_project_carousel);
 					
@@ -1183,7 +1048,12 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 						
 						HTML_to_append = HTML_to_append + '</div>';
 						
-						popup_project_carousel.innerHTML +=HTML_to_append;
+						
+						if(popup_project_carousel){
+						
+							popup_project_carousel.innerHTML +=HTML_to_append;
+						
+						}
 
 					
 					}
@@ -1197,7 +1067,9 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 					var TheCard = document.getElementById('card_link_' + $X);
 					
-					TheCard.style.display = 'block';
+					if(TheCard){
+						TheCard.style.display = 'block';
+					}
 
 					// Select the div element by its ID
 					const projectsDiv = document.getElementById('projects_div');
@@ -1231,19 +1103,25 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 					
 					//for (var i = 0, t = nodeList.length; i < t; i++) {
+						if(nodeList){
+							if(Flickity){
+							
+								var flkty = Flickity.data(nodeList[i]);
+							
+							}
+						}
 						
-						console.log(nodeList);
-						
-						var flkty = Flickity.data(nodeList[i]);
-						
-						console.log(flkty);
-						
-						//if (!flkty) {
+						if(flkty){
+
 							// Check if element had flickity options specified in data attribute.
 							
-							var flktyData = nodeList[i].getAttribute('data-flickity');
+							if(nodeList[i]){
+								
+								var flktyData = nodeList[i].getAttribute('data-flickity');
 							
-							console.log(flktyData);
+								console.log(flktyData);
+							
+							}
 							
 							if (flktyData) {
 								
@@ -1278,7 +1156,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 							}
 				
 					
-					
+						}
 					
 					
 					//}	// end for loop 
@@ -1319,7 +1197,21 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 <!-- /end main -->
 	
 	
-	
+
+  <script>
+  
+	jQuery(document).ready(function($){
+		// closes Projects pop-up when the user clicks outside of the main pop-up
+		document.addEventListener('click', function(event) {
+		  const target = event.target;
+		  const isVisibleDiv = target.closest('.is-visible');
+		  if (isVisibleDiv && isVisibleDiv === target) {
+			isVisibleDiv.classList.remove('is-visible');
+		  }
+		});
+	});
+  </script>
+  
 	<?php
 
 
@@ -1330,4 +1222,3 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 		get_footer();
 
-*/

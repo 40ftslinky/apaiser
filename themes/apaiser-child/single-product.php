@@ -12,6 +12,8 @@
 	$body_class="post";
 	$template_class="post";
 	
+	$template_name='product';
+	
 
 	get_header();
 
@@ -57,7 +59,7 @@
 	?>
 
     <main >
-        <!-- hero section (half panel) -->
+        <!-- hero section (half panel) single-product.php -->
         <!-- section -->
 
         <section class="half_panel-hero">

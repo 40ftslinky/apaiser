@@ -134,25 +134,103 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// smoothly scroll to the target element
 
-// get all elements with link to id
-const links = document.querySelectorAll('.submenu-link[href^="#"]');
 
-// loop through the links
-for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(event) {
 
-        // prevent default action
-        event.preventDefault();
 
-        // get the target element
-        const target = document.querySelector(this.getAttribute('href'));
 
-        // scroll to the target element minus the height of the header
-        window.scrollTo({
-            top: target.offsetTop - document.querySelector('header').offsetHeight,
-            behavior: 'smooth'
-        });
-    });
+
+
+
+
+
+function do_anchor_offset(targetId){
+
+	jQuery(document).ready( function($){
+		
+			targetId = targetId.replace('#', ''); // Remove the hash character
+			
+			var targetElement = document.getElementById(targetId);
+
+			var navElement = document.querySelector('.nav');
+			
+			var notification_bar = document.querySelector('.wpfront-notification-bar');
+			
+			if (navElement) {
+				var OFFSETY = navElement.offsetHeight;
+				console.log('The height of the .nav element is: ' + OFFSETY + 'px');
+			} else {
+				console.log('Element with class .nav not found.');
+				var OFFSETY =0;
+			}
+			
+			if (notification_bar) {
+				var NOTIFY_Y = notification_bar.offsetHeight;
+				console.log('The height of the notification bar element is: ' + NOTIFY_Y + 'px');
+			} else {
+				var NOTIFY_Y =0;
+			}
+				
+			var OFFSET_ALL = NOTIFY_Y + OFFSETY;
+			
+			console.log("Ready:  OFFSET_ALL=" + OFFSET_ALL);
+			
+			var TOPP = targetElement.getBoundingClientRect().top;
+			console.log("Ready:  TOPP=" + TOPP);
+			
+			var window_pageYOffset=window.pageYOffset;
+			
+			console.log("Ready:  window_pageYOffset=" + window_pageYOffset);
+			
+			var NEW_POS = TOPP + pageYOffset - OFFSET_ALL;
+			
+			console.log("Ready:  NEW_POS=" + NEW_POS);
+
+			if (targetElement) {
+				var targetPosition = NEW_POS;
+
+				window.scrollTo({
+					top: targetPosition,
+					behavior: 'smooth'
+				});
+			}
+
+	});
 }
+
+
+
+jQuery(document).ready( function($){
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			
+			
+			anchor.addEventListener('click', function(e) {
+				
+				e.preventDefault();
+				
+				var targetId = this.getAttribute('href').substring(1);
+				
+				do_anchor_offset(targetId);
+				
+			});
+		});
+		
+
+
+		// Check if the current URL has a # anchor link
+		if (window.location.hash) {
+			
+			// Get the anchor link from the URL
+			var anchorLink = window.location.hash;
+
+			// Log the anchor link to the console
+			console.log('Anchor link:', anchorLink);
+
+			
+			do_anchor_offset(anchorLink);
+		}
+
+		
+		
+		
+	});

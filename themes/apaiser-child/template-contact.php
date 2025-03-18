@@ -20,6 +20,14 @@
 
 		global $wp_query;
 		$post_id = $wp_query->post->ID;
+		
+		
+		$post_content = get_the_content($post_id);
+		
+		
+		$title = get_field('title', $post_id);
+		
+		$submit_your_details= get_field('submit_your_details', $post_id);
 
 	?>
 
@@ -34,8 +42,13 @@
                 <div class="col align-center">
                     <div class="hero-content">
                         <!-- <h1 class="subtitle">Contact</h1> -->
-                        <h1>Contact Us</h1>
-                        <p>Our team of brand ambassadors are standing by, ready to bring your bathroom vision to life. We would love to hear from you!</p>
+                        <h1><?php echo $title ?></h1>
+                        <!-- <p class="paragarph">Our team of brand ambassadors are standing by, ready to bring your bathroom vision to life. We would love to hear from you!</p> -->
+						<?php
+						
+						echo $post_content;
+						
+						?>
                     </div>
                 </div>
             </div>
@@ -44,7 +57,7 @@
                 <div class="col column align-center">
                     <div class="content">
                         
-                        <h3 class="center">Submit your details</h3>
+                        <h3 class="center"><?php echo $submit_your_details ?></h3>
                         
                         <div id="contact_form" class="outer_form" >
 
@@ -52,32 +65,7 @@
 
                             <?php echo apply_shortcodes( '[contact-form-7 id="baa4975" title="Contact Us"]' ); ?>
 
-                            <!-- <form class="form">
 
-                                <label for="Name">Name
-                                    <input type="text" id="Name" name="Name" placeholder="Name" required>
-                                </label>
-
-                                <label for="email">Email Address
-                                    <input type="email" id="email" name="email" placeholder="Email">
-                                </label>
-
-                                <label for="tel">Phone Number
-                                    <input type="tel" id="tel" name="tel" placeholder="(+61) Phone Number">
-                                </label>
-
-                                <label for="textarea">Message
-                                    <textarea id="textarea" name="textarea" placeholder="Leave a Message"></textarea>
-                                </label>
-
-                                <div class="checkbox_group">
-                                    <input type="checkbox" id="checkbox" name="checkbox" required>                        
-                                    <label for="checkbox"><span>By submitting this form I agree to the apaiser <a href="/privacy">Privacy Policy</a>, and to being contacted by apaiser for marketing purposes.<em>*</em></span></label>
-                                </div>
-
-                                <input type="submit" id="submit" name="submit" value="Submit">
-                                
-                            </form> -->
                         </div>
 
                     </div>
@@ -92,52 +80,71 @@
 <!-- section -->
 
 <section class="contact-info">
-        <!-- 
-        <div class="row ">
-            <div class="intro-content">               
-                <h2 class="intro-title">Locations</h2> 
-                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga blanditiis ratione in eligendi cumque nihil numquam, optio aut veniam ullam voluptatum soluta velit, beatae vitae, quibusdam molestiae temporibus. Impedit, a!</p>
-            </div>
-        </div>
-        -->
 
         <div class="row ">
-            
-            <div id="headquarters" class="content col">
-                <h3>Showrooms</h3>
+            <?php
+			
+			$showrooms_title = get_field('showrooms_title', $post_id);
+			
+			
+			?>
+            <div id="our-headquarters" class="content col">
+                <h3 id="our-showrooms"><?php echo $showrooms_title ?></h3>
                 <div class="listing">
-                    <div class="showroom_address">
-                        <h4>Headquarters</h4>
-                        <p>Suite 203/26 Rokeby St, <br>Collingwood, Victoria, 3066, <br>Australia</p>
-                        <p><a href="tel:+61 3 9421 5722">+61 3 9421 5722</a><br>
-                        <a href="mailto:info@apaiser.com">info@apaiser.com</a></p>
-                        </p>
-                    </div>
-                
-                    <div class="showroom_address">
-                        <h4>Australia</h4>
-                        <p>344 Burnley St, <br>Richmond, Victoria</p>
-                        <p><a href="tel:+61 3 9421 5722">+61 3 9421 5722</a><br>
-                            <a href="mailto:melbourne@apaiser.com">melbourne@apaiser.com</a></p>
-                    </div>
-                    <div class="showroom_address">
-                        <h4>Singapore</h4>
-                        <p>38 Eng Hoon St, <br>Singapore 169783</p>
-                        <p><a href="tel:+65 6223 2378">+65 6223 2378</a><br>
-                            <a href="mailto:singapore@apaiser.com">singapore@apaiser.com</a></p>
-                    </div>
+                    
+					<?php
+					
+						$showrooms = get_field('showrooms_showroom', $post_id);
+						
+						foreach($showrooms as $item){
+					
+							print '<div class="showroom_address">
+								<h4>'.$item['title'].'</h4>
+								<p>'.$item['address'].'</p>
+								<p><a href="tel:'.$item['phone'].'">'.$item['phone'].'</a><br>
+									<a href="mailto:'.$item['email'].'">'.$item['email'].'</a></p>
+								</p>
+							</div>';
+					
+						}
+					?>
+
+					
+
                 </div>
             </div>
             
         </div>
 
         <div class="row ">
-            
+			<?php
+
+				$sales_offices_title = get_field('sales_offices_title', $post_id);
+
+				?>
             <div id="salesoffices" class="content col">
-                <h3>Sales Offices</h3>
+                <h3><?php echo $sales_offices_title; ?></h3>
 
                 <div class="listing">
-                    <div id="melbourne" class="salesoffice_address">
+				
+				
+					<?php
+					
+						$offices = get_field('sales_offices_office', $post_id);
+						
+						foreach($offices as $item){
+					
+							print '<div id="'.$item['slug'].'" class="salesoffice_address">
+								<h4>'.$item['title'].'</h4>
+								<a href="mailto:'.$item['email'].'">'.$item['email'].'</a>
+								</div>';
+					
+						}
+					?>
+				
+				
+				
+                   <!-- <div id="melbourne" class="salesoffice_address">
                         <h4>Melbourne</h4>
                         <a href="mailto:melbourne@apaiser.com">melbourne@apaiser.com</a>
                     </div>
@@ -166,23 +173,40 @@
                         <h4>Dubai</h4>
                         <a href="mailto:dubai@apaiser.com">dubai@apaiser.com</a>
                     </div>
-                </div>
+               
+				-->
                 
-            </div>
-        
-        
+				</div>
+			</div>
         </div>
 
         <div class="row ">
-            
-            <div id="globalpartners" class="content col">
-                <h3>Global Partners</h3>
+            <?php
+			
+				$Gp_title = get_field('global_partners_title', $post_id);
+				
+				$Subtitle = get_field('global_partners_subtitle', $post_id);
+				
+				$GP = get_field('global_partners_partner', $post_id);
+			
+			?>
+            <div id="our-partners" class="content col">
+                <h3><?php echo $Gp_title ?></h3>
 
-                <h4>Australia & New Zealand</h4>
+                <h4><?php echo $Subtitle ?></h4>
                 
                 <div class="listing">
-                    
-                    <div class="globalpartners_address">
+				
+					<?php
+					
+						foreach($GP as $item){
+
+								print '<div class="globalpartners_address"><h5 class="partner-title">'.$item['title'].'</h5><p class="partner-location">'.$item['location'].'</p></div>';
+					
+						}
+						
+                    ?>
+                 <!--   <div class="globalpartners_address">
                         <h5 class="partner-title">Bathroom Collective</h5>
                         <p class="partner-location">North Manly NSW</p>
                     </div>
@@ -261,14 +285,31 @@
                         <h5 class="partner-title">Robertson Bathware</h5>
                         <p class="partner-location">Wellington, NZ</p>
                     </div>
-
+					-->
                     
                 </div>
+            <?php
+			
+				$Gp_title = get_field('global_partners_usa_subtitle', $post_id);
+				
 
-                <h4>North America</h4>
+				
+				$GP = get_field('global_partners_usa_partner', $post_id);
+			
+			?>
+                <h4><?php echo $Gp_title ?></h4>
                 
                 <div class="listing">
-                    <div class="globalpartners_address">
+					<?php
+					
+						foreach($GP as $item){
+
+								print '<div class="globalpartners_address"><h5 class="partner-title">'.$item['title'].'</h5><p class="partner-location">'.$item['location'].'</p></div>';
+					
+						}
+						
+                    ?>
+                    <!--<div class="globalpartners_address">
                         <h5 class="partner-title">RSSA</h5>
                         <p class="partner-location">Anaheim CA, USA</p>
                     </div>
@@ -286,95 +327,97 @@
                     <div class="globalpartners_address">
                         <h5 class="partner-title">Aquavato</h5>
                         <p class="partner-location">Toronto, ONTARIO, Canada</p>
-                    </div>
+                    </div>-->
             
                 </div>
+            <?php
+			
+				$Gp_title = get_field('global_partners_asia_subtitle', $post_id);
+				
 
-                <h4>Asia</h4>
+				
+				$GP = get_field('global_partners_asia_partner', $post_id);
+			
+			?>
+                <h4><?php echo $Gp_title ?></h4>
                 
                 <div class="listing">
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Bathroom Gallery</h5>
-                        <p class="partner-location">Singapore</p>
-                    </div>
-                
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Bathworld</h5>
-                        <p class="partner-location">Singapore</p>
-                    </div>
+                   		<?php
+					
+						foreach($GP as $item){
 
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Bretz & Co</h5>
-                        <p class="partner-location">Singapore</p>
-                    </div>
-
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Belfry Echo</h5>
-                        <p class="partner-location">Kowloon, Hong Kong</p>
-                    </div>
-
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Homely</h5>
-                        <p class="partner-location">Taipei, Taiwan</p>
-                    </div>
+								print '<div class="globalpartners_address"><h5 class="partner-title">'.$item['title'].'</h5><p class="partner-location">'.$item['location'].'</p></div>';
+					
+						}
+						
+                    ?>
                 </div>
+            <?php
+			
+				$Gp_title = get_field('global_partners_india_subtitle', $post_id);
+				
 
-                <h4>India</h4>
+				
+				$GP = get_field('global_partners_india_partner', $post_id);
+			
+			?>
+                <h4><?php echo $Gp_title ?></h4>
                 
                 <div class="listing">
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">FCML</h5>
-                        <p class="partner-location">Ahmadabad</p>
-                    </div>
-                
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">FCML</h5>
-                        <p class="partner-location">Bangalore</p>
-                    </div>
+                    					<?php
+					
+						foreach($GP as $item){
 
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">FCML</h5>
-                        <p class="partner-location">Delhi</p>
-                    </div>
-
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">FCML</h5>
-                        <p class="partner-location">Lucknow</p>
-                    </div>
-
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">FCML</h5>
-                        <p class="partner-location">Mumbai</p>
-                    </div>
-
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">FCML</h5>
-                        <p class="partner-location">Raipur</p>
-                    </div>
+								print '<div class="globalpartners_address"><h5 class="partner-title">'.$item['title'].'</h5><p class="partner-location">'.$item['location'].'</p></div>';
+					
+						}
+						
+                    ?>
                 </div>
+            <?php
+			
+				$Gp_title = get_field('global_partners_uae_subtitle', $post_id);
+				
 
-                <h4>United Arab Emirates</h4>
+				
+				$GP = get_field('global_partners_uae_partner', $post_id);
+			
+			?>
+                <h4><?php echo $Gp_title ?></h4>
                 
                 <div class="listing">
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Alshaya Group</h5>
-                        <p class="partner-location">Dubai</p>
-                    </div>
-                
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Sara Group</h5>
-                        <p class="partner-location">Dubai</p>
-                    </div>
+					<?php
+					
+						foreach($GP as $item){
+
+								print '<div class="globalpartners_address"><h5 class="partner-title">'.$item['title'].'</h5><p class="partner-location">'.$item['location'].'</p></div>';
+					
+						}
+						
+                    ?>
                 
                 </div>
+            <?php
+			
+				$Gp_title = get_field('global_partners_uk_subtitle', $post_id);
+				
 
-                <h4>United Kingdom</h4>
+				
+				$GP = get_field('global_partners_uk_partner', $post_id);
+			
+			?>
+                <h4><?php echo $Gp_title ?></h4>
                 
                 <div class="listing">
-                    <div class="globalpartners_address">
-                        <h5 class="partner-title">Soaks Bathroom</h5>
-                        <p class="partner-location">Belfast, Ireland</p>
-                    </div>                                
+					<?php
+					
+						foreach($GP as $item){
+
+								print '<div class="globalpartners_address"><h5 class="partner-title">'.$item['title'].'</h5><p class="partner-location">'.$item['location'].'</p></div>';
+					
+						}
+						
+                    ?>                           
                 </div>
 
             </div>

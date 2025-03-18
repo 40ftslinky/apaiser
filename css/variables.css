@@ -28,6 +28,9 @@
     --nav-width: 615px;
     --nav-seconday-width: 100px;
     --hero-height: calc(100vh - var(--header-height));
+    /* notification bar */
+    --notification-height: 40px;
+    --window-top: var(--notification-height);
 
     /*  */
     --button-padding-h:1rem;
@@ -42,6 +45,20 @@
     --transition-slow-part:500ms cubic-bezier(0.5, 0, 0.75, 0) 500ms;
     /* image */
     --mix-blend: hard-light;
+
+   
+    --z-index-grad: 11;
+    --z-index-logo: 1001;
+    --z-index-menu: 1111;
+    --z-index-stack: 1111;
+    --z-index-hover: 888;
+    --z-index-nav: 9999;
+    --z-index-popup: 9999;
+    --z-index-close: 222;
+}
+
+#wpfront-notification-bar-spacer[style="top: 0px; height: 40px;"] ~ * {
+    --hero-height: calc(100vh - var(--header-height) - var(--notification-height));
 }
 
 .home {
@@ -105,6 +122,7 @@
         --gap: 1rem;
         --gap-large: 2rem;
         --gap-xlarge: 3rem;
+        --gap-xxl: 6rem;
         --gap-xs: 1rem;
     }
 }
@@ -123,6 +141,7 @@
     --one-half-max-width: calc(var(--max-col-width) / 2 - (var(--gap-large) * 1/2));
     --one-half-max-width-smgap: calc(var(--column-width-xs) / 2 - (var(--gap-xs) * 1/2));
     --one-third-max-width: calc(var(--max-col-width) / 3 - (var(--gap-large) * 2/3));
+    --one-third-max-width-gap: calc(var(--max-col-width) / 3 - (var(--gap) * 2/3));
     --one-third-max-width-smgap: calc(var(--column-width-xs) / 3 - (var(--gap-xs) * 2/3));
     --two-thirds-max-width: calc((var(--max-col-width) * 2 / 3) - (var(--gap-large) * 1/2));
     --one-qtr-max-width: calc(var(--max-col-width) / 4 - (var(--gap-large) * 3/4));

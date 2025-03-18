@@ -1,44 +1,30 @@
 /* -- vanilla js -- */
 
-var rangeCarousel = document.querySelector('.range .carousel');
-var flkty = new Flickity( rangeCarousel, {
-    // options
-    cellAlign: 'left',
-    contain: true,
-    prevNextButtons: true,
-    pageDots: true,
-    // groupCells: 3,
-    arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
-    
 
-});
+var rangeCarousel = document.querySelector('.range .carousel');
+
+if (rangeCarousel !== null){
+	
+	var flkty = new Flickity( rangeCarousel, {
+		// options
+		cellAlign: 'left',
+		contain: true,
+		prevNextButtons: true,
+		pageDots: true,
+		// groupCells: 3,
+		arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
+		
+	});
+	
+}
 
 
 var projectPopUp = document.getElementsByClassName("project-pop-up");
 
-/*
-var projectCarousel = document.querySelector('.project-carousel');
-var proj_flkty = new Flickity( projectCarousel, {
-    // options
-    cellAlign: 'left',
-    contain: true,
-    prevNextButtons: true,
-    pageDots: true,
-    // margin: 1,
-    // groupCells: 3,
-});
-*/
 
 	// loop thru the pop-ups
 	for (let i = 0; i < projectPopUp.length; i++) {
-		/*
-		projectPopUp[i].addEventListener('click', function(event) {
-			if (event.target === projectPopUp || event.target === closes) {
-				projectPopUp[i].classList.remove('is-visible');
-				body.classList.remove('no_scroll');
-			}
-		});
-		*/
+
 			const projectOuter = projectPopUp[i];
 			
 

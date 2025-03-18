@@ -70,7 +70,8 @@
     width: 100%;
     height: auto;
 }
-.range .card-image {
+.range .card-image,
+.process_carousel .card-image {
     max-height: 40vh;
 }
 .card-image img {
@@ -81,7 +82,8 @@
     /* <img> is inline element - to remove padding/line-height change to block */
     display: block;
 }
-.range .card-image img {
+.range .card-image img,
+.process_carousel .card-image img {
     height: 40vh;
 }
 .card-content {
@@ -126,6 +128,8 @@
     text-decoration: none;
     position: relative;
 }
+
+
 
 /* --------------------------------------- */
 /* --------------------------------------- */
@@ -224,8 +228,8 @@
 @media screen and (max-width: 660px){
     .grid-archive .card, 
     .grid-archive .card img {
-        max-width: calc(var(--max-col-width));
-        min-height: calc(90vw - (0.0rem));
+        /* max-width: calc(var(--max-col-width));
+        min-height: calc(90vw - (0.0rem)); */
     }
 }
 
@@ -385,7 +389,7 @@
 }
 @media screen and (max-width: 1200px) {
     .grid-colours .grid-col.column {
-        gap: var(--gap-large);
+        gap: var(--gap);
     }
 }
 
@@ -443,7 +447,8 @@
 @media screen and (max-width: 1080px){
     .grid-colours .card, 
     .grid-colours .card img {
-        max-width: calc(var(--one-qtr-max-width));
+        max-width: calc(var(--one-third-max-width));
+        /* max-width: calc(var(--one-qtr-max-width)); */
         /* min-height: calc(var(--one-third-max-width) - (2.5vw)); */
     }
 }
@@ -479,6 +484,11 @@
     line-clamp: 4;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+.grid-colours .card-content {
+    width: 100%;
 }
 
 /* --------------------------------- */
@@ -542,6 +552,12 @@
     aspect-ratio: 3 / 2;
     /* A4 */
 }
+@media screen and (max-width: 1080px) {
+    .grid-collection.plain .card img {
+        aspect-ratio: 1 / 1;
+    }
+}
+
 
 /* .grid-collection .card:hover img, */
 .grid-collection a:hover .card img {
@@ -562,7 +578,7 @@
     aspect-ratio: 3 / 2;
     /* overflow-y: hidden; */
     position: absolute;
-    z-index: 55555;
+    z-index: var(--z-index-hover);
     top: 0;
     left: 0;
     /* background-color:blueviolet; */
@@ -579,8 +595,12 @@
 @media screen and (max-width: 1080px) {
     /* .grid-collection .card .card-image::after,  */
     .grid-collection a .card .card-image::after {
+        /* fix this */
         max-width: var(--one-half-max-width-smgap);
         max-height: calc(var(--one-half-max-width-smgap)* 2 / 3);
+    }
+    .grid-collection.plain a .card .card-image::after {
+        aspect-ratio: 1 / 1;
     }
 }
 
@@ -602,8 +622,13 @@
     }
 }
 @media screen and (max-width: 880px){
-    .grid-collection .card, 
-    .grid-collection .card img {
+    .grid-collection.plain .card, 
+    .grid-collection.plain .card img {
+        width: var(--column-width-xs);
+        /* max-width: unset ; */
+    }
+    .grid-collection.archive .card, 
+    .grid-collection.archive .card img {
         width: var(--column-width-xs);
         max-width: unset ;
     }
@@ -662,12 +687,19 @@
     justify-content: center;
     align-items: flex-start;
     gap: var(--gap-large) ;
+    margin-bottom: 2rem;
 }
 @media screen and (max-width: 1200px) {
     .grid-projects .column,
     .grid-projects .grid-col.column {
         /* gap: var(--gap-xs); */
     }
+}
+
+
+#process.grid-projects .card_link,
+#other_projects.grid-projects .card_link {
+    width: 100%;
 }
 
 
@@ -682,6 +714,11 @@
     width: 100%;
     max-width: calc(var(--one-third-max-width));
     overflow: hidden;
+}
+
+#process.grid-projects .card_link .card,
+#other_projects.grid-projects .card_link .card {
+    max-width: unset;
 }
 
 .grid-projects a:hover .card-img  {
@@ -700,6 +737,11 @@
     transition: var(--transition);
     aspect-ratio: 3 / 2;
     /* A4 */
+}
+@media screen and (max-width: 880px){
+    :not(#recent_projects).grid-projects.archive .card img {
+        aspect-ratio: 1 / 1;
+    }
 }
 
 .grid-projects .card,
@@ -721,11 +763,18 @@
     }
 }
 @media screen and (max-width: 880px){
+    #process.grid-projects .card, 
+    #process.grid-projects .card img,
     .grid-projects .card, 
     .grid-projects .card img {
         width: var(--max-col-width);
         max-width: unset ;
     }
+    #process.grid-projects .card, 
+    #process.grid-projects .card img {
+        width: 100%;
+    }
+    
 }
 
 .grid-projects .card-content {

@@ -59,9 +59,7 @@
     --font-size-h2: 80px;
     /* --font-size-h2: clamp(3.8rem, 3.56rem + 1.2vw, 5rem); */
     --font-size-h2: clamp(4rem, 2.714rem + 1.905vw, 5rem);
-    /* --font-size-h3: clamp(2.75rem, 1.971rem + 0.962vw, 3.125rem);  */
-    /* 50px / 3.125rem */
-    /* --font-size-h3: clamp(1.5rem, 1.048rem + 1.731vw, 3rem); */
+    /* --font-size-h3: clamp(1.5rem, -0.5893rem + 3.0952vw, 3.125rem); */
     --font-size-h3: 50px;
     --font-size-h3: clamp(2.5rem, 1.458rem + 1.389vw, 3.125rem);
     --font-size-h3-sm: clamp(2rem, 1.458rem + 1.389vw, 2.3077vw);
@@ -70,7 +68,6 @@
     --font-size-h4: 20px;
     --font-size-h4-bold: 16.5px;
     --font-size-h4-demibold: 16.5px;
-    /* --font-size-h4: 16.5px; */
     --font-size-h4-enquiry: 22px;
     --font-size-h5: 14px;
     --font-size-h6: 12px;
@@ -145,6 +142,7 @@
         --font-size-huge-sub: 50px;
         --font-size-h2: clamp(2.5rem, 1.868rem + 3.158vw, 4rem); 
         --font-size-h3: 36px;
+        --font-size-h3-sm: 24px;
         --font-size-h4-bold: 16.5px;
         --font-size-h4-demibold: 16.5px;
         --font-size-h4: 16.5px;
@@ -250,6 +248,10 @@ a {
     text-decoration: underline;
     text-underline-offset: 0.2em;
     text-decoration-color: var(--primary);
+}
+
+.content ul, .content li {
+    font-size: var(--font-size-base);
 }
 
 /* headings */

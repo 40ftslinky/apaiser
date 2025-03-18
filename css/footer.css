@@ -277,13 +277,22 @@ footer img {
 
 .certifications_group {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--gap);
+    flex-wrap: wrap;    
+    min-width: 40vw;
+}
+@media screen and (max-width: 880px) {
+    .certifications_group {
+        min-width: 100%;
+        width: 90vw;
+    }
 }
 
 .certifications_group img {
     width: 100%;
+    max-width: 55px;
     height: auto;
     max-height: 55px;
 }   

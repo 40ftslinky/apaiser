@@ -71,7 +71,9 @@
             </div>
             <div class="text_wrap align-start">
                 <?php echo $section2_paragraph ?>
-				<a class="button-secondary" href="<?php echo $section2_link ?>"><?php echo $section2_button ?></a>
+				<div class="button_wrap">
+					<a class="button-secondary" href="<?php echo $section2_link ?>"><?php echo $section2_button ?></a>
+				</div>
             </div>
         </div>
 		
@@ -124,7 +126,7 @@
 
 
 <!-- section -->
-<!-- RECENT PROJECTS -->
+<!-- PROCESS -->
 <section id="process" class="grid-projects archive">
 	<?php
 	$process_title= get_field("process_title", $post_id);
@@ -136,24 +138,25 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row process_carousel">
         
-        <div class="grid-col column ">   
+        <div class="grid-col column carousel">   
 			<?php
 			foreach($process_cards as $card){
 			?>
-				<!-- 01  -->
-				<a class="card_link" href="<?php echo $card['link'] ?>">
-					<div class="card align-center no_border">
-						<div class="card-image">
-							<img src="<?php echo $card['image'] ?>" alt="<?php echo $card['alt'] ?>">
+				<div class='carousel-cell column one-third'>
+					<a class="card_link" href="<?php echo $card['link'] ?>">
+						<div class="card align-center no_border">
+							<div class="card-image">
+								<img src="<?php echo $card['image'] ?>" alt="<?php echo $card['alt'] ?>">
+							</div>
+							<div class="card-content align-center">
+								<h3><?php echo $card['title'] ?></h3>
+								<p class="center-align"><?php echo $card['text'] ?></p>
+							</div>
 						</div>
-						<div class="card-content align-center">
-							<h3><?php echo $card['title'] ?></h3>
-							<p class="center-align"><?php echo $card['text'] ?></p>
-						</div>
-					</div>
-				</a>
+					</a>
+				</div>
 			<?php
 			}
 			?>
@@ -163,7 +166,14 @@
     </div>
 
 </section>
+<style>
+.archive .row.process_carousel .flickity-viewport{
+	
+	width: 100%;
+	
+}
 
+</style>
 <!-- /section -->
 
 <!-- section --> 
