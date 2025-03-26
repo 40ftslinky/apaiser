@@ -424,6 +424,7 @@
 	<script src="<?php echo $child_themedir; ?>/js/project-pop-up.js"></script>
     <script src="<?php echo $child_themedir; ?>/js/truncate.js"></script>
     <script src="<?php echo $child_themedir; ?>/js/in-focus.js"></script>
+    <script src="<?php echo $child_themedir; ?>js/confirmation.js"></script>
 
     <script src="<?php echo $child_themedir; ?>/js/flickity_custom.js"></script>
 	<!-- <script src="<?php echo $child_themedir; ?>/js/custom-ajax.js"></script> -->

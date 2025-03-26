@@ -25,9 +25,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 				</div>                            
 							
 				<div class="project-content">
-				
 					<div class="project-header">
-					
 						<h2 class="project-title" id="popup_project_title_<?php echo $XX; ?>"><?php echo $title; ?></h2>
 						<h2 class="subtitle" id="popup_project_regions_<?php echo $XX; ?>"><?php echo $RegionStr; ?></h2>
 
@@ -300,14 +298,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 		endif;
 		
 		
-		
-		//$related_1 = get_field('related_product', $project_id_1);
-		
-		//$post_content_1 =  $intro_link_1->post_content;
-		
-		
-		
-		//
+
 		
 		$title_2 =  $intro_link_2->post_title;
 		
@@ -447,7 +438,12 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
             </div>
      
 			<?php
-
+			if(!empty($_GET['offset'])){
+				$n = $_GET['offset'];
+			}
+			if(empty($n)){
+				$n=0;
+			}
 			
 			if(empty($category)){
 				
@@ -460,6 +456,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					'post_status'       => array("publish"),
 					'orderby' => 'id', 
 					'order' => 'desc',		
+					'offset'         => $n,
 				);
 				
 
@@ -476,6 +473,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					'tax_query' => [ [ 'taxonomy' => 'project_cat', 'field' => 'slug', 'terms' => $category ] ],
 					'orderby' => 'id', 
 					'order' => 'desc',		
+					'offset'         => $n,
 				);
 				
 			}
@@ -493,8 +491,10 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					
 					$proj_images=[];
 					
-					
-					foreach($Projects as $proj){
+					for( $i = 0; $i < 9; $i++) {
+					//foreach($Projects as $proj){
+						$proj = $Projects[$i];
+						
 						
 						$project_id = $proj->ID;
 						
@@ -589,9 +589,15 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 							
 						}
 						
+						if($proj){
+							$VIS="block";
+						} else {
+							$VIS="none";
+						}
+						
 					?>
 						<!-- 01....  -->
-						<a class="card_link" id="card_link_<?php echo $XX; ?>">
+						<a class="card_link" id="card_link_<?php echo $XX; ?>" style="display: <?php echo $VIS; ?>">
 							<div class="card center no_border"  id="card_<?php echo $XX; ?>">
 								<div class="card-image">
 									<img  id="card_image_<?php echo $XX; ?>" loading="lazy" src="<?php echo $image; ?>" alt="<?php echo $alt; ?>">
@@ -600,7 +606,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 									<h3 class="subtitle"  id="card_subtitle_<?php echo $XX; ?>"><?php echo $RegionStr; ?></h3>                
 									<h3 id="card_title_<?php echo $XX; ?>"><?php echo $title; ?></h3>
 									<p class="center-align"  id="card_description_<?php echo $XX; ?>"><?php echo $Des; ?></p>
-									<button class="button-outline pop-up-link"  onclick="refresh_flickity(<?php echo $XX ?>)" data="project-<?php echo $XX; ?>">Discover</button>
+									<button class="button-outline pop-up-link" style="opacity:0; width:0;" onclick="refresh_flickity(<?php echo $XX ?>)" data="project-<?php echo $XX; ?>">Discover</button>
 									<!-- hidden fields -->
 
 
@@ -622,6 +628,7 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 
 				
 					$XX++;
+					
 					
 					}
 					
@@ -659,9 +666,15 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					
 					$page_count = ceil($post_count / $posts_per_page);
 					
-
+					if(!empty($_GET['offset'])){
+						
+						if($_GET['offset']==0){
+							$current =1;
+						} else {
+							$current = (($_GET['offset'] / 9 ) +1);
+						}
 					
-					if(!isset($_GET['page'])){
+					} elseif(!isset($_GET['page'])){
 						$current = 1;
 						
 					} else {
@@ -676,9 +689,9 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 						<?php
 						print "<!-- :::current=$current  -->";
 						if($current>1){
-							$Style='display: block';
+							$Style='opacity: 1';
 						} else {
-							$Style='display: none';
+							$Style='opacity: 0; width: 0';
 						}
 							?>
 							<a href="" class="page previous load-more-link" style="<?php echo $Style; ?>"  data="prev" id="prev">
@@ -851,6 +864,28 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 							jQuery('.load-more-link .right_arrow').show();
 						}
 						
+							console.log("**n=" + $n);
+							
+							//document.querySelector('[class="pop-up-link"]').style.opacity = '0';
+							//document.querySelector('[data="pop-up-link"]').style.width = '0';	
+							const elements2 = document.querySelectorAll('.pop-up-link');
+							elements2.forEach(element => {
+							  element.style.opacity = '0';
+							  element.style.width = '0';
+							});
+							
+							// Get the current URL
+							let currentURL = window.location.href;
+							// Add or update the "?offset=" parameter with the value of n
+							if (currentURL.indexOf('?offset=') > -1) {
+								currentURL = currentURL.replace(/(\?offset=)[^&]*/, '$1' + $n);
+							} else {
+								currentURL += '?offset=' + $n;
+							}
+							// Update the URL in the location bar without reloading the page
+							window.history.pushState(null, '', currentURL);
+							
+						
 							// use Ajax to get posts 
 							$.ajax({
 								type: 'POST',
@@ -934,7 +969,14 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					card_image.src = image;
 					}
 					
-					
+		
+					//card_subtitle_1
+					const card_subtitle_x = document.getElementById('card_subtitle_' + $X);
+					// Replace the text content with the desired text
+					if(card_subtitle_x){
+						card_subtitle_x.textContent = obj['subtitle'];
+					}
+		
 					
 					//popup_project_regions_0
 					const popup_project_regions = document.getElementById('popup_project_regions_' + $X);
@@ -947,13 +989,13 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 					//project_description_7
 					const project_description  = document.getElementById('project_description_' + $X);  
 					if(project_description){
-						project_description.textContent = obj['description'];
+						project_description.innerHTML = obj['description'];
 						
 					}
 					//project_description_7
 					const card_description_  = document.getElementById('card_description_' + $X);  
 					if(card_description_){
-						card_description_.textContent = obj['description'];
+						card_description_.innerHTML = obj['description'];
 						
 					}
 					
@@ -1095,30 +1137,41 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 				
 				
 				function refresh_flickity(i){
-					
-					
 
-					
 					var nodeList = document.querySelectorAll('.flickity-js');
 
-					
 					//for (var i = 0, t = nodeList.length; i < t; i++) {
 						if(nodeList){
 							if(Flickity){
-							
 								var flkty = Flickity.data(nodeList[i]);
-							
 							}
 						}
+						
+						if(!flkty){
+							if (nodeList[i]) {
+								var proj_flkty = new Flickity( nodeList[i], {
+									cellAlign: 'left',
+									contain: true,
+									prevNextButtons: true,
+									pageDots: true,
+									arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
+								});
+							} else {
+								console.log("no nodelist[i] error!");
+								
+							}
+							
+						} else {
+							console.log("no flkty error!");
+						}
+						
 						
 						if(flkty){
 
 							// Check if element had flickity options specified in data attribute.
-							
 							if(nodeList[i]){
 								
 								var flktyData = nodeList[i].getAttribute('data-flickity');
-							
 								console.log(flktyData);
 							
 							}
@@ -1154,10 +1207,15 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 									}
 								
 							}
-				
-					
+
 						}
-					
+
+
+						const elementsx = document.querySelectorAll('.pop-up-link');
+						elementsx.forEach(element => {
+						  element.style.opacity = '1';
+						  element.style.width = 'auto';
+						});			
 					
 					//}	// end for loop 
 				}	// end function 
@@ -1207,6 +1265,8 @@ function project_pop_up($project_id, $XX, $title, $RegionStr, $_images, $related
 		  const isVisibleDiv = target.closest('.is-visible');
 		  if (isVisibleDiv && isVisibleDiv === target) {
 			isVisibleDiv.classList.remove('is-visible');
+			var body = document.body;
+			body.classList.remove('no_scroll');
 		  }
 		});
 	});

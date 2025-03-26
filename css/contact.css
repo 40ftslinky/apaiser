@@ -210,6 +210,14 @@ select.country option[value=""] {
 /* ------------------------------------------- */
 /* professionals */
 
+.wpcf7, .subscribe-content .wpcf7 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form,
 .enquiry_form form,
 #enquiry_form form,
 .contact_form form,
@@ -222,7 +230,7 @@ select.country option[value=""] {
     gap: var(--gap-sm);
     /* min-width: 580px; */
     max-height: fit-content;
-    transition: var(--transition);
+	transition: var(--transition);
     opacity: 1;
     height: auto;
 }
@@ -248,18 +256,44 @@ select.country option[value=""] {
 }
 
 form.sent,
-form [data-status="sent"],
+form[data-status="sent"],
 .enquiry_form form.sent,
 #enquiry_form form.sent,
 .contact_form form.sent,
 #contact_form form.sent,
 .professionals_form form.sent,
-#professionals_form form.sent {
-    display: none;
+#professionals_form form.sent,
+form.invalid,
+form[data-status="invalid"],
+.enquiry_form form.invalid,
+#enquiry_form form.invalid,
+.contact_form form.invalid,
+#contact_form form.invalid,
+.professionals_form form.invalid,
+#professionals_form form.sent{
+/*     display: none; */
     transition: var(--transition);
-    opacity: 0;
-    height: 0;
+    opacity: 1;
+    height: auto;
 }
+
+.screen-reader-response {
+	transition: var(--transition)
+}
+.screen-reader-response.success-message {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    z-index: 111;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    /* box-sizing: border-box; */
+    background: rgba(255, 255, 255, 0.4);
+	-webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
 
 .enquiry_form input[type="submit"],
 #enquiry_form input[type="submit"],
@@ -278,6 +312,10 @@ footer form button[type="submit"] {
 }
 
 #enquiry_form label span {
+}
+
+span[class*="-not-valid-tip"] {
+	color: red;
 }
 
 /* intl phone */
@@ -343,6 +381,10 @@ footer form button[type="submit"] {
     display: none;
 }
 
+.screen-reader-response.error-message-visible p {
+    color: red;
+}
+
 [aria-invalid="true"],
 #enquiry_form [aria-invalid="true"],
 #professionals_form [aria-invalid="true"] {
@@ -359,10 +401,12 @@ label span [class*="not-valid-tip"],
 
 .wpcf7-response-output {
     display: none;
-}
+}   
 
 [role="status"] {
- font-weight: 500;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0;
 }
 
 /* ------------------------- */

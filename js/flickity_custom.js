@@ -19,6 +19,25 @@ if (rangeCarousel !== null){
 }
 
 
+var process_carouselCarousel = document.querySelector('.process_carousel .carousel');
+
+if (process_carouselCarousel !== null){
+	
+	var flkty = new Flickity( process_carouselCarousel, {
+		// options
+		cellAlign: 'left',
+		contain: true,
+		prevNextButtons: true,
+		pageDots: true,
+		// groupCells: 3,
+		arrowShape: 'M60.5689 0.5L66 6L21.363 50.2884L66 94.5L60.6455 100L10.6348 50.2884L60.5689 0.5Z'
+		
+	});
+	
+}
+
+
+
 var projectPopUp = document.getElementsByClassName("project-pop-up");
 
 
@@ -43,6 +62,12 @@ var projectPopUp = document.getElementsByClassName("project-pop-up");
 			});
 		
 			proj_flkty.resize();
+			
+			const elementz = document.querySelectorAll('.pop-up-link');
+			elementz.forEach(element => {
+			  element.style.opacity = '1';
+			  element.style.width = 'auto';
+			});			
 		
 	}
 

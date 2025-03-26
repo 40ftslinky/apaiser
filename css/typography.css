@@ -360,7 +360,8 @@ h4.demibold {
 
 strong, .bold {
     font-weight: 700;
-    font-weight: var(--bold-font-weight);
+    /* font-weight: var(--bold-font-weight); */
+	font-weight: var(--med-font-weight);
 }
 .demibold {
     font-weight: 600;

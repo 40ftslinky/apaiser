@@ -1108,6 +1108,7 @@ add_action('wp_ajax_nopriv_clear_cookies', 'clear_cookies');
     // Check if the post has an excerpt
     if (has_excerpt($post_id)) {
         // Return the existing excerpt
+		print "<!-- excerpt=post_excerpt -->";
         return $post->post_excerpt;
     } else {
         // Get the post content
@@ -1121,11 +1122,14 @@ add_action('wp_ajax_nopriv_clear_cookies', 'clear_cookies');
         
         // Check if there are enough sentences
         if (count($sentences) > 1) {
-            // Combine the first two sentences
+            // Combine the first 2 sentences
             $excerpt = $sentences[0] . $sentences[1] . $sentences[2] . $sentences[3];
+			print "<!-- excerpt=sentences -->";
         } else {
-            // Use the first sentence if there are fewer than two
+            // Use the first 1 sentence if there are fewer than two
             $excerpt = $sentences[0] . $sentences[1];
+			print "<!-- excerpt=sentence -->";
+			
         }
         
         // Trim the excerpt to remove any extra spaces

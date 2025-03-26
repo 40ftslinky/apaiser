@@ -216,7 +216,6 @@ jQuery(document).ready( function($){
 		});
 		
 
-
 		// Check if the current URL has a # anchor link
 		if (window.location.hash) {
 			
@@ -226,11 +225,24 @@ jQuery(document).ready( function($){
 			// Log the anchor link to the console
 			console.log('Anchor link:', anchorLink);
 
-			
 			do_anchor_offset(anchorLink);
 		}
 
-		
-		
-		
 	});
+
+
+// Select all links with the class "submenu-link"
+document.querySelectorAll('.submenu-link').forEach(link => {
+    link.addEventListener('click', () => {
+		
+        // Select the header element
+        const header = document.querySelector('#header');
+        
+        // Check if the header has the class "active" and remove it
+        if (header && header.classList.contains('active')) {
+            header.classList.remove('active');
+        }
+		
+    });
+});
+

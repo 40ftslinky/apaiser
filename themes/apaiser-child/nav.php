@@ -57,7 +57,7 @@
 
                                                 <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>our-story">Our Story</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>our-atelier">Our Atelier</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>apaisermarble">Apaisermarble</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK; ?>apaisermarble">apaiserMarble</a></li>
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
@@ -93,17 +93,11 @@
 											<h2 class="submenu-title">Products</h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bath/">Baths</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basin</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basins</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/freestanding-basins/">Freestanding Basins</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-vanities/">Vanities</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bathroom-accessories/">Accessories</a></li>
-												<!--												
-                                                <li class="submenu-item"><a class="submenu-link" href="/products/baths">Baths</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products/basin">Basin</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products/free-standing-basins">Free Standing Basins</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products/vanities">Vanities</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products/accessories">Accessories</a></li>
-												-->
+												
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
@@ -183,7 +177,7 @@
 												<?php if($path=="/about"){$LINK = "#";} else {$LINK = "/about#";} ?>
                                                 <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-story">Our Story</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>our-atelier">Our Atelier</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>apaisermarble">Apaisermarble</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="<?php echo $LINK ?>apaisermarble">apaiserMarble</a></li>
                                             </ul>
                                         </div>
                                         <div class="submenu_col">
@@ -220,7 +214,7 @@
                                             <h2 class="submenu-title has-submenu">Products</h2>
                                             <ul class="submenu">
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bath/">Baths</a></li>
-                                                <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basin</a></li>
+                                                <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-basins/">Basins</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/freestanding-basins/">Freestanding Basins</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-vanities/">Vanities</a></li>
                                                 <li class="submenu-item"><a class="submenu-link" href="/products-types/stone-bathroom-accessories/">Accessories</a></li>

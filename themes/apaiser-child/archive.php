@@ -70,11 +70,12 @@ function get_posts_from_categories($term_ids = []) {
 			
 			$post_content = get_the_content($post_id);
 			
-			$yoast_description = substr(get_post_meta($post_id, '_yoast_wpseo_metadesc', true), 0, 100);
+			$yoast_description = get_post_meta($post_id, '_yoast_wpseo_metadesc', true);
 			
 			if(!empty($yoast_description)){
 				
 				$excerpt = $yoast_description;
+				print "<!-- excerpt=yoast_description -->";
 				
 			} else {
 				
@@ -158,13 +159,13 @@ function get_posts_from_categories($term_ids = []) {
 					<?php
 						if(!empty($hero_subtitle)){
 							?>
-							<h3 class="subtitle"><?php echo $hero_subtitle; ?></h3>        
+							<!-- <h3 class="subtitle"><?php echo $hero_subtitle; ?></h3>       -->  
 							<?php
 						}
 					?>
 						<!-- <h3>One&Only</h3> -->
 						<?php echo '<h3>' . get_the_title() . '</h3>'; ?>
-						<p class="center-align">
+						<p class="center-align"><!-- excerpt-01 -->
 							<?php echo $excerpt; ?>
 						</p>
 						<button class="button-outline pop-up-link">Discover</button>

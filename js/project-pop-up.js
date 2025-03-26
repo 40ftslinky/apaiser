@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 	var closes = document.getElementsByClassName("close"); 
 	var projectPopUp = document.getElementsByClassName("project-pop-up"); 
+
 	var popUpButton = document.getElementsByClassName("pop-up-link"); 
+	
+	var popUpButton2 = document.getElementsByClassName("pop-up-link-2"); 
+	
     var body = document.body;
 	
 	// loop through the closes
@@ -26,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}
+	
+
+	
+	
 
 	// loop through the pop up buttons 
 	for (let i = 0; i < popUpButton.length; i++) {
@@ -37,6 +45,28 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 			// no scrolling 
 			body.classList.toggle('no_scroll');
+		});
+
+	}
+	
+	
+	
+	// loop through the pop up buttons 
+	for (let i = 0; i < popUpButton2.length; i++) {
+		
+		// add on click function for each popupButton 
+		
+		
+		popUpButton2[i].addEventListener('click', function() {
+			
+			j = i + 9;
+			
+			// make pop-up visible 
+			projectPopUp[j].classList.toggle('is-visible');
+	
+			// no scrolling 
+			body.classList.toggle('no_scroll');
+			
 		});
 
 	}
